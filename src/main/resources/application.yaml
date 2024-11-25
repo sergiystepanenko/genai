@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Gen AI
+client-openai:
+  key: ${DAIL_KEY}
+  endpoint: https://ai-proxy.lab.epam.com
+  model: gpt-4o
+logging:
+  level:
+    com.epam.genai: DEBUG
