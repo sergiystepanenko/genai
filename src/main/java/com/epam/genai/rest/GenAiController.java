@@ -19,7 +19,7 @@ public class GenAiController {
   @PostMapping(path = "chat", consumes = "application/json", produces = "text/plain")
   public ResponseEntity<String> chat(@RequestBody InputRequest request) {
     String input = request.getInput();
-    String response = openAiService.simpleChat(input);
+    String response = openAiService.simpleChat(input, request.getTemperature());
 
     return ResponseEntity.ok(response);
   }
