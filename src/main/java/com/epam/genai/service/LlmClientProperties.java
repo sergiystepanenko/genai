@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "client-openai")
-public class OpenAiClientProperties {
+@ConfigurationProperties(prefix = "llm-client")
+public class LlmClientProperties {
   private String key;
   private String endpoint;
   private String model;
