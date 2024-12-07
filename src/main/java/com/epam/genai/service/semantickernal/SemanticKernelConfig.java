@@ -3,7 +3,7 @@ package com.epam.genai.service.semantickernal;
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.core.credential.KeyCredential;
-import com.epam.genai.service.OpenAiClientProperties;
+import com.epam.genai.service.LlmClientProperties;
 import com.epam.genai.service.semantickernal.model.BookFormat;
 import com.google.gson.Gson;
 import com.microsoft.semantickernel.Kernel;
@@ -11,31 +11,32 @@ import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatC
 import com.microsoft.semantickernel.contextvariables.ContextVariableTypeConverter;
 import com.microsoft.semantickernel.contextvariables.ContextVariableTypes;
 import com.microsoft.semantickernel.plugin.KernelPlugin;
-import com.microsoft.semantickernel.plugin.KernelPluginFactory;
 import com.microsoft.semantickernel.services.ServiceNotFoundException;
 import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 @RequiredArgsConstructor
 public class SemanticKernelConfig {
-  private final OpenAiClientProperties openAiClientProperties;
-  private final BookPlugin bookPlugin;
+  private final LlmClientProperties llmClientProperties;
 
   @Bean
   public OpenAIAsyncClient openAIAsyncClient() {
     return new OpenAIClientBuilder()
-        .credential(new KeyCredential(openAiClientProperties.getKey()))
-        .endpoint(openAiClientProperties.getEndpoint())
+        .credential(new KeyCredential(llmClientProperties.getKey()))
+        .endpoint(llmClientProperties.getEndpoint())
         .buildAsyncClient();
   }
 
   @Bean
-  public Kernel kernel(OpenAIAsyncClient openAIAsyncClient) {
+  @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+  public Kernel kernel(OpenAIAsyncClient openAIAsyncClient, String model, KernelPlugin kernelPlugin) {
     ChatCompletionService chatService = OpenAIChatCompletion.builder()
-        .withModelId(openAiClientProperties.getModel())
+        .withModelId(model)
         .withOpenAIAsyncClient(openAIAsyncClient)
         .build();
 
@@ -45,18 +46,18 @@ public class SemanticKernelConfig {
             .toPromptString(new Gson()::toJson)
             .build());
 
-    KernelPlugin bookKernelPlugin = KernelPluginFactory.createFromObject(
-        bookPlugin,
-        "BookPlugin"
-    );
+    Kernel.Builder kernalBuilder = Kernel.builder()
+        .withAIService(ChatCompletionService.class, chatService);
 
-    return Kernel.builder()
-        .withAIService(ChatCompletionService.class, chatService)
-        .withPlugin(bookKernelPlugin)
-        .build();
+    if (kernelPlugin != null) {
+      kernalBuilder.withPlugin(kernelPlugin);
+    }
+
+    return kernalBuilder.build();
   }
 
   @Bean
+  @Scope(BeanDefinition.SCOPE_PROTOTYPE)
   public ChatCompletionService chatCompletionService(Kernel kernel) {
     try {
       return kernel.getService(ChatCompletionService.class);

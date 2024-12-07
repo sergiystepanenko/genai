@@ -1,7 +1,7 @@
 spring:
   application:
     name: Gen AI
-client-openai:
+llm-client:
   key: ${EPAM_DAIL_KEY}
   endpoint: https://ai-proxy.lab.epam.com
   model: gpt-4o

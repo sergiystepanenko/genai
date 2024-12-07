@@ -8,9 +8,10 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class InputRequest {
-  public static Double DEFAULT_TEMPERATURE = 0.5;
+  public static final Double DEFAULT_TEMPERATURE = 0.5;
   private String input;
   private Double temperature;
+  private String model;
 
   public Double getTemperature() {
     return temperature != null ? temperature : DEFAULT_TEMPERATURE;

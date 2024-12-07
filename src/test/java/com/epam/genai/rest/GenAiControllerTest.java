@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.epam.genai.rest.model.InputRequest;
-import com.epam.genai.service.OpenAiService;
+import com.epam.genai.service.LlmService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
@@ -22,16 +22,16 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class GenAiControllerTest {
+class GenAiControllerTest {
 
   @Autowired
   private MockMvc mockMvc;
 
   @MockBean
-  private OpenAiService openAiService;
+  private LlmService llmService;
 
   @Test
-  public void testChatEndpoint() {
+  void chatWithTemperature() {
     double temperature = 0.7;
     InputRequest inputRequest = InputRequest.builder()
         .input("Hello world")
@@ -39,19 +39,33 @@ public class GenAiControllerTest {
         .build();
     String expectedResponse = "This is a response from OpenAI";
 
-    when(openAiService.simpleChat(anyString(), eq(temperature))).thenReturn(expectedResponse);
+    when(llmService.simpleChat(anyString(), eq(temperature), eq(null))).thenReturn(expectedResponse);
 
     performRestRequest(inputRequest, expectedResponse);
   }
 
   @Test
-  public void testChatEndpointDefaultTemperature() {
+  void chatDefaultTemperature() {
     InputRequest inputRequest = InputRequest.builder()
         .input("Hello world")
         .build();
     String expectedResponse = "This is a response from OpenAI";
 
-    when(openAiService.simpleChat(anyString(), eq(DEFAULT_TEMPERATURE))).thenReturn(expectedResponse);
+    when(llmService.simpleChat(anyString(), eq(DEFAULT_TEMPERATURE), eq(null))).thenReturn(expectedResponse);
+
+    performRestRequest(inputRequest, expectedResponse);
+  }
+
+  @Test
+  void chatEndpointWithModel() {
+    String model = "llm model";
+    InputRequest inputRequest = InputRequest.builder()
+        .input("Hello world")
+        .model(model)
+        .build();
+    String expectedResponse = "This is a response from OpenAI";
+
+    when(llmService.simpleChat(anyString(), eq(DEFAULT_TEMPERATURE), eq(model))).thenReturn(expectedResponse);
 
     performRestRequest(inputRequest, expectedResponse);
   }
