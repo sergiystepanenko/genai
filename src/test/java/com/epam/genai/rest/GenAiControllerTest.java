@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.epam.genai.rest.model.InputRequest;
-import com.epam.genai.service.LlmService;
+import com.epam.genai.service.SimpleChatLlmService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ class GenAiControllerTest {
   private MockMvc mockMvc;
 
   @MockBean
-  private LlmService llmService;
+  private SimpleChatLlmService llmService;
 
   @Test
   void chatWithTemperature() {

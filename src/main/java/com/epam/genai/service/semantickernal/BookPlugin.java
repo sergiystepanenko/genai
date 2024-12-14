@@ -1,8 +1,8 @@
 package com.epam.genai.service.semantickernal;
 
 import com.epam.genai.service.BookStoreService;
-import com.epam.genai.service.semantickernal.model.BookFormat;
-import com.epam.genai.service.semantickernal.model.BookStore;
+import com.epam.genai.service.semantickernal.model.book.BookFormat;
+import com.epam.genai.service.semantickernal.model.book.BookStore;
 import com.microsoft.semantickernel.semanticfunctions.annotations.DefineKernelFunction;
 import com.microsoft.semantickernel.semanticfunctions.annotations.KernelFunctionParameter;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class BookPlugin {
       name = "where_to_buy",
       description = "Propose a place where and what format to buy the book.",
       returnDescription = "Returns the book store name and instructions how to access it.",
-      returnType = "com.epam.genai.service.semantickernal.model.BookStore")
+      returnType = "com.epam.genai.service.semantickernal.model.book.BookStore")
   public Mono<BookStore> whereToBuyBook(
       @KernelFunctionParameter(name = "bookFormat", description = "The format of the book", type = BookFormat.class)
       BookFormat bookFormat,

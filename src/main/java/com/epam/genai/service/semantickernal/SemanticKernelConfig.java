@@ -4,12 +4,8 @@ import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.core.credential.KeyCredential;
 import com.epam.genai.service.LlmClientProperties;
-import com.epam.genai.service.semantickernal.model.BookFormat;
-import com.google.gson.Gson;
 import com.microsoft.semantickernel.Kernel;
 import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
-import com.microsoft.semantickernel.contextvariables.ContextVariableTypeConverter;
-import com.microsoft.semantickernel.contextvariables.ContextVariableTypes;
 import com.microsoft.semantickernel.plugin.KernelPlugin;
 import com.microsoft.semantickernel.services.ServiceNotFoundException;
 import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionService;
@@ -39,12 +35,6 @@ public class SemanticKernelConfig {
         .withModelId(model)
         .withOpenAIAsyncClient(openAIAsyncClient)
         .build();
-
-    ContextVariableTypes
-        .addGlobalConverter(ContextVariableTypeConverter.builder(BookFormat.class)
-            .fromObject(o -> Enum.valueOf(BookFormat.class, (String) o))
-            .toPromptString(new Gson()::toJson)
-            .build());
 
     Kernel.Builder kernalBuilder = Kernel.builder()
         .withAIService(ChatCompletionService.class, chatService);

@@ -1,7 +1,7 @@
 package com.epam.genai.service;
 
-import com.epam.genai.service.semantickernal.model.BookFormat;
-import com.epam.genai.service.semantickernal.model.BookStore;
+import com.epam.genai.service.semantickernal.model.book.BookFormat;
+import com.epam.genai.service.semantickernal.model.book.BookStore;
 import java.util.EnumMap;
 import org.springframework.stereotype.Service;
 

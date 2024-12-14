@@ -1,4 +1,4 @@
-package com.epam.genai.service.semantickernal.model;
+package com.epam.genai.service.semantickernal.model.book;
 
 import lombok.Data;
 

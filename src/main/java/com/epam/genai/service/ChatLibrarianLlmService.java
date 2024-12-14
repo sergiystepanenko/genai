@@ -3,7 +3,11 @@ package com.epam.genai.service;
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.epam.genai.rest.model.InputRequest;
 import com.epam.genai.service.semantickernal.BookPlugin;
+import com.epam.genai.service.semantickernal.model.book.BookFormat;
+import com.google.gson.Gson;
 import com.microsoft.semantickernel.Kernel;
+import com.microsoft.semantickernel.contextvariables.ContextVariableTypeConverter;
+import com.microsoft.semantickernel.contextvariables.ContextVariableTypes;
 import com.microsoft.semantickernel.orchestration.InvocationContext;
 import com.microsoft.semantickernel.orchestration.InvocationContext.Builder;
 import com.microsoft.semantickernel.orchestration.InvocationReturnMode;
@@ -18,75 +22,34 @@ import com.microsoft.semantickernel.services.chatcompletion.ChatMessageContent;
 import jakarta.annotation.PostConstruct;
 import java.util.List;
 import java.util.Objects;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
-public class LlmService {
-  private final ApplicationContext applicationContext;
-  private final OpenAIAsyncClient openAIAsyncClient;
-  private final LlmClientProperties llmClientProperties;
-
+public class ChatLibrarianLlmService extends LlmServiceBase {
   private final BookPlugin bookPlugin;
-  private ChatHistory history;
   private KernelPlugin bookKernelPlugin;
+
+  public ChatLibrarianLlmService(ApplicationContext applicationContext, OpenAIAsyncClient openAIAsyncClient,
+                                 LlmClientProperties llmClientProperties, BookPlugin bookPlugin) {
+    super(applicationContext, openAIAsyncClient, llmClientProperties);
+    this.bookPlugin = bookPlugin;
+  }
 
   @PostConstruct
   public void init() {
+    ContextVariableTypes
+        .addGlobalConverter(ContextVariableTypeConverter.builder(BookFormat.class)
+            .fromObject(o -> Enum.valueOf(BookFormat.class, (String) o))
+            .toPromptString(new Gson()::toJson)
+            .build());
+
     bookKernelPlugin = KernelPluginFactory.createFromObject(
         bookPlugin,
         "BookPlugin"
     );
-  }
-
-  private Kernel createKernal(final String model, KernelPlugin kernelPlugin) {
-    String llmModel = model != null ? model : llmClientProperties.getModel();
-
-    log.debug("Model: {}", llmModel);
-    log.debug("KernelPlugin: {}", kernelPlugin != null ? kernelPlugin.getName() : "n/a");
-    return applicationContext.getBean(Kernel.class, openAIAsyncClient, llmModel, kernelPlugin);
-  }
-
-  private ChatCompletionService createChatCompletionService(Kernel kernel) {
-    return applicationContext.getBean(ChatCompletionService.class, kernel);
-  }
-
-  public String simpleChat(String prompt, double temperature, String model) {
-    Kernel kernel = createKernal(model, null);
-    ChatCompletionService chatCompletionService = createChatCompletionService(kernel);
-
-    // Enable planning
-    InvocationContext invocationContext = new Builder()
-        .withReturnMode(InvocationReturnMode.LAST_MESSAGE_ONLY)
-        .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(true))
-        .withPromptExecutionSettings(PromptExecutionSettings.builder()
-            .withTemperature(temperature)
-            .build())
-        .build();
-
-    // Create a history to store the conversation
-    ChatHistory history = new ChatHistory();
-    history.addUserMessage(prompt);
-
-    List<ChatMessageContent<?>> results =
-        chatCompletionService.getChatMessageContentsAsync(history, kernel, invocationContext).block();
-
-    StringBuilder stringBuilder = new StringBuilder();
-
-    for (ChatMessageContent<?> result : Objects.requireNonNull(results)) {
-      logResult(result);
-      if (result.getAuthorRole() == AuthorRole.ASSISTANT && result.getContent() != null) {
-        stringBuilder.append(result);
-      }
-      // Add the message from the agent to the chat history
-      history.addMessage(result);
-    }
-
-    return stringBuilder.toString();
   }
 
   public String chatLibrarian(String prompt, String model) {
@@ -129,9 +92,5 @@ public class LlmService {
     history = new ChatHistory(results);
 
     return assistantResponse;
-  }
-
-  private void logResult(ChatMessageContent<?> result) {
-    log.debug(result.getAuthorRole() + ":\n" + result.getContent());
   }
 }
