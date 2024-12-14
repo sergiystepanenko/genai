@@ -28,7 +28,7 @@
     </scm>
     <properties>
         <java.version>21</java.version>
-        <semantic-kernel.version>1.4.0</semantic-kernel.version>
+        <semantic-kernel.version>1.4.2</semantic-kernel.version>
     </properties>
     <dependencies>
         <dependency>
