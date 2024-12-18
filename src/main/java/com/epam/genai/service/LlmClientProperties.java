@@ -11,4 +11,5 @@ public class LlmClientProperties {
   private String key;
   private String endpoint;
   private String model;
+  private String embeddingModel;
 }

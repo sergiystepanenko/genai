@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -68,6 +67,6 @@ public class LensDataService {
         .filter(lens -> brandLensMountMap.get(brand).contains(lens.getLensMount()) || lens.getLensMount() == lensMount)
         .filter(lens -> lens.getPhotographyGenre() == photographyGenre)
         .filter(lens -> lens.getPrice() <= budget)
-        .collect(Collectors.toList());
+        .toList();
   }
 }

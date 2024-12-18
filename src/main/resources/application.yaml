@@ -5,3 +5,7 @@ llm-client:
   key: ${EPAM_DAIL_KEY}
   endpoint: https://ai-proxy.lab.epam.com
   model: gpt-4o
+  embedding-model: text-embedding-3-small-1
+milvus:
+  host: localhost
+  port: 19530
