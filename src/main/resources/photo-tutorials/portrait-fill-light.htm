@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portraits with Two Lights: Adding a Fill Light</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/portrait-fill-light.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/portrait-fill-light.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/portrait-fill-light.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-172 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>PORTRAIT FILL LIGHTING</h1>
+<p>A second light source &#8212; usually called a fill light or fill flash &#8212; can greatly improve portrait lighting. It reduces the depth of shadows and softens the appearance of facial features, amongst other traits. Best of all, a fill light is easy to create: either a simple on-camera flash or a reflector is often sufficient. However, a second light source can just as easily harm portraits. This tutorial therefore focuses on how to control the location and intensity of the fill light in order to produce a desired portrait appearance.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-364114017"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Harsh Overhead Sunlight" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_intro-bad1.jpg" alt="harsh overhead sunlight portrait" width="259" height="280"/></div></div>
+<span class="arrowbg">&rarr;</span>
+<div><div><img loading="lazy" title="Sunlight with a Fill Flash" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_intro-good1.jpg" alt="overhead sunlight portrait with a fill flash" width="259" height="280"/></div></div>
+</div>
+<p style="text-align: center;">If you haven't done so already, also take a look at the first part of this tutorial:<br/><a href="portrait-lighting.htm">Introduction to Portrait Lighting: One Light Source</a></p>
+<h2>OVERVIEW: TWO LIGHT SOURCES</h2>
+<p>With a single light source, the most important considerations were its direction and apparent size. While these have the same effect with a second light, they aren't typically varied independent of the main light. Instead, <strong>what's usually adjusted is the relative illumination of the secondary light compared to the main light.</strong> This controls how much the second light will &quot;fill in&quot; the shadows from the main light, and is why a secondary light is usually referred to as the <em>fill light</em> or <em>fill flash</em>:</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Harsh Overhead Sunlight" src="https://cdn.cambridgeincolour.com/images/tutorials/flash_position4b.png" alt="diagram: harsh overhead sunlight portrait" width="260" height="150"/></div></div>
+<span class="arrowbg">&rarr;</span>
+<div><div><img loading="lazy" title="Sunlight with a Fill Flash" src="https://cdn.cambridgeincolour.com/images/tutorials/flash_position4.png" alt="diagram: overhead sunlight with a fill flash" width="260" height="150"/></div></div>
+</div>
+<p class="note">note: diagrams show the effect of a fill light, not necessarily its ideal position (more on this later)</p>
+<p>Perhaps the most common lighting scenario is to use an on-camera flash as the fill light, and sunlight as the main light. One could also use a secondary flash as a fill light in the studio, or could even use ambient light as the fill light and instead have the flash be the main light. There are many possibilities. The key is knowing how to control the qualities of your fill light &#8212; regardless of what source is being used to create it.</p>
+<h2>FILL LIGHT RATIOS</h2>
+<p>The terms &quot;flash ratio&quot; and &quot;fill light ratio&quot; describe* the relative amount of light from the main and secondary light sources, and effectively determine the overall contrast. For example, a value of 1:4 means that the fill light is a quarter the intensity of the main light. More balanced ratios produce weaker shadows:</p>
+<div class="image-row">
+<div>
+<table class="t1 bg pad">
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio1.png" width="124" height="75" alt="no fill light"></td>
+<td width="130"><strong>Fill Light Ratios:</strong><br/><br/><strong>0:1</strong>
+<p class="note">no fill light</p>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><span class="arrow">&darr;</span></td>
+</tr>
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio2.png" width="124" height="75" alt="weak fill light"></td>
+<td><br/><strong>1:8 - 1:2</strong>
+<p class="note">weaker fill light</p>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><span class="arrow">&darr;</span></td>
+</tr>
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio3.png" width="106" height="75" alt="strong fill light"></td>
+<td><br/><strong>1:2 - 1:1</strong>
+<p class="note">stronger fill light</p>
+</td>
+</tr>
+</table>
+</div>
+<div>
+<table class="t1 pad">
+<tr class="bg">
+<td colspan="5"><img loading="lazy" name="i1" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio12.jpg" width="271" height="320" alt="comparison of different fill light ratios"></td>
+</tr>
+<tr class="bg">
+<td colspan="5">Choose a Fill Light Ratio:</td>
+</tr>
+<tr>
+<td id="b1"><span onmouseover="on('b1'); off('b2'); off('b3'); off('b4'); off('b5'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio01.jpg';">0:1</span></td>
+<td id="b2"><span onmouseover="off('b1'); on('b2'); off('b3'); off('b4'); off('b5'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio18.jpg';">1:8</span></td>
+<td id="b3"><span onmouseover="off('b1'); off('b2'); on('b3'); off('b4'); off('b5'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio14.jpg';">1:4</span></td>
+<td id="b4" class="on"><span onmouseover="off('b1'); off('b2'); off('b3'); on('b4'); off('b5'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio12.jpg';">1:2</span></td>
+<td id="b5"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); on('b5'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio11.jpg';">1:1</span></td>
+</tr>
+</table>
+</div>
+</div>
+<p><strong>Portraiture typically appears better with a flash ratio near 1:2</strong>. This is strong enough to produce subtle shadows, but not so strong that it eliminates shadows entirely (causing the subject to be appear flat).</p>
+<p>However, one should always be wary of such seemingly strict rules in photography. Less fill light is often used for dark, &quot;low key&quot; style portraits with well-defined shadows. Similarly, more fill light might be necessary to render a brighter &quot;high key&quot; style, or just to provide a softer appearance (such as with a photograph of a baby). When in doubt though, the 1:2 ratio is a safe starting point.</p>
+<p class="notebox">*<strong>Note</strong>: These terms can be a little confusing, because a &quot;fill light ratio&quot; refers to the ratio between the secondary and primary sources of light, whereas the &quot;flash ratio&quot; refers to the ratio between the light from the flash and ambient light. To make matters worse, sometimes the ratio is used to describe the ratio between <em>total</em> light (ambient+flash) and that from flash alone. The numbers are sometimes also reversed, but the smaller number always refers to the fill light. We'll stick to the same definition throughout this tutorial, and since we'll only discuss scenarios where flash is weaker than other light sources, both terms are synonymous.</p>
+<h2>FILL LIGHT LOCATION</h2>
+<p>Unlike the main light source, <strong>the simplest location for a fill light is near the camera's line of sight (&quot;on-axis&quot;), but not so close that it appears in your image</strong>. That way, any shadows cast by the fill light won't be visible from the camera's perspective, so it won't matter if these appear hard (due to a small source). Perhaps the easiest way to achieve this type of fill light is to use a built-in or on-camera flash.</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash_position1.png" width="260" height="150" alt="on-camera fill flash"/>
+<span class="caption"><strong>On-Axis Fill Light</strong><br/>(shadows fall behind the subject)</span></div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offcamerafill1.png" width="260" height="150" alt="off-camera fill flash"/>
+<span class="caption"><strong>Off-Axis Fill Light</strong><br/>(shadows fall across the subject)</span></div></div>
+</div>
+<p>On the other hand, an on-axis fill light might be too restricting, and has a higher chance of producing direct reflections off the subject. Many therefore use a fill light which strikes their subject from a direction which partially opposes the main light (&quot;off-axis&quot;). This targets main light shadows more efficiently &#8212; even if the fill light ratio remains unchanged &#8212; and is therefore also less likely to affect the overall exposure.</p>
+<div class="image-row">
+<div>
+<img loading="lazy" name="i2" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-hard1.jpg" alt="off-axis versus on-axis fill light" width="253" height="280">
+</div>
+<div>
+<img loading="lazy" name="i3" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-setup1.png" alt="lighting diagram of off-axis vs on-axis fill lights" width="300" height="150"><br/>
+<table class="t1 pad center">
+<tr>
+<td class="bg">Choose<br/>a Fill Light:</td>
+<td id="b6" class="on"><span onmouseover="on('b6'); off('b7'); off('b8'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-hard1.jpg'; i3.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-setup1.png';">Off-Axis<br/>Hard</span></td>
+<td id="b7"><span onmouseover="off('b6'); on('b7'); off('b8'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-soft1.jpg'; i3.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-setup2.png';">Off-Axis<br/>Soft</span></td>
+<td id="b8"><span onmouseover="off('b6'); off('b7'); on('b8'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_onaxis-hard1.jpg'; i3.src='https://cdn.cambridgeincolour.com/images/tutorials/portraits2_onaxis-setup1.png';">On-Axis<br/>Hard</span></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="note">The square light represents the main light, and the octagonal disc represents the fill light.<br/>Above example uses a 1:1 fill ratio in order to improve visibility of fill shadows.</p>
+<p>However, off-axis fill has its own disadvantages, with perhaps the worst being that one now has to worry about the appearance of shadows from the fill light. If these aren't made sufficiently soft, they can cause unrealistic-looking double shadows. To counteract this, <strong>the farther a fill light is placed from the camera's line of sight, the larger that light source needs to be</strong>. <em>Move your mouse over the selections above to see this effect</em>.</p>
+<p>Note the second shadow to the right of her nose with the &quot;off-axis hard&quot; fill lighting. Also note how the on-axis fill light avoids producing double shadows even though it is a small (hard) source, but that it doesn't eliminate the shadows as thoroughly (even though it uses the same 1:1 fill light ratio).</p>
+<p>Also keep in mind that off-axis fill lighting requires a more complex lighting arrangement, and is therefore usually reserved for portraits in a studio. <strong>An off-axis fill light also technically isn't a true fill light</strong>, since it cannot lighten all shadows visible to the camera &#8212; just those from its direction. For example, in the above portrait, the off-axis light is unable to reduce the shadows behind the hair on the upper right.</p>
+<h2>FILL FLASH CAMERA SETTINGS</h2>
+<div class="right">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_flash-icon1.png" width="92" height="150" alt="camera force flash icon">
+</div>
+<p>Many only use flash when their scene has insufficient light for a hand-held photograph, but doing so misses out on perhaps an even more useful function: fill flash. Although it might seem counter-intuitive, portrait flash is perhaps most useful when there is plenty of sunlight. Fortunately, most cameras default to using their flash as a fill flash when the subject is well-lit* &#8212; but only if you force the flash to fire.</p>
+<p>Cameras usually default to a flash ratio near 1:1, but this can be substantially off because it relies on your <a href="camera-metering.htm">camera's metering system</a>. To fine-tune this ratio, you'll want to apply <a href="camera-flash-2.htm">flash exposure compensation (FEC)</a>. This modifies the amount of flash that your camera would otherwise emit, while leaving the other exposure settings unchanged.</p>
+<p class="notebox">*<strong>Note</strong>: Well-lit means that your camera doesn't deem <a href="camera-shake.htm">camera shake</a> to be a threat, which usually translates into having an exposure time that is shorter than about 1/60 of a second.</p>
+<h2>OTHER CONSIDERATIONS</h2>
+<p>Other important fill light techniques and considerations include:</p>
+<p><strong>Natural Fill Lighting</strong>. Thus far we've focused on scenarios where natural light is the main light source, and the camera's flash is used as the fill light. However, these roles could easily be reversed. The source of natural light usually needs to be soft though, such as from an overcast day or a subject in the shade. One also typically needs an off-camera or bounced flash in order for this to produce optimal results (see the discussion about lighting direction in the <a href="portrait-lighting.htm">tutorial on portrait lighting</a>).</p>
+<div class="left" style="margin-top: -10px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_reflector1.png" width="120" height="118" alt="reflector">
+</div>
+<p><strong>Reflectors</strong>. These make a single light source illuminate a subject from a second direction. The reflection is dimmer than the main light, so reflectors are most commonly used as a fill light. An added benefit is that this light can easily have the same <a href="white-balance.htm">white balance</a> as the main light, if desired. However, a disadvantage is that reflectors often don't provide enough light (even for a fill light). This is highly dependent on the reflectivity of the material, in addition to its distance from the subject. To increase illumination, reflectors are therefore usually placed as close to the subject as possible &#8212; often just outside the image frame.</p>
+<p><strong>Subject-Background Separation</strong>. With natural light portraits, a fill flash can help create additional subject-background separation, since the flash is likely to provide a lot more illumination to the (closer) subject than the (farther) background. You can control the strength of this effect by (i) moving closer to your subject and/or (ii) moving your subject farther from the background.</p>
+<div class="right" style="margin-top: -15px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio01-small.jpg" width="119" height="140" alt="high contrast portrait with low ambient light">
+<p class="note">low ambient light</p>
+</div>
+<p><strong>Ambient Light</strong>. All scenes have some amount of fill light &#8212; regardless of whether this has been added intentionally. Light from the main source bounces off walls and other objects, which collectively acts as a fill light. Shadows are therefore never fully black, and the actual amount of fill light is usually a little higher than that provided by your fill flash. However, studio lighting can still achieve very high contrast.</p>
+<h2>SUMMARY &amp; FURTHER READING</h2>
+<p>Overall, the most important fill light choices are:</p>
+<ul>
+<li><strong>Location: </strong>whether to place the fill near your camera's line of sight (on-axis), or off to the side (off-axis). On-axis fill is easier since one doesn't have to worry about how shadows appear, but off-axis fill gives more flexibility with placement and control over the appearance of reflections.</li>
+<li><strong>Fill Ratio: </strong>the relative strength of your fill light, as compared to the main light. A good starting point is typically one part fill light for every two parts main light (denoted as a 1:2 ratio), but this will also depend on where your fill light has been located.</li>
+</ul>
+<p style="text-align: center;">For background reading on this topic, also see part 1 of this tutorial:<br/><a href="portrait-lighting.htm">Introduction to Portrait Lighting: One Light Source</a></p>
+<p>For other similar topics, also visit the following tutorials:</p>
+<ul>
+<li><a href="camera-flash.htm">Camera Flash: Appearance</a><br/>Discusses how to control the quality and appearance of light from a flash.</li>
+<li><a href="/forums/thread6923.htm">Our Interactive School of Portraiture</a> (in the forums)<br/>In particular, take a look at <a href="/forums/thread5236.htm">lesson 2: lighting</a> and <a href="/forums/thread6871.htm">lesson 6: studio lighting</a>.</li>
+</ul>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio01.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio18.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio14.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_ratio11.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_offaxis-setup2.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/portraits2_onaxis-setup1.png">
+</div>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-177254428"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/portrait-fill-light.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/portrait-fill-light.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

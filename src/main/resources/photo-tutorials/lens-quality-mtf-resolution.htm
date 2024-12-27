@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Camera Lens Quality: MTF, Resolution &amp; Contrast</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/lens-quality-mtf-resolution.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-157 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>LENS QUALITY: MTF, RESOLUTION &amp; CONTRAST</h1>
+<p>Lens quality is more important now than ever, due to the ever-increasing number of megapixels found in today's digital cameras. Frequently, the resolution of your digital photos is actually limited by the camera's lens &#8212; and not by the resolution of the camera itself. However, deciphering MTF charts and comparing the resolution of different lenses can be a science unto itself. This tutorial gives an overview of the fundamental concepts and terms used for assessing lens quality. At the very least, hopefully it will cause you to think twice about what's important when purchasing your next digital camera or lens.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-230989013"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<h2>RESOLUTION &amp; CONTRAST</h2>
+<p>Everyone is likely to be familiar with the concept of image resolution, but unfortunately, too much emphasis is often placed on this single metric. Resolution only describes how much detail a lens is capable of capturing &#8212; and not necessarily the quality of the detail that <em>is</em> captured. Other factors therefore often contribute much more to our perception of the quality and sharpness of a digital image.</p>
+<p>To understand this, let's take a look at what happens to an image when it passes through a camera lens and is recorded at the camera's sensor. To make things simple, we'll use images composed of alternating black and white lines (&quot;line pairs&quot;). Beyond the resolution of your lens, these lines are of course no longer distinguishable:</p>
+<div class="center">
+<table class="t1 bg pad">
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-stripes1.png" alt="black and white line pairs" width="64" height="64"></td>
+<td><span class="arrowbg">&rarr;</span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_canon-24-105-lens.png" width="69" height="50" alt="camera lens"></td>
+<td><span class="arrowbg">&rarr;</span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-stripes2.png" alt="unresolved line pairs" width="64" height="64"></td>
+</tr>
+<tr>
+<td>High Resolution Line Pairs</td>
+<td></td>
+<td>Lens</td>
+<td></td>
+<td>Unresolved Line Pairs</td>
+</tr>
+</table>
+</div>
+<p class="note">Example of line pairs which are smaller than the resolution of a camera lens.</p>
+<p>However, something that's probably less well understood is what happens to other, thicker lines. Even though they're still resolved, these progressively deteriorate in both contrast and edge clarity (see <a href="sharpness.htm">sharpness: resolution and acutance</a>) as they become finer:</p>
+<div class="center">
+<table class="t1 bg pad">
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_line-pairs-perfect.png" alt="full contrast black and white line pairs" width="156" height="38"></td>
+<td><span class="arrowbg">&rarr;</span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_canon-24-105-lens.png" width="69" height="50" alt="camera lens"></td>
+<td><span class="arrowbg">&rarr;</span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_line-pairs-lens.png" alt="black and white line pairs softened by camera lens" width="156" height="38"></td>
+</tr>
+<tr>
+<td>Progressively Finer Lines<br/>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Lens<br/>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Progressively Less Contrast<br/>&amp; Edge Definition</td>
+</tr>
+</table>
+</div>
+<p>For two lenses with the same resolution, the apparent quality of the image will therefore be mostly determined by how well each lens preserves contrast as these lines become progressively narrower. However, in order to make a fair comparison between lenses we need to establish a way to quantify this loss in image quality...</p>
+<h2>MTF: MODULATION TRANSFER FUNCTION</h2>
+<p>A Modulation Transfer Function (MTF) quantifies how well a subject's regional brightness variations are preserved when they pass through a camera lens. The example below illustrates an MTF curve for a perfect* lens:</p>
+<div class="center">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_mtf-chart1.png" alt="MTF Chart vs Frequency" width="355" height="173"/>
+<span class="caption">Increasing Line Pair Frequency <span class="arrow">&rarr;</span><br/>
+Far right = <a href="diffraction-photography.htm">Maximum Resolution / Diffraction Limit</a>.</span>
+</div>
+<p class="note">Note: The spacing between black and white lines has been exaggerated to improve visibility.<br/>MTF curve assumes a circular aperture; other aperture shapes will produce slightly different results.</p>
+<p class="note">*A perfect lens is one whose detail is limited only by diffraction.<br/>See <a href="diffraction-photography.htm">tutorial on diffraction in photography</a> for a background on this topic.</p>
+<p>An MTF of 1.0 represents perfect contrast preservation, whereas values less than this mean that more and more contrast is being lost &#8212; until an MTF of 0, where line pairs can no longer be distinguished at all. This resolution limit is an unavoidable barrier with any lens; it only depends on the <a href="camera-lenses.htm">camera lens aperture</a> and is unrelated to the number of megapixels. The figure below compares a perfect lens to two real-world examples:</p>
+<div class="center">
+<img loading="lazy" name="i1" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_high-quality-lens.png" width="350" height="173" alt="MTF: real-world lens versus a perfect diffraction-limited lens">
+<span class="caption">Increasing Line Pair Frequency <span class="arrow">&rarr;</span></span>
+<table class="t1 pad center">
+<tr>
+<td id="a1" class="on"><span onmouseover="on('a1'); off('a2'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_high-quality-lens.png';">Very High Quality Camera Lens<br/>(close to the diffraction limit)</span></td>
+<td id="a2"><span onmouseover="off('a1'); on('a2'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_low-quality-lens.png';">Low Quality Camera Lens<br/>(far from the diffraction limit)</span></td>
+</tr>
+</table>
+</div>
+<p class="note">Comparison between an ideal diffraction-limited lens (blue line) and real-world camera lenses.<br/>The line pair illustration below the graph does not apply to the perfect lens.<br/>Move your mouse over each of the labels to see how high and low quality lenses often differ.</p>
+<p>The <span style="color: #5992d7">blue line</span> above represents the MTF curve for a perfect &quot;diffraction limited&quot; lens. No real-world lens is limited only by diffraction, although high-end camera lenses can get much closer to this limit than lower quality lenses.</p>
+<p>Line pairs are often described in terms of their frequency: the number of lines which fit within a given unit length. This frequency is therefore usually expressed in terms of &quot;LP/mm&quot; &#8212; the number of line pairs (LP) that are concentrated into a millimeter (mm). Alternatively, sometimes this frequency is instead expressed in terms of line widths (LW), where two LW's equals one LP.</p>
+<p>The highest line frequency that a lens can reproduce without losing more than 50% of the MTF (&quot;MTF-50&quot;) is an important number, because it correlates well with our perception of sharpness. A high-end lens with an MTF-50 of 50 LP/mm will appear far sharper than a lower quality lens with an MTF-50 of 20 LP/mm, for example (presuming that these are used on the same camera and at the same aperture; more on this later).</p>
+<p>However, the above MTF versus frequency chart is not normally how lenses are compared. Knowing just the (i) maximum resolution and (ii) MTF at perhaps two different line frequencies is usually more than enough information. What often matters more is knowing how the MTF changes depending on the distance from the center of your image.</p>
+<p>The MTF is usually measured along a line leading out from the center of the image and into a far corner, for a fixed line frequency (usually 10-30 LP/mm). These lines can either be parallel to the direction leading away from the center (sagittal) or perpendicular to this direction (meridional). The example below shows how these lines might be measured and shown on an MTF chart for a full frame 35mm camera:</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" name="i3" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_position-meridional2.png" width="290" height="131" alt="MTF measurements for distance from center of image"><br/><br/>
+<table class="t1 pad">
+<tr>
+<td id="c1" class="on"><span onmouseover="on('c1'); off('c2'); i3.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_position-meridional2.png';">Meridional (Circular) Line Pairs</span></td>
+</tr>
+<tr>
+<td id="c2"><span onmouseover="off('c1'); on('c2'); i3.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_position-sagittal2.png';">Sagittal (Radial) Line Pairs</span></td>
+</tr>
+</table>
+</div></div>
+<div><span class="arrowbg">&rarr;</span></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_position1.png" width="200" height="123" alt="MTF chart versus distance from center of image">
+<span class="caption">Distance From Center [mm]</span>
+</div></div>
+</div>
+<p>Detail at the center of an image will virtually always have the highest MTF, and positions farther from the center will often have progressively lower MTF values. This is why the corners of camera lenses are virtually always the softest and lowest quality portion of your photos. We'll discuss why the sagittal and meridional lines diverge later. </p>
+<h2>HOW TO READ AN MTF CHART</h2>
+<p>Now we can finally put all of the above concepts into practice by comparing the properties of a zoom lens with a prime lens:</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_canon-16-35-ii-lens-at35.png" width="225" height="191" alt="Canon 16-35mm f/2.8L II zoom lens MTF chart"/>
+<span class="caption"><strong>Canon 16-35mm f/2.8L II Lens</strong><br/>(zoom set at 35mm)</span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_canon-35-prime-lens.png" width="225" height="191" alt="Canon 35mm f/1.4L prime lens MTF chart"/>
+<span class="caption"><strong>Canon 35mm f/1.4L Prime Lens</strong><br/><br/></span>
+</div></div>
+</div>
+<p>On the vertical axis, we have the MTF value from before, with 1.0 representing perfect reproduction of line pairs, and 0 representing line pairs that are no longer distinguished from each other. On the horizontal axis, we have the distance from the center of the image, with 21.6&nbsp;mm being the far corner on a 35&nbsp;mm camera. For a 1.6X cropped sensor, you can ignore everything beyond 13.5&nbsp;mm. Furthermore, anything beyond about 18 mm with a full frame sensor will only be visible in the extreme corners of the photo:</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Full Frame 35 mm Sensor" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_full-frame-dimensions.png" width="272" height="176" alt="full frame camera sensor dimensions"/></div></div>
+<div><div><img loading="lazy" title="1.6X Cropped Sensor" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_full-frame-dimensions-cropped.png" width="272" height="176" alt="1.6X cropped camera sensor dimensions"/></div></div>
+</div>
+<p class="note">Note: For a 1.5X sensor, the far corner is at 14.2 mm, and the far edge is at 11.9 mm.<br/>See the tutorial on <a href="digital-camera-sensor-size.htm">digital camera sensor sizes</a> for more on how these affect image quality.</p>
+<p>All of the different looking lines in the above MTF charts can at first be overwhelming; the key is to look at them individually. Each line represents a separate MTF under different conditions. For example, one line might represent MTF values when the lens is at an aperture of f/4.0, while another might represent MTF values at f/8.0. A big hurdle with understanding how to read an MTF chart is learning what each line refers to.</p>
+<p>Each line above has three different styles: thickness, color and type. Here's a breakdown of what each of these represents:</p>
+<div class="center">
+<table class="t1 pad">
+<tr class="left">
+<td width="25%">Line Thickness:</td>
+<td width="75%">Bold <span class="arrowsm">&rarr;</span> 10 LP/mm - small-scale contrast<br/>Thin <span class="arrowsm">&rarr;</span> 30 LP/mm - resolution or fine detail</td>
+</tr>
+<tr class="left">
+<td>Line Color:</td>
+<td>Blue <span class="arrowsm">&rarr;</span> Aperture at f/8.0<br/>Black <span class="arrowsm">&rarr;</span> Aperture wide open</td>
+</tr>
+<tr class="left">
+<td>Line Type:</td>
+<td>Dashed <span class="arrowsm">&rarr;</span> Meridional (concentric) line pairs<br/>Solid <span class="arrowsm">&rarr;</span> Sagittal (radial) line pairs</td>
+</tr>
+</table>
+</div>
+<p>Since a given line can have any combination of thickness, color and type, the above MTF chart has a total of eight different types of lines. For example, a curve that is bold, blue and dashed would describe the MTF of meridional 10 LP/mm lines at an aperture of f/8.0.</p>
+<div class="d1">
+<strong>Black Lines</strong>. These are most relevant when you are using your lens in low light, need to freeze rapid movement, or need a shallow depth of field. The MTF of black lines will almost always be a worst case scenario (unless you use unusually small apertures).</div>
+<p>In the above example, black lines unfortunately aren't a fair apples to apples comparison, since a wide open aperture is different for each of the above lenses (f/2.8 on the zoom vs f/1.4 on the prime). This is the main reason why the black lines appear so much worse for the prime lens. However, given that the prime lens has such a handicap, it does quite admirably &#8212; especially at 10 LP/mm in the center, and at 30 LP/mm toward the edges of the image. It's therefore highly likely that the prime lens will outperform the zoom lens when they're both at f/2.8, but we cannot say for sure based only on the above charts.</p>
+<div class="d1">
+<strong>Blue Lines</strong>. These are most relevant for landscape photography, or other situations where you need to maximize depth of field and sharpness. They are also more useful for comparisons because blue lines are always to be at the same aperture: f/8.0.</div>
+<p>In the above example, the prime lens has a better MTF at all positions, for both high and low frequency details (30 and 10 LP/mm). The advantage of the prime lens is even more pronounced towards the outer regions of the camera's image.</p>
+<div class="d1">
+<strong>Bold vs. Thin Lines</strong>. Bold lines describe the amount of &quot;pop&quot; or small-scale contrast, whereas thin lines describe finer details or resolution. Bold lines are often a priority since high values can mean that your images will have a more three dimensional look, similar to what happens when performing <a href="local-contrast-enhancement.htm">local contrast enhancement</a>.</div>
+<p>In the above example, both lenses have similar contrast at f/8.0, although the prime lens is a little better here. The zoom lens barely loses any contrast when used wide open compared to at f/8.0. On the other hand, the prime lens loses quite a bit of contrast when going from f/8.0 to f/1.4, but this is probably because f/1.4-f/8.0 is a much bigger change than f/2.8-f/8.0.</p>
+<a name="astigmatism"></a>
+<h2>ASTIGMATISM: SAGITTAL vs. MERIDIONAL LINES</h2>
+<p><strong>Dashed vs. Solid Lines</strong>. At this point you're probably wondering: why show the MTF for both sagittal (&quot;S&quot;) and meridional (&quot;M&quot;) line pairs? Wouldn't these be the same? Yes, at the image's direct center they're always identical. However, things become more interesting progressively farther from the center. Whenever the dashed and solid lines begin to diverge, this means that the amount of blur is not equal in all directions. This quality-reducing artifact is called an &quot;<strong>astigmatism</strong>,&quot; as illustrated below:</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" name="i2" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_astigmatism-all3.png" width="490" height="121" alt="camera lens test chart">
+<span class="caption">Select Aberration Type:</span>
+<table class="t1 pad">
+<tr>
+<td class="on" id="b1"><span onmouseover="on('b1'); off('b2'); off('b3'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_astigmatism-all3.png';">Astigmatism: MTF in S &gt; M</span></td>
+</tr>
+<tr>
+<td id="b2"><span onmouseover="off('b1'); on('b2'); off('b3'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_astigmatism-all4.png';">Astigmatism: MTF in M &gt; S</span></td>
+</tr>
+<tr>
+<td id="b3"><span onmouseover="off('b1'); off('b2'); on('b3'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/mtf_astigmatism-all2.png';">No Astigmatism: MTF in M=S</span></td>
+</tr>
+</table>
+</div></div>
+</div>
+<p class="note">Move your mouse over the labels on the image to the right to see the effect of astigmatism.<br/><span style="color: #c00">S</span> = sagittal lines, <span style="color: #0ff">M</span> = meridional lines<br/>Note: Technically, the S above will have a slightly better MTF because it is closer to the center of the image; however, for the purposes of this example we're assuming that M &amp; S are at similar positions.</p>
+<p>When the MTF in S is greater than in M, objects are blurred primarily along lines radiating out from the center of the image. In the above example, this causes the white dots to appear to streak outward from the center of the image, almost as if they had motion blur. Similarly, objects are blurred in the opposite (circular) direction when the MTF in M is greater than in S. Many of you reading this tutorial right now might even be using eye glasses that correct for an astigmatism...</p>
+<div class="notebox">
+<strong>Technical Note</strong>: With wide angle lenses, M lines are much more likely to have a lower MTF than S lines, partly because these try to preserve a <a href="image-projections.htm">rectilinear image projection</a>. Therefore, as the angle of view becomes wider, subjects near the periphery become progressively more stretched/distorted in directions leading away from the center of the image. A wide angle lens with significant barrel distortion can therefore achieve a better MTF since objects at the periphery are stretched much less than they would be otherwise. However, this is usually an unacceptable trade-off with architectural photography.</div>
+<p>In the MTF charts for the Canon zoom versus prime lens from before, both lenses begin to exhibit pronounced astigmatism at the very edges of the image. However, with the prime lens, something interesting happens: the type of astigmatism reverses when comparing the lens at f/1.4 versus at f/8.0. At f/8.0, the lens primarily blurs in the radial direction, which is a common occurrence. However, at f/1.4 the prime lens primarily blurs in a circular direction, which is much less common.</p>
+<p><strong>What does astigmatism mean for your photos?</strong> Probably the biggest implication, other than the unique appearance, is that standard sharpening tools may not work as intended. These tools assume that blur is equal in all directions, so you might end up over-sharpening some edges, while leaving other edges still looking blurry. Astigmatism can also be problematic with photos containing stars or other point light sources, since this will make the asymmetric blur more apparent.</p>
+<a name="lens-aperture-sweet-spot"></a>
+<h2>MTF &amp; APERTURE: FINDING THE &quot;SWEET SPOT&quot; OF A LENS</h2>
+<p>The MTF of a lens typically increases for successively narrower apertures, then reaches a maximum for intermediate apertures, and finally declines again for very narrow apertures. The figure below shows the MTF-50 for various apertures on a high-quality lens:</p>
+<div class="center"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_aperture-sweet-spot.png" width="412" height="163" alt="mtf aperture sweet spot"></div>
+<p>The aperture corresponding to the maximum MTF is the so-called &quot;sweet spot&quot; of a lens, since images will generally have the best sharpness and contrast at this setting. On a full frame or cropped sensor camera, this sweet spot is usually somewhere between f/8.0 and f/16, depending on the lens. The location of this sweet spot is also independent of the number of megapixels in your camera.</p>
+<div class="notebox">
+<strong>Technical Notes</strong>:<br/>
+<ul style="margin: 0;">
+<li>At large apertures, resolution and contrast are typically limited by light aberrations.<br/>An aberration is when imperfect lens design causes a point light source in the image not to converge onto a point on your camera's sensor.</li>
+<li>At small apertures, resolution and contrast are typically <a href="diffraction-photography.htm">limited by diffraction</a>.<br/>Unlike aberrations, diffraction is a fundamental physical limit caused by the scattering of light, and is not necessarily any fault of the lens design.</li>
+<li>High and low quality lenses are therefore very similar when used at small apertures<br/>(such as f/16-32 on a full frame or cropped sensor).</li>
+<li>Large apertures are where high quality lenses really stand out, because the materials and engineering of the lens are much more important. In fact, a perfect lens would not even have a &quot;sweet spot&quot;; the optimal aperture would just be wide open.</li>
+</ul>
+</div>
+<p>However, one should not conclude that the optimal aperture setting is completely independent of what is being photographed. The sweet spot at the center of the image may not correspond with where the edges and corners of the image look their best; this often requires going to an even narrower aperture. Furthermore, this all assumes that your subject is in perfect focus; objects outside the depth of field will likely still improve in sharpness even when your f-stop is larger than the so-called sweet spot.</p>
+<h2>COMPARING DIFFERENT CAMERAS &amp; LENS BRANDS</h2>
+<p>A big problem with the MTF concept is that it's not standardized. Comparing different MTF charts can therefore be quite difficult, and in some cases even impossible. For example, MTF charts by Canon and Nikon cannot be directly compared, because the Canon uses theoretical calculations while Nikon uses measurements.</p>
+<p>However, even if one performed their own MTF tests, they'd still run into problems. <strong>A typical self-run MTF chart actually depicts the net total MTF of your camera's optical system</strong> &#8212; and not the MTF of the lens alone. This net MTF represents the combined result from the lens, camera sensor and RAW conversion, in addition to any sharpening or other post-processing. MTF measurements will therefore vary depending on which camera is used for the measurement, or the type of software used in the RAW conversion. It's therefore only practical to compare MTF charts that were measured using identical methodologies.</p>
+<p><strong>Cropped vs. Full Frame Sensors</strong>. One needs to be extra careful when comparing MTF charts amongst <a href="digital-camera-sensor-size.htm">cameras with different sensor sizes</a>. For example, an MTF curve at 30&nbsp;LP/mm on a full frame camera is not equivalent to a different 30 LP/mm MTF curve on a 1.6X cropped sensor. The cropped sensor would instead need to show a curve at 48&nbsp;LP/mm for a fair comparison, because the cropped sensor gets enlarged more when being made into the same size print.</p>
+<div class="center"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/digital_sensor-sizes.png" alt="digital camera sensor sizes" width="300" height="200"></div>
+<p>The diversity of sensor sizes is why some have started listing the line frequency in terms of the picture or image height (LP/PH or LP/IH), as opposed to using an absolute unit like a millimeter. A line frequency of 1000 LP/PH, for example, has the same appearance at a given print size &#8212; regardless of the size of the camera's sensor. One would suspect that part of the reason manufacturers keep showing MTF charts at 10 and 30 LP/mm for DX, EF-S and other cropped sensor lenses is because this makes their MTF charts look better.</p>
+<h2>MTF CHART LIMITATIONS</h2>
+<p>While MTF charts are an extremely powerful tool for describing the quality of a lens, they still have many limitations. In fact, an MTF chart says nothing about:</p>
+<ul>
+<li>Color quality and chromatic aberrations</li>
+<li>Image distortion</li>
+<li>Vignetting (light fall-off toward the edges of an image)</li>
+<li>Susceptibility to <a href="lens-flare.htm">camera lens flare</a></li>
+</ul>
+<p>Furthermore, other factors such as the condition of your equipment and your camera technique can often have much more of an impact on the quality of your photos than small differences in the MTF. Some of these quality-reducing factors might include:</p>
+<ul>
+<li>Focusing accuracy</li>
+<li>Camera shake</li>
+<li>Dust on your camera's digital sensor (see <a href="camera-sensor-cleaning.htm">tutorial on camera sensor cleaning</a>)</li>
+<li>Micro abrasions, moisture, fingerprints or other coatings on your lens</li>
+</ul>
+<p>Most importantly, even though MTF charts are amazingly sophisticated and descriptive tools &#8212; with lots of good science to back them up &#8212; ultimately nothing beats simply visually inspecting an image on-screen or in a print. After all, pictures are made to look at, so that's all that really matters at the end of the day. It can often be quite difficult to discern whether an image will look better on another lens based on an MTF, because there's usually many competing factors: contrast, resolution, astigmatism, aperture, distortion, etc. A lens is rarely superior in all of these aspects at the same time. If you cannot tell the different between shots with different lenses used in similar situations, then any MTF discrepancies probably don't matter.</p>
+<p>Finally, even if one lens's MTF is indeed worse than another's, sharpening and <a href="local-contrast-enhancement.htm">local contrast enhancement</a> can often make this disadvantage imperceptible in a print &#8212; as long as the original quality difference isn't too great.</p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_low-quality-lens.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_position-sagittal.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_astigmatism4.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/mtf_astigmatism2.png">
+</div>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-999623564"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/lens-quality-mtf-resolution.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

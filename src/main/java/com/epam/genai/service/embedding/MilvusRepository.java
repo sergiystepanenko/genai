@@ -15,7 +15,6 @@ import io.milvus.v2.service.vector.request.SearchReq;
 import io.milvus.v2.service.vector.request.data.FloatVec;
 import io.milvus.v2.service.vector.response.InsertResp;
 import io.milvus.v2.service.vector.response.SearchResp;
-import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,7 +34,8 @@ public class MilvusRepository {
   private final MilvusProperties milvusProperties;
   private MilvusClientV2 milvusClient;
 
-  @PostConstruct
+  private boolean initialized = false;
+
   public void init() {
     milvusClient = createMilvusClient();
 
@@ -65,6 +65,8 @@ public class MilvusRepository {
         LoadCollectionReq.builder()
             .collectionName(COLLECTION_NAME)
             .build());
+
+    initialized = true;
   }
 
   private MilvusClientV2 createMilvusClient() {
@@ -76,7 +78,7 @@ public class MilvusRepository {
   }
 
   public void save(List<Float> vector, String text) {
-    InsertResp insertResp = milvusClient.insert(InsertReq.builder()
+    InsertResp insertResp = getMilvusClient().insert(InsertReq.builder()
         .collectionName(COLLECTION_NAME)
         .data(buildData(vector, text))
         .build());
@@ -85,7 +87,7 @@ public class MilvusRepository {
   }
 
   public List<String> search(List<Float> vector, int topLimit) {
-    SearchResp searchResp = milvusClient.search(SearchReq.builder()
+    SearchResp searchResp = getMilvusClient().search(SearchReq.builder()
         .collectionName(COLLECTION_NAME)
         .topK(topLimit)
         .data(Collections.singletonList(new FloatVec(vector)))
@@ -106,6 +108,13 @@ public class MilvusRepository {
     }
 
     return results;
+  }
+
+  private MilvusClientV2 getMilvusClient() {
+    if (!initialized) {
+      init();
+    }
+    return milvusClient;
   }
 
   private static List<CreateCollectionReq.FieldSchema> createFieldSchemas() {

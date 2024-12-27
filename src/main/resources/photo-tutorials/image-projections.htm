@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Panoramic Image Projections</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/image-projections.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/image-projections.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/image-projections.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-150 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>PANORAMIC IMAGE PROJECTIONS</h1>
+<p>An image projection occurs whenever a flat image is mapped onto a curved surface, or vice versa, and is particularly common in panoramic photography. A projection is performed when a cartographer maps a spherical globe of the earth onto a flat piece of paper, for example. Since <strong>the entire field of view around us can be thought of as the surface of a sphere</strong> (for all viewing angles), a similar spherical to 2-D projection is required for photographs which are to be printed.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-804920141"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="image-row">
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/projections_sphere-narrow.png" width="200" height="200" alt="narrow angle spherical projection">
+<span class="caption"><strong>Narrow Angle of View</strong><br/>(grid remains nearly square)</span>
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/projections_sphere-wide.png" width="200" height="200" alt="wide angle spherical projection">
+<span class="caption"><strong>Wider Angle of View</strong><br/>(grid is highly distorted)</span>
+</div>
+</div>
+<p>For small viewing angles, it is relatively easy to distort this into an image on a flat piece of paper since this viewing arc is relatively flat. <strong>Some distortion is inevitable when trying to map a spherical image onto a flat surface, therefore each projection type only tries to minimize one type of distortion at the expense of others.</strong> As the viewing angle increases, the viewing arc becomes more curved, and thus the difference between panorama projection types becomes more pronounced. When to use each projection depends largely on the subject matter and application; here we focus on a few which are most commonly encountered in digital photography. Many of the projection types discussed in this tutorial are selectable as an output format for several panoramic software packages; PTAssembler allows selection of all those which are listed.</p>
+<h2>IMAGE PROJECTION TYPES IN PHOTOGRAPHY</h2>
+<div class="image-row">
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/projections_sphere-grid.png" width="200" height="172" alt="spherical grid"/>
+<span class="caption">Grid Representing Sphere of Vision<br/>(if standing at center)</span>
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/projections_sphere-grid-label.png" width="249" height="37" alt="180 and 360 degree labels"><br/>
+<img loading="lazy" name="spheregrid" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid1.png" width="270" height="160">
+<span class="caption">Projection Type for Flattened Sphere:</span>
+<table class="t1 pad">
+<tr>
+<td id="b1" class="on" colspan="2"><span onmouseover="on('b1');off('b2');off('b3');off('b4');off('b5');off('b6');off('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid1.png';">Equirectangular (100% Coverage)</span></td>
+</tr>
+<tr>
+<td id="b2"><span onmouseover="off('b1');on('b2');off('b3');off('b4');off('b5');off('b6');off('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid3.png';">Rectilinear</span></td>
+<td id="b3"><span onmouseover="off('b1');off('b2');on('b3');off('b4');off('b5');off('b6');off('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid2.png';">Cylindrical</span></td>
+</tr>
+<tr>
+<td id="b4"><span onmouseover="off('b1');off('b2');off('b3');on('b4');off('b5');off('b6');off('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid7.png';">Mercator</span></td>
+<td id="b5"><span onmouseover="off('b1');off('b2');off('b3');off('b4');on('b5');off('b6');off('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid4.png';">Fisheye</span></td>
+</tr>
+<tr>
+<td id="b6"><span onmouseover="off('b1');off('b2');off('b3');off('b4');off('b5');on('b6');off('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid5.png';">Sinusoidal</span></td>
+<td id="b7"><span onmouseover="off('b1');off('b2');off('b3');off('b4');off('b5');off('b6');on('b7'); spheregrid.src='https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid6.png';">Stereographic</span></td>
+</tr>
+</table>
+</div>
+</div>
+<p><em>If all the above image projection types seem a bit daunting, try to first just read and understand the distinction between rectilinear and cylindrical (shown in bold), as these are the ones which are most widely used when photo stitching digital panoramas.</em></p>
+<p><strong>Equirectangular</strong> image projections map the latitude and longitude coordinates of a spherical globe directly onto horizontal and vertical coordinates of a grid, where this grid is roughly twice as wide as it is tall. Horizontal stretching therefore increases farther from the poles, with the north and south poles being stretched across the entire upper and lower edges of the flattened grid. Equirectangular projections can show the entire vertical and horizontal angle of view up to 360 degrees.</p>
+<p><strong>Cylindrical</strong> image projections are similar to equirectangular, except it also vertically stretches objects as they get closer to the north and south poles, with infinite vertical stretching occurring at the poles (therefore no horizontal line is shown at the top and bottom of this flattened grid). It is for this reason that cylindrical projections are also not suitable for images with a very large vertical angle of view. Cylindrical projections are also the standard type rendered by traditional panoramic film cameras with a swing lens. Cylindrical projections maintain more accurate relative sizes of objects than rectilinear projections, however this is done at the expense of rendering lines parallel to the viewer's line of sight as being curved (even though these would otherwise appear straight).</p>
+<p><strong>Rectilinear</strong> image projections have the primary advantage that they map all straight lines in three-dimensional space to straight lines on the flattened two-dimensional grid. This projection type is what most ordinary wide angle lenses aim to produce, so this is perhaps the projection with which we are most familiar. Its primary disadvantage is that it can greatly exaggerate perspective as the angle of view increases, leading to objects appearing skewed at the edges of the frame. It is for this reason that rectilinear projections are generally not recommended for angles of view much greater than 120 degrees.</p>
+<p><strong>Fisheye</strong> image projections aim to create a flattened grid where the distance from the center of this grid is roughly proportional to actual viewing angle, yielding an image which would look similar to the reflection off of a metallic sphere. These are generally not used as an output format for panoramic photography, but may instead represent the input images when the camera lens type being used for photo stitching is a fisheye lens. Fisheye projections are also limited to vertical and horizontal angles of view of 180 degrees or less, yielding an image which fits within a circle. This would be characterized by (otherwise straight) lines becoming progressively more curved the farther they get from the center of the image grid. A camera with a fisheye lens is extremely useful when creating panoramas that encompass the entire sphere of vision, since these often require stitching just a few input photographs.</p>
+<p><strong>Mercator</strong> image projections are most closely related to the cylindrical and equirectangular projection types; mercator represents a compromise between these two types, providing for less vertical stretching and a greater usable vertical angle of view than cylindrical, but with more line curvature. This projection is perhaps the most recognizable from its use in flat maps of the earth. Here we also note that an alternative form of this projection (the transverse mercator) may be used for very tall vertical panoramas.</p>
+<p><strong>Sinusoidal</strong> image projections aim to maintain equal areas throughout all grid sections. If flattening the globe of an earth, one can imagine that this projection could be rolled back up again to form a sphere with the same area and shape as the original. The equal area characteristic is useful because if recording a spherical image in 2-D, it maintains the same horizontal and vertical resolution throughout the image. This projection is similar to the fisheye and stereographic types, except that it maintains perfectly horizontal latitude lines from the original sphere.</p>
+<p><strong>Stereographic</strong> image projections are very similar to fisheye projections, except that it maintains a better sense of perspective by progressively stretching objects away from the point of perspective. This perspective-exaggerating characteristic is somewhat similar to that yielded by the rectilinear projection, though certainly less pronounced.</p>
+<h2>EXAMPLES: WIDE HORIZONTAL FIELD OF VIEW</h2>
+<p>How do the above image projections actually influence a panoramic photograph? The following series of photographs are used to visualize the difference between two projection types most often encountered in photo stitching software: rectilinear and cylindrical projections. These are designed to show only distortion differences for a wide horizontal angle of view; vertical panoramas are used later on to illustrate differences in vertical distortion between other projection types.</p>
+<div class="image-row"><div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_orig.png" width="540" height="149"></div></div></div>
+<p>The first example demonstrates how a rectilinear image projection would be rendered in a photo stitch of the above three photographs.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" style="background:url(https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_rect.jpg); background-size: 100%;" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_rect-top.png" width="536" height="206">
+</div></div>
+</div>
+<p>Note the extreme distortion near the edges of the angle of view, in addition to the dramatic loss in resolution due to image stretching. The next image demonstrates how the highly distorted image above would appear if it were cropped to contain just a 120 degree horizontal angle of view.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" style="background:url(https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_rect-crop.jpg); background-size: 100%;" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_rect-croptop.png" width="508" height="272">
+</div></div>
+</div>
+<p>Here we see that this cropped rectilinear projection yields a very suitable look, since all straight architectural lines are rendered straight in the stitched photograph. On the other hand, this is done at the expense of maintaining the relative size of objects throughout the angle of view; objects toward the edge of the angle of view (far left and right) are significantly enlarged compared to those at the center (tower with doorway at base).</p>
+<p>The next example demonstrates how the stitched photographs would appear using a cylindrical projection. Cylindrical projections also have the advantage of producing stitched photographs with relatively even resolution throughout, and also require minimal cropping of empty space. Additionally, the difference between cylindrical and equirectangular is negligible for photographs which do not have extreme vertical angles of view (such as the example below).</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_cylin3.png" width="538" height="16"><br/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_cylin.jpg" width="538" height="185"><br/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_cylin2.png" width="538" height="56">
+</div></div>
+</div>
+<h2>EXAMPLES: TALL VERTICAL FIELD OF VIEW</h2>
+<p>The following examples illustrate the difference between projection types for a vertical panorama (with a very large vertical field of view). This gives a chance to visualize the difference between the equirectangular, cylindrical and mercator projections, even though these would have appeared the same in the previous example (with a wide horizontal angle of view).</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_arrow1.png" width="17" height="408"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_t1.jpg" width="134" height="408">
+<span class="caption">Cylindrical</span>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_t2.jpg" width="179" height="408">
+<span class="caption">Mercator</span>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_t3.jpg" width="197" height="408">
+<span class="caption">Equirectangular</span>
+</div></div>
+</div>
+<p class="note">Note: Vertical compression increases from left to right. The point of perspective was set as the base of the tower, therefore the effective vertical angle of view looks as if there were a 140 degrees field of view in total (if the perspective point were at the halfway height).</p>
+<br/>
+<div class="image-right"><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_t-all.jpg" width="128" height="486"></div></div>
+<div class="image-right cap"><div><img loading="lazy" title="Transverse Mercator" src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_t4.jpg" width="183" height="408"></div></div>
+<p>This large vertical angle of view allows us to clearly see how each of these image projections differ in their degree of vertical stretching/compression. The equirectangular projection compresses vertical perspective so greatly that one arguably loses the sense of extreme height that this tower gives in person. For this reason, equirectangular is only recommended when absolutely necessary (such as in stitched photographs with both an extreme vertical and horizontal field of view).</p>
+<p>The three projections above aim to maintain nearly straight vertical lines; the transverse mercator projection to the right sacrifices some curvature for a (subjectively) more realistic perspective. This projection type is often used for panoramas with extreme vertical angles of view. Also note how this projection closely mimics the look of each of the individual source photographs.</p>
+<p>The difference between rectilinear and cylindrical is barely noticeable for this narrow horizontal angle of view, so the rectilinear projection was not included.</p>
+<a name="calculator"></a>
+<h2>PANORAMIC FIELD OF VIEW CALCULATORS</h2>
+<p>The following calculator can be used to estimate your camera's vertical and horizontal angles of view for different lens focal lengths, which can help in assessing which projection type would be most suitable.</p>
+<form method="post" name="pano_aov_form" class="calculator">
+<h3>Panoramic Field of View Calculator</h3>
+<div class="input-area">
+<p><label>Camera Type</label>
+<select name="sensor" class="mySelect">
+<option value=0.02000>Digital SLR with CF of 1.6X</option>
+<option value=0.02107>Digital SLR with CF of 1.5X</option>
+<option value=0.02551>Digital SLR with CF of 1.3X</option>
+<option value=0.01600>Digital SLR with 4/3&quot; sensor</option>
+<option value=0.03200>35 mm (full frame)</option>
+<option value=0.00444>Digital compact with 1/3&quot; sensor</option>
+<option value=0.00567>Digital compact with 1/2.3&quot; sensor</option>
+<option value=0.00592>Digital compact with 1/2&quot; sensor</option>
+<option value=0.00663>Digital compact with 1/1.8&quot; sensor</option>
+<option value=0.00814>Digital compact with 2/3&quot; sensor</option>
+<option value=0.01173>Digital compact with a 1&quot; sensor</option>
+<option value=0.02231>APS</option>
+<option value=0.05547>6x4.5 cm</option>
+<option value=0.06276>6x6 cm</option>
+<option value=0.06819>6x7 cm</option>
+<option value=0.12029>5x4 inch</option>
+<option value=0.24058>10x8 inch</option>
+<option value=0.02107>Super35 (3-perf)</option>
+<option value=0.02554>RED Dragon 6K</option>
+<option value=0.02500>RED Helium 8K</option>
+</select>
+</p>
+<p><label>Lens Focal Length</label>
+<input type="text" name="focal" value="50"/>mm
+</p>
+<p><label>Horizontal Size</label>
+<select name="hor_size" class="unitSelect">
+<option value=1>1</option>
+<option selected value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+</select>
+photo(s)
+</p>
+<p><label>Vertical Size</label>
+<select name="vert_size" class="unitSelect">
+<option value=1>1</option>
+<option selected value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+</select>
+photo(s)
+</p>
+<p><label>Camera Orientation</label>
+<select name="orientation" class="unitSelect">
+<option value=2>Portrait</option>
+<option value=1>Landscape</option>
+</select>
+</p>
+<p><label>Percent Overlap</label>
+<input type="text" name="percent_overlap" value="20"/>%
+</p>
+</div>
+<div class="result-area">
+<input type="button" value="Calculate" onclick="pano_aov_calc(this.form)"/>
+<div class="result">
+<label>Horizontal Angle of View:</label>
+<input type="text" name="hor_aov" value="30.7&deg;" readonly="readonly"/>
+</div>
+<div class="result">
+<label>Vertical Angle of View:</label>
+<input type="text" name="vert_aov" value="45.7&deg;" readonly="readonly"/>
+</div>
+</div>
+</form>
+<p class="note">Note: Calculators not intended for use in extreme macro photography. The above results are only approximate, since the angle of view is actually also influenced (to a lesser degree) by the focusing distance. Additionally, field of view estimate assumes that the lens performs a perfect rectilinear image projection; lenses with large barrel or pincushion distortion may yield slightly different results.</p>
+<p>The next calculator estimates how many photos are required to encompass a 360 degree horizontal field of view, given the input settings of: focal length, camera orientation, photo overlap and <a href="digital-camera-sensor-size.htm">digital camera sensor size</a>.</p>
+<form method="post" name="pano_360_form" class="calculator">
+<h3>360&deg; Panorama Calculator</h3>
+<div class="input-area">
+<p><label>Camera Type</label>
+<select name="sensor0" class="mySelect">
+<option value=0.02000>Digital SLR with CF of 1.6X</option>
+<option value=0.02107>Digital SLR with CF of 1.5X</option>
+<option value=0.02551>Digital SLR with CF of 1.3X</option>
+<option value=0.01600>Digital SLR with 4/3&quot; sensor</option>
+<option value=0.03200>35 mm (full frame)</option>
+<option value=0.00444>Digital compact with 1/3&quot; sensor</option>
+<option value=0.00567>Digital compact with 1/2.3&quot; sensor</option>
+<option value=0.00592>Digital compact with 1/2&quot; sensor</option>
+<option value=0.00663>Digital compact with 1/1.8&quot; sensor</option>
+<option value=0.00814>Digital compact with 2/3&quot; sensor</option>
+<option value=0.01173>Digital compact with a 1&quot; sensor</option>
+<option value=0.02231>APS</option>
+<option value=0.05547>6x4.5 cm</option>
+<option value=0.06276>6x6 cm</option>
+<option value=0.06819>6x7 cm</option>
+<option value=0.12029>5x4 inch</option>
+<option value=0.24058>10x8 inch</option>
+<option value=0.02107>Super35 (3-perf)</option>
+<option value=0.02554>RED Dragon 6K</option>
+<option value=0.02500>RED Helium 8K</option>
+</select>
+</p>
+<p><label>Lens Focal Length</label>
+<input type="text" name="focal0" value="24"/>mm
+</p>
+<p><label>Camera Orientation</label>
+<select name="orientation0" class="unitSelect">
+<option value=2>Portrait</option>
+<option value=1>Landscape</option>
+</select>
+</p>
+<p><label>Percent Overlap</label>
+<input type="text" name="percent_overlap0" value="20"/>%
+</p>
+</div>
+<div class="result-area">
+<input type="button" value="Calculate" onclick="pano_360_calc(this.form)"/>
+<div class="result">
+<label>Horizontal Photos Required:</label>
+<input type="text" name="num_photos" value="13" readonly="readonly"/>
+</div>
+</div>
+</form>
+<p class="note">Note: CF = crop factor, which describes the relative width of the camera sensor compared to a 35&nbsp;mm camera. For a background reading, please visit the tutorial on <a href="digital-camera-sensor-size.htm">digital camera sensor sizes</a>.</p>
+<p>For a summary of when to consider each projection type, please refer to the table below:</p>
+<div class="center">
+<table class="t1" width="100%">
+<tr>
+<th rowspan="2">Projection Type</th>
+<th colspan="2">Field of View Recommendations</th>
+<th colspan="2">Straight Lines?</th>
+</tr>
+<tr>
+<th>Horizontal</th>
+<th>Vertical</th>
+<th>Horizontal</th>
+<th>Vertical</th>
+</tr>
+<tr>
+<td>Rectilinear</td>
+<td>&lt;120&deg;</td>
+<td>&lt;120&deg;</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Cylindrical</td>
+<td>~120-360&deg;</td>
+<td>&lt;120&deg;</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Mercator</td>
+<td>~120-360&deg;</td>
+<td>&lt;150&deg;</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Equirectangular</td>
+<td>~120-360&deg;</td>
+<td>120-180&deg;</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td style="background: #000;">Fisheye</td>
+<td style="background: #000;">&lt;180&deg;</td>
+<td style="background: #000;">&lt;180&deg;</td>
+<td style="background: #000;">NO</td>
+<td style="background: #000;">NO</td>
+</tr>
+</table>
+<p class="note">Note: All straight line considerations exclude the centermost horizontal and vertical lines, and fields of view assume that the point of perspective is located at the center of this angle.</div>
+<p style="text-align: center;">For background reading on creating digital panoramas, please also refer to:<br/>Part 1: <a href="digital-panoramas.htm">Photo Stitching Digital Panoramas</a><br/>Part 2: <a href="photo-stitching-software.htm">Using Photo Stitching Software</a></p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid2.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid3.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid4.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid5.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid6.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/stitchsoft_spheregrid7.png">
+</div>
+<script src="https://cdn.cambridgeincolour.com/js/tutorials/image-projections.js.pagespeed.jm.t8Fx9RnNoX.js"></script>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1983527988"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/image-projections.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/image-projections.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

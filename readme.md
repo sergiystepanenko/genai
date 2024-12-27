@@ -5,6 +5,7 @@
 - Spring Boot
 - Java 21
 - Microsoft Semantic Kernel
+- langchain4j
 - EPAM DIAL api
 
 Use EPAM VPN to access EPAM DIAL api.
@@ -53,3 +54,24 @@ Similarity search:
     {
     "input": "Who shoots canon?"
     }`
+
+## RAG Service
+
+RAG Service is photography assistant and an expert in photography topics like:
+
+* Concepts & Terminology
+* Camera Equipment
+* Photo Editing & Post-Processing
+* Color Management & Printing
+* Photography Techniques & Styles and others
+
+Vector db is initialized by processing html pages with the photography articles
+
+    `POST http://localhost:8080/photographyexpert/init
+
+Query photography expert:
+
+    `POST http://localhost:8080/photographyexpert/query
+     Content-Type: text/plain
+
+     Recommend how to use telephoto lens in landscape photography?

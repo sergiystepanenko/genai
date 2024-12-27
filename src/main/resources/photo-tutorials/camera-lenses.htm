@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Understanding Camera Lenses</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/camera-lenses.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/camera-lenses.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/camera-lenses.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-114 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>UNDERSTANDING CAMERA LENSES</h1>
+<p>Understanding camera lenses can help add more creative control to digital photography. Choosing the right lens for the task can become a complex trade-off between cost, size, weight, lens speed and image quality. This tutorial aims to improve understanding by providing an introductory overview of concepts relating to image quality, focal length, perspective, prime vs. zoom lenses and aperture or f-number.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-1899278187"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<h2>LENS ELEMENTS &amp; IMAGE QUALITY</h2>
+<p>All but the simplest cameras contain lenses which are actually comprised of several &quot;lens elements.&quot; Each of these elements directs the path of light rays to recreate the image as accurately as possible on the digital sensor. The goal is to minimize aberrations, while still utilizing the fewest and least expensive elements.</p>
+<div class="image-row"><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lensflare_elements9.png" alt="lens elements diagram" width="536" height="181"></div></div>
+<p>Optical aberrations occur when points in the image do not translate back onto single points after passing through the lens &#8212; causing image blurring, reduced contrast or misalignment of colors (chromatic aberration). Lenses may also suffer from uneven, radially decreasing image brightness (vignetting) or distortion. Move your mouse over each of the options below to see how these can impact image quality in extreme cases:</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle1.jpg" alt="" width="240" height="195"><br/>
+<span class="caption">Original Image</span>
+</div></div>
+<div><div>
+<img loading="lazy" name="eagle1" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-CA.jpg" alt="" width="240" height="195"><br/>
+<table class="t1 pad center">
+<tr>
+<td id="b1"><span onmouseover="on('b1'); off('b2'); off('b3'); off('b4'); off('b5'); off('b6'); eagle1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-contrast.jpg';">Loss of Contrast</span></td>
+<td id="b2"><span onmouseover="off('b1'); on('b2'); off('b3'); off('b4'); off('b5'); off('b6'); eagle1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-blurring.jpg';">Blurring</span></td>
+</tr>
+<tr>
+<td id="b3" class="on"><span onmouseover="off('b1'); off('b2'); on('b3'); off('b4'); off('b5'); off('b6'); eagle1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-CA.jpg';">Chromatic Aberration</span></td>
+<td id="b4"><span onmouseover="off('b1'); off('b2'); off('b3'); on('b4'); off('b5'); off('b6'); eagle1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-distortion.jpg';">Distortion</span></td>
+</tr>
+<tr>
+<td id="b5"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); on('b5'); off('b6'); eagle1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-vignetting.jpg';">Vignetting</span></td>
+<td id="b6"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); off('b5'); on('b6'); eagle1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle1.jpg';">Original</span></td>
+</tr>
+</table>
+</div></div>
+</div>
+<p>Any of the above problems is present to some degree with any lens. In the rest of this tutorial, <strong>when a lens is referred to as having lower optical quality than another lens, this is manifested as some combination of the above artifacts</strong>. Some of these lens artifacts may not be as objectionable as others, depending on the subject matter.</p>
+<p class="note">Note: For a more quantitative and technical discussion of the above topic, please see the<br/><a href="lens-quality-mtf-resolution.htm">tutorial on camera lens quality: MTF, resolution &amp; contrast</a>.</p>
+<a name="calculator"></a>
+<h2>INFLUENCE OF LENS FOCAL LENGTH</h2>
+<p>The focal length of a lens determines its angle of view, and thus also how much the subject will be magnified for a given photographic position. <a href="wide-angle-lenses.htm">Wide angle lenses</a> have short focal lengths, while <a href="telephoto-lenses.htm">telephoto lenses</a> have longer corresponding focal lengths.</p>
+<div class="image-row">
+<div><img loading="lazy" alt="lens focal length diagram (short)" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_focal-length-right1.png" width="260" height="120"></div>
+<div><img loading="lazy" alt="lens focal length diagram (long)" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_focal-length-left1.png" width="190" height="120"></div>
+</div>
+<p class="note">Note: The location where light rays cross is not necessarily equal to the focal length,<br/>as shown above, but is instead roughly proportional to this distance.</p>
+<br/>
+<form method="post" name="reqfocform" class="calculator">
+<h3>Required Focal Length Calculator</h3>
+<div class="input-area">
+<p><label>Subject Distance</label>
+<input type="text" name="distance" value="36" style="width: 80px;"/>
+<select name="unit1" class="unitSelect">
+<option value=1.0>meters
+<option value=3.2808>feet
+<option value=39.37>inches
+</select>
+</p>
+<p><label>Subject Size</label>
+<input type="text" name="height" value="2" style="width: 80px;"/>
+<select name="unit2" class="unitSelect">
+<option value=1.0>meters
+<option value=3.2808>feet
+<option value=39.37>inches
+</select>
+</p>
+<p><label>Camera Type</label>
+<select name="sensorsize" class="mySelect">
+<option value=22.5>Digital SLR with CF of 1.6X
+<option value=23.7>Digital SLR with CF of 1.5X
+<option value=28.7>Digital SLR with CF of 1.3X
+<option value=4.8>Digital compact with 1/3&quot; sensor
+<option value=5.76>Digital compact with 1/2.5&quot; sensor
+<option value=6.17>Digital compact with 1/2.3&quot; sensor
+<option value=7.176>Digital compact with 1/1.8&quot; sensor
+<option value=7.6>Digital compact with 1/1.7&quot; sensor
+<option value=8.8>Digital compact with 2/3&quot; sensor
+<option value=13.2>Digital compact with a 1&quot; sensor
+<option value=17.3>Digital SLR with 4/3&quot; sensor
+<option value=36>35 mm (full frame)
+<option value=25.1>APS-C
+<option value=60>6x4.5 cm
+<option value=60>6x6 cm
+<option value=70>6x7 cm
+<option value=127>5x4 inch
+<option value=254>10x8 inch
+</select>
+</p>
+</div>
+<div class="result-area">
+<input type="button" value="Calculate" onclick="reqfoccalc(this.form)"/>
+<div class="result">
+<label>Required Focal Length:</label>
+<input type="text" name="reqfocal" value="400.5 mm" readonly="readonly"/>
+</div>
+</div>
+</form>
+<p class="note">Note: Calculator assumes that camera is oriented such that the maximum<br/>
+subject dimension given by &quot;subject size&quot; is in the camera's longest dimension.<br/>
+Calculator not intended for use in extreme macro photography.</p>
+<p>Many will say that focal length also determines the perspective of an image, but strictly speaking, perspective only changes with one's location relative to their subject. If one tries to fill the frame with the same subjects using both a wide angle and telephoto lens, then perspective does indeed change, because one is forced to move closer or farther from their subject. For these scenarios only, the wide angle lens exaggerates or stretches perspective, whereas the telephoto lens compresses or flattens perspective.</p>
+<p style="text-align: center;"><span onmouseover="perspective1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_wideangle.jpg';" onmouseout="perspective1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_telephoto.jpg';"><img loading="lazy" name="perspective1" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_telephoto.jpg" alt="" width="300" height="199"></span></p>
+<p><strong>Perspective control can be a powerful compositional tool in photography, and often determines one's choice in focal length</strong> (when one can photograph from any position). <i>Move your mouse over the above image to view an exaggerated perspective due to a wider angle lens.</i> Note how the subjects within the frame remain nearly identical &#8212; therefore requiring a closer position for the wider angle lens. The relative sizes of objects change such that the distant doorway becomes smaller relative to the nearby lamps.</p>
+<p>The following table provides an overview of what focal lengths are required to be considered a wide angle or telephoto lens, in addition to their typical uses. Please note that <i>focal lengths listed are just rough ranges</i>, and actual uses may vary considerably; many use telephoto lenses in distant landscapes to compress perspective, for example.</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<th>Lens Focal Length<sup>*</sup></th>
+<th>Terminology</th>
+<th>Typical Photography</th>
+</tr>
+<tr>
+<td>Less than 21 mm</td>
+<td>Extreme Wide Angle</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>21-35 mm</td>
+<td>Wide Angle</td>
+<td>Landscape</td>
+</tr>
+<tr>
+<td>35-70&nbsp;mm</td>
+<td>Normal</td>
+<td>Street &amp; Documentary</td>
+</tr>
+<tr>
+<td>70-135 mm</td>
+<td>Medium Telephoto</td>
+<td>Portraiture</td>
+</tr>
+<tr>
+<td>135-300+ mm</td>
+<td>Telephoto</td>
+<td>Sports, Bird &amp; Wildlife</td>
+</tr>
+</table>
+</div>
+<p class="note">*Note: Lens focal lengths are for <i>35&nbsp;mm equivalent cameras</i>. If you have a compact or digital SLR camera, then you likely have a different sensor size. To adjust the above numbers for your camera, please use the focal length converter in the <a href="digital-camera-sensor-size.htm">tutorial on digital camera sensor sizes</a>.</p>
+<p>Other factors may also be influenced by lens focal length. Telephoto lenses are more susceptible to camera shake since small hand movements become magnified, similar to the shakiness experience while trying to look through binoculars. Wide angle lenses are generally more resistant to flare, in part because the designers assume that the sun is more likely to be within the frame. A final consideration is that medium and telephoto lenses generally yield better optical quality for similar price ranges.</p>
+<a name="camera-shake"></a>
+<h2>FOCAL LENGTH &amp; HANDHELD PHOTOS</h2>
+<p>The focal length of a lens may also have a significant impact on how easy it is to achieve a sharp handheld photograph. <strong>Longer focal lengths require shorter exposure times to minimize blurring caused by shaky hands.</strong> Think of this as if one were trying to hold a laser pointer steady; when shining this pointer at a nearby object its bright spot ordinarily jumps around less than for objects farther away.</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_rotational.png" alt="shaky hands - rotational vibrations" width="300" height="66"></p>
+<p>This is primarily because slight rotational vibrations are magnified greatly with distance, whereas if only up and down or side to side vibrations were present, the laser's bright spot would not change with distance.</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_vertical.png" alt="shaky hands - vertical vibrations" width="300" height="80"></p>
+<p>A common rule of thumb for estimating how fast the exposure needs to be for a given focal length is the <strong>one over focal length rule</strong>. This states that for a 35&nbsp;mm camera, the exposure time needs to be at least as fast as one over the focal length in seconds. In other words, when using a 200&nbsp;mm focal length on a 35&nbsp;mm camera, the exposure time needs to be at least 1/200&nbsp;seconds &#8212; otherwise blurring may be hard to avoid. See the <a href="camera-shake.htm">tutorial on reducing camera shake with hand-held photos</a> for more on this topic.</p>
+<p>Keep in mind that this rule is just for rough guidance; some may be able to hand hold a shot for much longer or shorter times. For users of <a href="digital-camera-sensor-size.htm">digital cameras with cropped sensors</a>, one needs to convert into a 35&nbsp;mm equivalent focal length.</p>
+<h2>ZOOM LENSES vs. PRIME LENSES</h2>
+<p>A zoom lens is one where the photographer can vary the focal length within a pre-defined range, whereas this cannot be changed with a &quot;prime&quot; or fixed focal length lens. The primary advantage of a zoom lens is that it is easier to achieve a variety of compositions or perspectives (since lens changes are not necessary). This advantage is often critical for dynamic subject matter, such as in photojournalism and children's photography.</p>
+<p>Keep in mind that <strong>using a zoom lens does not necessarily mean that one no longer has to change their position</strong>; zooms just increase flexibility. In the example below, the original position is shown along with two alternatives using a zoom lens. If a prime lens were used, then a change of composition would not have been possible without cropping the image (if a tighter composition were desirable). Similar to the example in the previous section, the change of perspective was achieved by zooming out and getting closer to the subject. Alternatively, to achieve the opposite perspective effect, one could have zoomed in and moved farther from the subject.</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<td colspan="2"><img loading="lazy" name="dog1" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog1.jpg" alt="" width="350" height="226"></td>
+</tr>
+<tr class="bg">
+<td colspan="2">Two Options Available with a Zoom Lens:</td>
+</tr>
+<tr>
+<td id="b7"><span onmouseover="on('b7'); dog1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog2.jpg';" onmouseout="off('b7'); dog1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog1.jpg';">Change of Composition</span></td>
+<td id="b8"><span onmouseover="on('b8'); dog1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog3.jpg';" onmouseout="off('b8'); dog1.src='https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog1.jpg';">Change of Perspective</span></td>
+</tr>
+</table>
+</div>
+<p>Why would one intentionally restrict their options by using a prime lens?Prime lenses existed long before zoom lenses were available, and still offer many advantages over their more modern counterparts. When zoom lenses first arrived on the market, one often had to be willing to sacrifice a significant amount of optical quality. However, more recent high-end zoom lenses generally do not produce noticeably lower image quality, unless scrutinized by the trained eye (or in a very large print).</p>
+<p>The primary advantages of prime lenses are in cost, weight and speed. <strong>An inexpensive prime lens can generally provide as good (or better) image quality as a high-end zoom lens</strong>. Additionally, if only a small fraction of the focal length range is necessary for a zoom lens, then a prime lens with a similar focal length will be significantly smaller and lighter. Finally, the best prime lenses almost always offer better light-gathering ability (larger maximum aperture) than the fastest zoom lenses &#8212; often critical for low-light sports/theater photography, and when a <a href="depth-of-field.htm">shallow depth of field</a> is necessary.</p>
+<p>For compact digital cameras, lenses listed with a 3X, 4X, etc. zoom designation refer to the ratio between the longest and shortest focal lengths. Therefore, a larger zoom designation does not necessarily mean that the image can be magnified any more (since that zoom may just have a wider angle of view when fully zoomed out). Additionally, <a href="image-interpolation.htm">digital zoom is not the same as optical zoom, as the former only enlarges the image through interpolation</a>. Read the fine-print to ensure you are not misled.</p>
+<h2>INFLUENCE OF LENS APERTURE OR F-NUMBER</h2>
+<p>The aperture range of a lens refers to the amount that the lens can open up or close down to let in more or less light, respectively. Apertures are listed in terms of f-numbers, which quantitatively describe relative light-gathering area (depicted below).</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_aperture4.png" alt="" width="365" height="90"></p>
+<p class="note">Note: Aperture opening (iris) is rarely a perfect circle,<br/>due to the presence of 5-8 blade-like lens diaphragms.</p>
+<p>Note that larger aperture openings are defined to have lower f-numbers (often very confusing). These two terms are often mistakenly interchanged; the rest of this tutorial refers to lenses in terms of their aperture size. <strong>Lenses with larger apertures are also described as being &quot;faster,&quot;</strong> because for a given ISO speed, the shutter speed can be made faster for the same exposure. Additionally, a smaller aperture means that objects can be in focus over a wider range of distance, a concept also termed the <a href="depth-of-field.htm">depth of field</a>.</p>
+<div class="center">
+<table class="t1 pad">
+<tr class="bg">
+<td>&nbsp;</td>
+<td rowspan="4" width="5%">&nbsp;</td>
+<td colspan="3">Influence on Other Properties:</td>
+</tr>
+<tr>
+<th>f/#</th>
+<th>Light-Gathering Area<br/>(Aperture Size)</th>
+<th>Required Shutter Speed</th>
+<th>Depth of Field</th>
+</tr>
+<tr>
+<td>Higher</td>
+<td>Smaller</td>
+<td>Slower</td>
+<td>Wider</td>
+</tr>
+<tr>
+<td>Lower</td>
+<td>Larger</td>
+<td>Faster</td>
+<td>Narrower</td>
+</tr>
+</table>
+</div>
+<p>When one is considering purchasing a lens, specifications ordinarily list the maximum (and maybe minimum) available apertures. Lenses with a greater range of aperture settings provide greater artistic flexibility, in terms of both exposure options and depth of field. The maximum aperture is perhaps the most important lens aperture specification, which is often listed on the box along with focal length(s).</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_boxes.jpg" alt="Canon camera lens boxes" width="400" height="200"></p>
+<p>An f-number of X may also be displayed as 1:X (instead of f/X), as shown below for the Canon 70-200 f/2.8 lens (whose box is also shown above and lists f/2.8).</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_maxaperture1.jpg" alt="maximum aperture in 1:X format" width="250" height="50"></p>
+<p>Portrait and indoor sports/theater photography often requires lenses with very large maximum apertures, in order to be capable of a narrower depth of field or a faster shutter speed, respectively. The narrow depth of field in a portrait helps isolate the subject from their background. For digital SLR cameras, <strong>lenses with larger maximum apertures provide significantly brighter viewfinder images</strong> &#8212; <a href="night-photography.htm">possibly critical for night and low-light photography</a>. These also often give <strong>faster and more accurate auto-focusing</strong> in low-light. <strong>Manual focusing is also easier</strong> because the image in the viewfinder has a narrower depth of field (thus making it more visible when objects come into or out of focus).</p>
+<div class="center">
+<table width="90%" class="t1 pad">
+<tr>
+<th>Typical Maximum Apertures</th>
+<th>Relative Light-Gathering Ability</th>
+<th>Typical Lens Types</th>
+</tr>
+<tr>
+<td>f/1.0</td>
+<td>32X</td>
+<td>Fastest Available Prime Lenses<br/>(for Consumer Use)</td>
+</tr>
+<tr>
+<td>f/1.4</td>
+<td>16X</td>
+<td rowspan="2">Fast Prime Lenses</td>
+</tr>
+<tr>
+<td>f/2.0</td>
+<td>8X</td>
+</tr>
+<tr>
+<td>f/2.8</td>
+<td>4X</td>
+<td>Fastest Zoom Lenses<br/>(for Constant Aperture)</td>
+</tr>
+<tr>
+<td>f/4.0</td>
+<td>2X</td>
+<td rowspan="2">Light Weight Zoom Lenses or Extreme Telephoto Primes</td>
+</tr>
+<tr>
+<td>f/5.6</td>
+<td>1X</td>
+</tr>
+</table>
+</div>
+<p>Minimum apertures for lenses are generally nowhere near as important as maximum apertures. This is primarily because the minimum apertures are rarely used due to <a href="diffraction-photography.htm">photo blurring from lens diffraction</a>, and because these may require prohibitively long exposure times. For cases where extreme depth of field is desired, then smaller minimum aperture (larger maximum f-number) lenses allow for a wider depth of field.</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_maxaperture2.jpg" alt="" width="300" height="145"></p>
+<p>Finally, some zoom lenses on digital SLR and compact digital cameras often list a range of maximum aperture, because this may depend on how far one has zoomed in or out. These aperture ranges therefore refer only to the range of maximum aperture, not overall range. A range of f/2.0-3.0 would mean that the maximum available aperture gradually changes from f/2.0 (fully zoomed out) to f/3.0 (at full zoom). The primary benefit of having a zoom lens with a constant maximum aperture is that exposure settings are more predictable, regardless of focal length.</p>
+<p>Also note that just because the maximum aperture of a lens may not be used, this does not necessarily mean that this lens is not necessary. <strong>Lenses typically have fewer aberrations when they perform the exposure stopped down one or two f-stops from their maximum aperture</strong> (such as using a setting of f/4.0 on a lens with a maximum aperture of f/2.0). This *may* therefore mean that if one wanted the best quality f/2.8 photograph, a f/2.0 or f/1.4 lens may yield higher quality than a lens with a maximum aperture of f/2.8.</p>
+<p>Other considerations include cost, size and weight. Lenses with larger maximum apertures are typically much heavier, larger and more expensive. Size/weight may be critical for wildlife, hiking and travel photography because all of these often utilize heavier lenses, or require carrying equipment for extended periods of time.</p>
+<h2>FURTHER READING</h2>
+<p>For more on camera lenses, also visit the following tutorials:</p>
+<ul>
+<li><a href="wide-angle-lenses.htm">Using Wide Angle Lenses</a><br/></li>
+<li><a href="telephoto-lenses.htm">Using Telephoto Lenses</a><br/></li>
+<li><a href="macro-lenses.htm">Macro Lenses: Magnification, Depth of Field &amp; Effective F-Stop</a></li>
+</ul>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-contrast.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-CA.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-blurring.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-distortion.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_eagle-vignetting.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_wideangle.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog2.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/lenses_dog3.jpg">
+</div>
+<script>//<![CDATA[
+function reqfoccalc(form){distance=form.distance.value;dist_unit=form.unit1.value;height=form.height.value;height_unit=form.unit2.value;sensorsize=form.sensorsize.value;if(isNaN(distance)){alert('Please enter a numerical value for subject distance.');document.form.distance.focus();document.form.distance.select();}else{if(isNaN(height)){alert('Please enter a numerical value for subject height.');document.form.height.focus();document.form.height.select();}else{distance_m=distance/dist_unit;subject_m=height/height_unit;sensor_m=sensorsize/1000;adjfocal=1000*sensor_m*distance_m/(subject_m+sensor_m);form.reqfocal.value=Math.round(10*adjfocal)/10+" mm";}}}
+//]]></script>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-483805734"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/camera-lenses.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/camera-lenses.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	
