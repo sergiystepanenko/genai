@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Using Tilt-Shift Lenses to Control Depth of Field</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/tilt-shift-lenses2.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/tilt-shift-lenses2.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/tilt-shift-lenses2.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-184 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>TILT SHIFT LENSES: DEPTH OF FIELD</h1>
+<p>Tilt shift lenses enable photographers to transcend the normal restrictions of depth of field and perspective. Many of the optical tricks these lenses permit could not otherwise be reproduced digitally&#8212;making them a must for certain landscape, architectural and product photography. This part of the tutorial addresses the tilt feature, and focuses on its use in digital SLR cameras for controlling depth of field. The first part of this tutorial focused on <a href="tilt-shift-lenses1.htm">using tilt shift lenses to control perspective and create panoramas</a>.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-319400706"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<h2>OVERVIEW: TILT SHIFT MOVEMENTS</h2>
+<p><strong>Shift movements</strong> enable the photographer to shift the location of the lens's imaging circle relative to the digital camera sensor. This means that the lens's center of perspective no longer corresponds the the image's center of perspective, and produces an effect similar to only using a crop from the side of a correspondingly wider angle lens.</p>
+<p><strong>Tilt movements</strong> enable the photographer to tilt the plane of sharpest focus so that it no longer lies perpendicular to the lens axis. This produces a wedge-shaped depth of field whose width increases farther from the camera. The tilt effect therefore does not necessarily increase depth of field&#8212;it just allows the photographer to customize its location to better suit their subject matter.</p>
+<h2>CONCEPT: SCHEIMPFLUG PRINCIPLE &amp; HINGE RULE</h2>
+<p>The Scheimpflug principle states that the sensor plane, lens plane and plane of sharpest focus must all intersect along a line. In the diagram below, this intersection is actually a point since the line is perpendicular to your the screen. When the Scheimpflug principle is combined with the &quot;Hinge&quot; or &quot;Pivot Rule,&quot; these collectively define the location for the plane of sharpest focus as follows:</p>
+<div class="center">
+<table class="t1">
+<tr>
+<td colspan="3" rowspan="11" class="bg"><img loading="lazy" name="til1" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t6.png" alt="influence of tilt angle on plane of sharpest focus" width="386" height="226"></td>
+<td>Apply<br/>Lens Tilt:</td>
+</tr>
+<tr>
+<td id="a1"><span onmouseover="on('a1'); off('a2'); off('a3'); off('a4'); off('a5'); off('a6'); off('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t1.png';">0.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a2"><span onmouseover="off('a1'); on('a2'); off('a3'); off('a4'); off('a5'); off('a6'); off('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t2.png';">0.5&deg;</span></td>
+</tr>
+<tr>
+<td id="a3"><span onmouseover="off('a1'); off('a2'); on('a3'); off('a4'); off('a5'); off('a6'); off('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t3.png';">1.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a4"><span onmouseover="off('a1'); off('a2'); off('a3'); on('a4'); off('a5'); off('a6'); off('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t4.png';">2.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a5"><span onmouseover="off('a1'); off('a2'); off('a3'); off('a4'); on('a5'); off('a6'); off('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t5.png';">3.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a6" class="on"><span onmouseover="off('a1'); off('a2'); off('a3'); off('a4'); off('a5'); on('a6'); off('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t6.png';">4.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a7"><span onmouseover="off('a1'); off('a2'); off('a3'); off('a4'); off('a5'); off('a6'); on('a7'); off('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t7.png';">5.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a8"><span onmouseover="off('a1'); off('a2'); off('a3'); off('a4'); off('a5'); off('a6'); off('a7'); on('a8'); off('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t8.png';">6.0&deg;</span></td>
+</tr>
+<tr>
+<td id="a9"><span onmouseover="off('a1'); off('a2'); off('a3'); off('a4'); off('a5'); off('a6'); off('a7'); off('a8'); on('a9'); til1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_t9.png';">8.0&deg;</span></td>
+</tr>
+<tr class="bg">
+<td rowspan="2">&nbsp;</td>
+</tr>
+<tr class="bg">
+<td><span style="color: #000;">&#8212;</span> sensor plane</td>
+<td><span style="color: #c0504d;">&#8212;</span> lens plane</td>
+<td><span style="color: #4f81bd;">&#8212;</span> plane of sharpest focus</td>
+</tr>
+</table>
+<p class="note">Figure based on actual calculations using Canon's 45 mm TS-E lens; vertical scale compressed 2X.<br/>Purple line (<span style="color: #8064a2;">&#8212;</span>) represents plane parallel to lens plane and separated by the lens focal length.</p>
+</div>
+<p>Try experimenting with different values of tilt to get a feel for how this influences the plane of sharpest focus. Notice that even a small lens tilt angle can produce a correspondingly large tilt in the plane of sharpest focus.</p>
+<p>The focusing distance can also change the plane of sharpest focus along with tilt, and will be discussed later in this tutorial. Also note that for the sake of brevity, the rest of this tutorial will use &quot;plane of sharpest focus&quot; and &quot;focus plane&quot; synonymously. </p>
+<h2>TILT MOVEMENTS TO REPOSITION DEPTH OF FIELD</h2>
+<p><a href="depth-of-field.htm">Depth of field</a> for many scenes is often insufficient using standard equipment&#8212;even with small lens apertures. The problem is that one could use even smaller apertures to increase depth of field, but not without also increasing <a href="diffraction-photography.htm">softness at the camera's focus plane due to diffraction</a>. Tilt movements can sometimes avoid this technical limitation by making more efficient use of the depth of field, depending on the subject matter.</p>
+<p>The example below demonstrates the effect of tilt movements on a scene whose subject matter traverses both up/down and front/back directions. Each image is taken using a wide aperture of f/2.8 to make the depth of field more noticeable at this small image size.</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt1.jpg" alt="photo with zero degrees tilt" width="150" height="300"/>
+<span class="caption"><strong>Zero Tilt</strong><br/>&nbsp;<br/>&nbsp;</span>
+</div></div>
+<div><div><span onmouseover="t1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt2f16.jpg';" onmouseout="t1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt2.jpg';"><img loading="lazy" name="t1" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt2.jpg" alt="photo with 3 degree downward tilt" width="150" height="300"></span>
+<span class="caption"><strong>3&deg; Downward Tilt</strong><br/>Rug DoF Increased<br/>Lens DoF Decreased<br/>
+<p class="note">mouseover to view at f/16</p></span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt3.jpg" alt="photo with 8 degree upward tilt" width="150" height="300"/>
+<span class="caption"><strong>8&deg; Upward Tilt</strong><br/>Apparent DoF Decreased<br/>&nbsp;</span>
+</div></div>
+</div>
+<p class="note">DoF = Depth of Field; Camera lens aimed downward approx. 30&deg; towards rug.<br/>All images taken at f/2.8 using the Canon 45 mm TS-E lens on a full 35 mm frame sensor.<br/>Center image at f/16 brightens due to reduced vignetting.</p>
+<p>On the left we see the typical depth if field produced by an ordinary lens. In order to get both the front and rear rug edges sharp in the left image we would have needed to use a very small aperture. The central image, however, is able to achieve this even with the same aperture. On the other hand, note how the vertical depth of field has decreased and caused the top of the front lens to be blurred.</p>
+<div class="image-right">
+<div>
+<span onmouseover="t2.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt4f56.jpg';" onmouseout="t2.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt4.jpg';"><img loading="lazy" name="t2" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tilt4.jpg" width="150" height="300"></span>
+<span class="caption"><strong>Downward Tilt</strong><br/>Only Lens Tops in Focus
+</div>
+<p class="note">mouseover to view at f/5.6</p></span>
+</div>
+<p>Tilt can also be used to reduce apparent depth of field, as demonstrated by the 8&deg; upward tilt image. This can be particularly useful for portraits when a wide aperture is insufficient, or when one wishes to focus on only part of a vertical object. Note how both the rug and vertical depth of field appear to have decreased. This is because the focus plane is at an angle in between the rug and lens. Also note how the field of view has moved downward due to the tilt, which should be taken into account.</p>
+<p>Another possibility would be to place the depth of field both above and parallel to the rug, such that only the tops of the two lenses are in sharp focus (right image). This type of placement is common for many types of flower shots, since these have a geometry similar to this rug/lens example.</p>
+<p>For landscapes and architecture, however, the goal is usually to achieve maximal sharpness throughout. In the rug/lens example this would require placing the focus plane slightly above and parallel to the rug with a small aperture.</p>
+<p>Deciding where to optimally place the focus plane can become a tricky game of geometry, particularly if the subject traverses both front/back and up/down directions. This requires considering not just the angle of the focus plane, but also the shape of the depth of field.</p>
+<p>Instead of the usual rectangular region for an ordinary lens, the depth of field for a tilt shift lens actually occupies a wedge which broadens away from the camera. This means that placement of the depth of field is more critical near foreground subject matter.</p>
+<div class="image-row">
+<div><div>
+<table class="t1 pad"><tr>
+<td id="b1a" class="on"><span onmouseover="on('b1a'); off('b1b'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof1.png';">Large Aperture</span></td>
+<td id="b1b"><span onmouseover="off('b1a'); on('b1b'); i1.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof2.png';">Small Aperture</span></td>
+</tr></table>
+<img loading="lazy" name="i1" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof1.png" width="200" height="85">
+<span class="caption">Ordinary Camera Lens</span>
+</div></div>
+<div><div>
+<table class="t1 pad"><tr>
+<td id="b2a" class="on"><span onmouseover="on('b2a'); off('b2b'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltdof1.png';">Large Aperture</span></td>
+<td id="b2b"><span onmouseover="off('b2a'); on('b2b'); i2.src='https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltdof2.png';">Small Aperture</span></td>
+</tr></table>
+<img loading="lazy" name="i2" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltdof1.png" width="200" height="85">
+<span class="caption">Tilt Shift Lens</span>
+</div></div>
+</div>
+<p class="note">Blue intensity qualitatively represents the degree of image sharpness at a given distance;<br/>actual depth of field can be unequally distributed to either side of the focus plane.</p>
+<p>Note how using a small aperture with a tilt shift lens can become very important with vertical subject matter&#8212;and increasingly so if this subject matter is in the foreground, or with a more horizontal focus plane.</p>
+<p>Traditional view cameras (ie, old-fashioned looking camera with flexible bellows) can use virtually any amount of lens tilt. However, the Nikon and Canon tilt shift lenses are limited to 8.5 and 8 degrees of tilt, respectively. This means that achieving optimal sharpness throughout is often a compromise between the best possible location for the focus plane and the constraints caused by a narrow range of tilt. This can sometimes occur when one requires a horizontal focus plane, since this may not always be achievable with just 8 degrees of tilt. The example below demonstrates an alternative placement:</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltcompromise1.png" width="250" height="100"/>
+<span class="caption"><strong>Optimal Depth of Field Placement</strong><br/>(if wide range of tilt angles available)</span></div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltcompromise2.png" width="250" height="100">
+<span class="caption"><strong>Best Available Depth of Field</strong><br/>(if horizontal placement not possible)</span></div></div>
+</div>
+<p><strong>The key is to optimally place not only the focus plane, but also its wedge-shaped depth of field</strong>. Note how in the right image the focus plane crosses the floor, which ensures that depth of field is most efficiently distributed across the floor and two subjects. In this example the crossover distance is positioned just before the <a href="hyperfocal-distance.htm">hyperfocal distance</a> of the corresponding untilted lens, since there is minimal vertical subject matter. For other subject distributions, proper placement depends on the relative importance of subject matter and the artistic intent of the photograph.</p>
+<p><strong>A more sophisticated possibility is to use a combination of tilt and shift</strong>. This could have been accomplished by first aiming the camera itself slightly towards the ground, thereby rotating the focus plane even further than possible using lens tilt alone. One could then use <a href="tilt-shift-lenses1.htm">shift to change the field of view</a>&#8212;thereby maintaining a similar composition as the original unshifted camera angle, but with a different perspective.</p>
+<p>Overall, even if one cannot tilt enough to place the focus plane at the best possible location, one can usually still use some tilt and be better off than what would have been achievable with an ordinary lens. The only exception is when there is vertical subject matter in the foreground which fills a significant fraction of the image, in which case zero tilt is usually best, although shift movements are likely to be helpful.</p>
+<h2>FOCUSING A TILT SHIFT LENS</h2>
+<p>Mentally visualizing how tilting a lens will correspond to changes in the depth of field can be quite difficult, even for the most experienced of photographers. Even then, knowing where to best place the focus plane is only half the battle&#8212;actually putting it there can be a different matter entirely.</p>
+<div class="image-right">
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_cameradiagram2.jpg" width="181" height="151"></div>
+</div>
+<p>The reason focusing can become so difficult is because the focusing distance and the amount of tilt do not independently control the focus plane's location. In other words, changing the focusing distance changes the angle of the focus plane in addition to changing its distance. Focusing can therefore become an iterative process of alternately adjusting the focusing distance and lens tilt until the photo looks best.</p>
+<p>Perhaps the easiest scenarios are those which demand more tilt than the lens supports. In these cases one can just use maximal tilt in the chosen direction, then choose the focus distance which achieves the best available depth of field placement. No tilt/focusing iterations are required.</p>
+<p><strong>For more difficult focusing scenarios, tilt shift lenses are usually focused using trial and error techniques through the viewfinder</strong>. This works by following a systematic procedure of alternating between setting the focusing distance and tilt, with the aim of having the focus plane converge onto the desired location. Since accurate focusing requires consistent and careful attention to detail, using a tripod is almost always a must.</p>
+<p>The following procedure is intended for situations where the subject lies primarily along a horizontal plane or some other plane which is rotated relative to the camera's sensor:</p>
+<table width="100%" class="t1 left pad">
+<tr>
+<th colspan="2">Focusing Procedure for a Tilt Shift Lens</th>
+</tr>
+<tr>
+<td width="20%">(1) Compose</td>
+<td>Set lens to zero degrees tilt and frame the photograph</td>
+</tr>
+<tr>
+<td>(2) Identify</td>
+<td>Identify critical nearest and furthest subjects along the subject plane</td>
+</tr>
+<tr>
+<td>(3) Focus</td>
+<td>Focus at a distance which maximizes near and far subject sharpness in the viewfinder (if far subject is at infinity, this distance will be at or near the hyperfocal distance).
+<p style="margin: 5px 0;">Once an approximate distance is identified, rock the focus ring back and forth slightly to get a better estimate of this distance.</p>
+</td>
+</tr>
+<tr>
+<td>(4) Tilt</td>
+<td>Very slowly apply progressively more lens tilt towards the subject plane until near and far subject sharpness is maximized in viewfinder.
+<p style="margin: 5px 0;">Once an approximate tilt angle is identified, slightly rotate the tilt knob back and forth to get a better estimate of this angle.</p>
+</td>
+</tr>
+<tr>
+<td>(5) Refine</td>
+<td>Repeat steps (3) and (4) with smaller changes than before to identify whether this improves both near and far subject sharpness; if no further improvement then the focusing procedure is complete.</td>
+</tr>
+</table>
+<p class="note">For more on step (3) above, see tutorials on <a href="depth-of-field.htm">depth of field</a> and the <a href="hyperfocal-distance.htm">hyperfocal distance</a>.<br/>For landscapes, one should generally put more weight on having the furthest subject sharp.<br/>Overall, the above procedure aims to give robust results across a wide range of scenarios;<br/>for more exact focusing under specific conditions, refer to the calculators/charts later in this tutorial.</p>
+<p>Also note that <strong>using the camera's focus points and focus lock confirmation can be of great help</strong>. Even though tilt shift lenses do no work with a <a href="camera-autofocus.htm">camera's autofocus</a>, your camera can still be used to notify when you have achieved successful manual focus. Select a focus point which is on your subject and use the focus lock lights in the viewfinder to confirm when your tilt or focusing has successfully brought this subject into focus.</p>
+<p>With practice, visual procedures work fine, but ultimately nothing beats having a better intuition for how the process works. One is encouraged to first experiment heavily with their tilt shift lens in order to get a better feel for using tilt movements.</p>
+<h2>TOOLS TO MAKE TILT SHIFT FOCUSING EASIER</h2>
+<p>Trial and error techniques can be problematic due to the limited size of viewfinders used in 35&nbsp;mm or cropped digital camera sensors. This can make it very hard to discern changes in sharpness&#8212;particularly in low light, or with tilt shift lenses having a maximum aperture of f/3.5 or a wide angle of view. However, several tools are available which may make this process easier.</p>
+<p>A special <strong>texturized manual focusing screen</strong> can ensure the eye has a clear reference to compare with out of focus objects. Otherwise one's eye can get tricked and try to make objects appear in focus even though these objects are not necessarily in focus in the viewfinder. In such cased the eye effectively becomes a part of the optical system.</p>
+<p>Alternatively, if your camera supports <strong>real-time viewing using your camera's LCD (Live View)</strong> this can be of great help. One can also <strong>take a series of test photographs</strong> and then zoom in afterwards to verify sharpness at critical points.</p>
+<p>A <strong>magnified viewfinder</strong> can also help, such as Canon's &quot;angle finder C&quot; or one of many third party viewfinder magnifiers. Many of these are at a right angle to the viewfinder, which can make for more convenient focusing when the camera is near the ground.</p>
+<h2>FOCUSING TECHNIQUE FOR LANDSCAPE PHOTOGRAPHY</h2>
+<div class="right">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltdof2J.png" width="183" height="71">
+</div>
+<p>Tilt movements for landscape photography often require a focus plane which lies along a sweeping, near horizontal subject plane. In these situations it is very important to place the focus plane accurately in the foreground. The vertical distance &quot;J&quot; is easy to set because it is only determined by the lens tilt, not focusing distance.</p>
+<div class="center">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_jdiagram.png" width="536" height="204">
+</div>
+<p>Once the desired value of J has been determined and the corresponding tilt set, one can then independently use the focusing distance to set the angle of the focus plane. Setting the lens's focus ring to farther distances will simultaneously increase the angle of the focus plane and the angular depth of field, as demonstrated in the next section.</p>
+<a name="calculator"></a>
+<h2>TILT SHIFT LENS DEPTH OF FIELD CALCULATOR</h2>
+<div class="image-right">
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_nearfardiagram.png" alt="tilt shift lens depth of field diagram" width="200" height="114"/></div>
+</div>
+<p>The calculator below uses the lens focal length, lens tilt and untilted focusing distance to locate the plane of sharpest focus.</p>
+<p>To also estimate depth of field, click "show advanced" to input aperture and sensor size as well.</p>
+<div class="clear"></div>
+<form method="post" name="tsform0" class="calculator">
+<h3>T/S Lens Depth of Field Calculator</h3>
+<div class="advanced"><span class="show-adv">show advanced</span><span class="hide-adv">hide advanced</span></div>
+<div class="input-area">
+<div class="showhide">
+<p><label>Camera Type</label>
+<select name="format" class="mySelect">
+<option value=0.03200>35 mm (full frame)</option>
+<option value=0.02551>Digital SLR with CF of 1.3X</option>
+<option value=0.02107>Digital SLR with CF of 1.5X</option>
+<option value=0.02000>Digital SLR with CF of 1.6X</option>
+</select>
+</p>
+<p><label>Aperture</label>
+<select name="aperture" class="unitSelect">
+<option value=2.8>f/2.8</option>
+<option value=3.5>f/3.5</option>
+<option value=4.0>f/4.0</option>
+<option value=5.6>f/5.6</option>
+<option value=8.0>f/8.0</option>
+<option value=11>f/11</option>
+<option value=16>f/16</option>
+<option value=22>f/22</option>
+<option value=32>f/32</option>
+</select>
+</p>
+</div>
+<p><label>Focal Length</label>
+<input type="text" name="focal0" value="45"/> mm
+</p>
+<p><label>Tilt Amount</label>
+<input type="text" name="tilt0" value="8"/> degrees
+</p>
+<p><label>Untilted Focus Distance</label>
+<input type="text" name="distance" value="1"/>
+<select name="distance_unit" class="unitSelect">
+<option value=1.0>meters
+<option value=3.2808>feet
+<option value=39.37>inches
+</select>
+</p>
+</div>
+<div class="result-area">
+<input type="button" value="Calculate" onclick="tscalc0(tsform0)"/>
+<div class="result">
+<label>Angle of Plane of Sharpest Focus:</label>
+<input type="text" name="fplanerot0" value="75.8&deg;" readonly="readonly"/>
+</div>
+<div class="result">
+<label>Vertical Distance (J) of Focus Plane from Lens:</label>
+<input type="text" name="jval" value="0.3 m" readonly="readonly"/>
+</div>
+</div>
+<div class="result-area showhide">
+<div class="result">
+<label>Angle of Near Plane of Acceptable Sharpness:</label>
+<input type="text" name="dnear" value="75&deg;" readonly="readonly"/>
+</div>
+<div class="result">
+<label>Angle of Far Plane of Acceptable Sharpness:</label>
+<input type="text" name="dfar" value="76.5&deg;" readonly="readonly"/>
+</div>
+<div class="result">
+<label>Total Angular Depth of Field:</label>
+<input type="text" name="dtotaov" value="1.5&deg;" readonly="readonly"/>
+</div>
+</div>
+</form>
+<p class="note">Assumes thin lens approximation, with greatest error for focusing distances near infinity or close up.<br/>The circle of confusion is the standard size also used in the regular <a href="depth-of-field.htm#calculator">depth of field calculator</a>.<br/>&quot;Untilted Focus Distance&quot; is (approximately) the distance labeled on your lens's focus ring.</p>
+<p>Note how small changes in tilt lead to large changes in the focus plane angle, and that tilt is correspondingly less influential as the tilt angle increases. Also observe how the untilted focusing distance can have a significant impact on the focus plane angle. Similar to ordinary depth of field, the total angular depth of field (near minus far angles of acceptable sharpness) decreases for closer focusing distances.</p>
+<h2>USING SHIFT TO FURTHER ROTATE THE FOCUS PLANE</h2>
+<p>The next calculator is useful for situations where tilt and shift are used together to achieve an even greater rotation in the focus plane. With an ordinary camera lens, the angle of the focus plane changes when the camera is rotated, since the focus plane is always perpendicular to the lens's line of sight. With a tilt shift lens this is no different. However, the key is that with a tilt shift lens, we can rotate the camera slightly and then use a shift movement to ensure the same field of view (same composition).</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof3.png" width="180" height="100"/>
+<span class="caption"><strong>Ordinary Unrotated Lens</strong><br/><br/><br/></span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof4.png" width="180" height="100"/>
+<span class="caption"><strong>Rotated Ordinary Lens</strong><br/>Rotates plane of focus,<br/>different field of view</span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof5.png" width="180" height="100"/>
+<span class="caption"><strong>Rotated Lens With Shift</strong><br/>Rotates plane of focus,<br/>maintains field of view</span>
+</div></div>
+</div>
+<p class="note">Blue intensity qualitatively represents the degree of image sharpness at a given distance;<br/>light gray line lies along the center of the photograph.</p>
+<p>The calculator below demonstrates how much one would have to rotate their camera in order to offset a given lens shift, which is also equal to the rotation in the focus plane. This would achieve a rotation in the focus plane similar to the top left and right images above, with also the same field of view.</p>
+<form method="post" name="tsform1" class="calculator">
+<h3>Using Shift to Rotate the Focus Plane</h3>
+<div class="input-area">
+<p><label>Focal Length</label>
+<input type="text" name="focal1" value="45"/> mm
+</p>
+<p><label>Shift Amount</label>
+<input type="text" name="shift1" value="11"/> mm
+</p>
+</div>
+<div class="result-area">
+<input type="button" value="Calculate" onclick="tscalc1(this.form)"/>
+<div class="result">
+<label>Focus Plane Rotation</label>
+<input type="text" name="fplanerot1" value="13.7&deg;" readonly="readonly"/>
+</div>
+</div>
+</form>
+<p class="note">Rotation in focus plane is relative to its location for camera/lens with same field of view, but no shift.</p>
+<p>Note how shift can rotate the plane of sharpest focus much more for shorter focal lengths. This is because in absolute units, a given mm shift corresponds to a greater rotation in in the field of view. On the other hand, this also means that the perspective will be more strongly influenced for shorter focal lengths, which may be an important consideration.</p>
+<p>Be aware that using shift to rotate the focus plane <strong>may require that your tilt shift lens be modified so that it can tilt and shift in the same direction</strong>, which is usually not the case by manufacturer default. This can be sent to the manufacturer for modification, or can be performed yourself with a small screwdriver. One needs to remove the four small screws at the base of the lens, rotate the base 90&deg;, and then screw them back into the base.</p>
+<h2>AVAILABLE NIKON &amp; CANON TILT SHIFT LENSES</h2>
+<p>Canon has four and Nikon has three mainstream tilt shift lens models available:</p>
+<div class="center">
+<table class="t1" width="80%">
+<tr>
+<th width="50%">Canon Tilt Shift Lenses</th>
+<th width="50%">Nikon Tilt Shift Lenses</th>
+</tr>
+<tr>
+<td>Canon 17 mm TS-E f/4L</td>
+<td class="bg"></td>
+</tr>
+<tr>
+<td>Canon 24 mm TS-E f/3.5L II</td>
+<td>PC-E Nikkor 24 mm F3.5D&nbsp;ED</td>
+</tr>
+<tr>
+<td>Canon 45&nbsp;mm TS-E f/2.8&nbsp;</td>
+<td>PC-E Nikkor 45 mm F2.8D&nbsp;ED</td>
+</tr>
+<tr>
+<td>Canon 90 mm TS-E f/2.8&nbsp;</td>
+<td>PC-E Nikkor 85 mm F2.8D&nbsp;ED</td>
+</tr>
+</table>
+</div>
+<p>Calculations and diagrams above have been designed to represent the range of tilt and shift movements relevant for these lenses on the 35 mm and cropped camera formats.</p>
+<p style="text-align: center;">Note that this tutorial primarily discusses the tilt feature; for shift movements visit part 1:<br/><a href="tilt-shift-lenses1.htm">Tilt Shift Lenses: Using Shift to Control Perspective or Create Panoramas</a></p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_notiltdof2.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_tiltdof2.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t1.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t2.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t3.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t4.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t5.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t7.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t8.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/ts_t9.png">
+</div>
+<script src="https://cdn.cambridgeincolour.com/js/tutorials/tilt-shift2.js.pagespeed.jm.j_U55JKWZA.js"></script>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1517848851"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/tilt-shift-lenses2.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/tilt-shift-lenses2.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

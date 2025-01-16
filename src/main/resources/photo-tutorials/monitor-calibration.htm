@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Monitor Calibration for Photography</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/monitor-calibration.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/monitor-calibration.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/monitor-calibration.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-164 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>MONITOR CALIBRATION FOR PHOTOGRAPHY</h1>
+<p>Knowing how to calibrate your monitor is critical for any photographer who wants accurate and predictable photographic prints. If your monitor is not correctly reproducing shades and colors, then all the time spent on image editing and post-processing could actually be counter-productive. This tutorial covers basic calibration for the casual photographer, in addition to using calibration and profiling devices for high-precision results. Furthermore, it assumes that tossing your old monitor and buying a new one is not an option.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-2122333819"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_flowers1.jpg" alt="Swans" title="" width="154" height="100"/>
+<span class="caption">Digital Image File</span>
+</div></div>
+<div><span class="arrowbg">&rarr;</span></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_color-profile1.png" alt="Color Profile" width="83" height="80"/>
+<span class="caption">Color Profile</span>
+</div></div>
+<div><span class="arrowbg">&rarr;</span></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_lcd.png" alt="LCD monitor" width="50" height="65"/>
+<span class="caption">Calibrated<br/>Monitor</span>
+</div></div>
+</div>
+<h2>ADJUSTING BRIGHTNESS &amp; CONTRAST</h2>
+<p>The easiest (but least accurate) way to calibrate your display is to simply adjust its brightness and contrast settings. This method doesn't require a color profile for your monitor, so it's ideal for casual use, or for when you're not at your own computer and need to make some quick adjustments.</p>
+<p>The images below are designed to help you pick optimal brightness/contrast settings. A well-calibrated monitor should be able to pass both tests, but if it cannot, then you will have to choose which of the two is most important. In either case, make sure that your display has first been given at least 10-15 minutes to warm up.</p>
+<p><strong>(1) Mid-Tones</strong>. Having well-calibrated mid-tones is often the highest-priority goal. Such a monitor should depict the central square as being the same shade as the solid outer portion &#8212; when viewed out of focus or at a distance. The leftmost and rightmost squares should also appear darker and lighter than the solid gray, respectively.</p>
+<div class="center">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gamma.png" width="416" height="165" alt="Monitor Calibration Image" title="This calibration image has been designed by Sean McHugh and may not be reproduced without prior consent. Please email me and I will be happy to allow its use if you provide a link crediting this site.">
+<p class="note">&copy; 2004-2015 Sean McHugh<br/>Note: the above calibration assumes that your monitor is set to gamma 2.2.</p>
+</div>
+<p>If the central square is lighter or darker than the outer gray region, your display is likely depicting images lighter or darker than intended. This will also have a noticeable impact on your prints, so it's something that should be addressed.</p>
+<p>If you are using an LCD monitor, first set your display to its default contrast (this will likely be either 100% or 50%), then adjust the brightness until the central square blends in. If you are using a CRT monitor (the larger &quot;old-fashioned&quot; type), then instead set it to maximum contrast. For both CRT &amp; LCD displays, make sure that these are set to gamma 2.2 if available (most current displays come with this as the native setting).</p>
+<p class="notebox">Note: increasing the brightness of your display too much can shorten its usable life span. You will likely not need to have your display at its maximum brightness if the room isn't too bright, if the display isn't back-lit (such as in front of a window) and if the display isn't too old.</p>
+<p><strong>(2) Highlight &amp; Shadow Detail</strong>. If you've followed the previous calibration, now your mid-tones will be reproduced roughly at the shade intended. However, it may also mean that the shadows and highlights will appear too bright or dark, or vice versa. You should be able to distinguish the 8 shades in each of the two images below:</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_shadow_8step.png" width="208" height="80" alt="Monitor Calibration - Shadow Detail"/>
+<span class="caption">Shadow Detail</span>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_highlight_8step.png" width="208" height="80" alt="Monitor Calibration - Highlight Detail"/>
+<span class="caption">Highlight Detail</span>
+</div></div>
+</div>
+<p>The two adjacent shaded bands at each outer edge of this page should be <em>just barely</em> distinguishable. Otherwise you've likely reached the limit of what brightness/contrast adjustments alone can achieve. Alternatively, if maximal shadow and highlight detail are more important than mid-tone lightness, you can ignore the mid-tone image. In that case, first use brightness to control shadow detail and then use contrast to control highlight detail (in that order). When brightness is too high, solid black will appear gray, but when it's too low shadow clipping will make several of the darker 8 shades appear the same.</p>
+<p>However, the above examples are just crude adjustments that only address small portions of the tonal range, and do not fix colors at all. There are somewhat more accurate methods out there for visual calibration, but ultimately, achieving truly accurate results requires systematic and objective measurements using a calibration device...</p>
+<h2>OVERVIEW: CALIBRATION &amp; PROFILING</h2>
+<p>The colors and shades that a monitor reproduces vary with the monitor's type, brand, settings and even age. Unfortunately, unlike in the digital world, all numbers aren't created equal when it comes to monitors. A digital green value may therefore appear darker, lighter or with a different saturation than this color was intended to be seen:</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<th>Digital Value<br/>of Green</th>
+<td class="bg"></td>
+<th>Monitor<br/>&quot;X&quot;</th>
+<th>Standardized<br/>Color</th>
+</tr>
+<tr>
+<td>200</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #00f000;"></td>
+<td style="background: #00f000;"></td>
+</tr>
+<tr>
+<td>150</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #00b400;"></td>
+<td style="background: #009600;"></td>
+</tr>
+<tr>
+<td>100</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #005000;"></td>
+<td style="background: #006400;"></td>
+</tr>
+<tr>
+<td>50</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #001e00;"></td>
+<td style="background: #003200;"></td>
+</tr>
+<tr class="bg">
+<td colspan="2">&nbsp;</td>
+<td colspan="2"><span class="arrowsm">&larr;</span> Color Mismatch <span class="arrowsm">&rarr;</span></td>
+</tr>
+</table>
+</div>
+<p class="note">note: for the purposes of this example, &quot;standardized color&quot; is just one example of a desirable state that is well-defined in terms of universal parameters, such as gamma, white point and luminance.</p>
+<br/>
+<p>Ideally, you would get your monitor to simply translate the digital values in a file into a standardized set of colors. However, this isn't always possible, so the process of monitor calibration actually requires two steps: (1) calibration and (2) profiling.</p>
+<p><strong>(1) Calibration</strong> is the process of getting your monitor into a desirable and well-defined state. This usually involves changing various physical parameters on your monitor, such as brightness from before, in addition to creating what is called a Look-Up Table (LUT).</p>
+<p>The LUT takes an input value, such as green=50 in the above example, and then says &quot;on 'Monitor X,' I know that it reproduces green=50 darker than the standard, but if I convert the 50 into a 78 before sending it to the monitor, then the color will come out how a green=50 was intended to be seen.&quot; An LUT therefore translates digital values in a file into new values which effectively compensate for that particular monitor's characteristics:</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<th>Digital Value<br/>of Green</th>
+<th class="bg">LUT</th>
+<th>Compensated<br/>Digital Values</th>
+<td class="bg"></td>
+<th>Monitor<br/>&quot;X&quot;</th>
+<th>Standardized<br/>Color</th>
+</tr>
+<tr>
+<td>200</td>
+<td><span class="arrow">&rarr;</span></td>
+<td>200</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #00f000;"></td>
+<td style="background: #00f000;"></td>
+</tr>
+<tr>
+<td>150</td>
+<td><span class="arrow">&rarr;</span></td>
+<td>122</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #009600;"></td>
+<td style="background: #009600;"></td>
+</tr>
+<tr>
+<td>100</td>
+<td><span class="arrow">&rarr;</span></td>
+<td>113</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #006400;"></td>
+<td style="background: #006400;"></td>
+</tr>
+<tr>
+<td>50</td>
+<td><span class="arrow">&rarr;</span></td>
+<td>78</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #003200;"></td>
+<td style="background: #003200;"></td>
+</tr>
+<tr class="bg">
+<td colspan="4"></td>
+<td colspan="2"><span class="arrowsm">&larr;</span> Colors Match <span class="arrowsm">&rarr;</span></td>
+</tr>
+</table>
+</div>
+<p><strong>(2) Profiling</strong> is the process of characterizing your monitor's calibrated state using a color profile. These characteristics include the range of colors your monitor is capable of displaying (the &quot;<a href="color-spaces.htm">color space</a>&quot;), in addition to the spacing of intermediate shades within this range (&quot;gamma&quot;). Other properties may also be included.</p>
+<p>Profiling is important because different devices cannot necessarily reproduce the same range of colors and shades (a &quot;gamut mismatch&quot;). A perfect translation from one device's color into another's therefore isn't always possible. Color profiles enable color-managed software to make intelligent compromises when making these imperfect conversions:</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<td>Original<br/>Image</td>
+<th>Standard<br/>&quot;A&quot;</th>
+<td rowspan="5" width="90" class="bg">Color-Managed<br/>Software<br/><span class="arrowbg">&rarr;</span></td>
+<th>Standard<br/>&quot;B&quot;</th>
+<td>Converted<br/>Image</td>
+</tr>
+<tr>
+<td rowspan="4" class="bg"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_standard-a.png" alt="" width="56" height="56"></td>
+<td style="background: #00f000;">&nbsp;</td>
+<td style="background: #009600;"></td>
+<td rowspan="4" class="bg"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_standard-b.png" alt="" width="56" height="56"></td>
+</tr>
+<tr>
+<td style="background: #009600;">&nbsp;</td>
+<td style="background: #007800;"></td>
+</tr>
+<tr>
+<td style="background: #006400;">&nbsp;</td>
+<td style="background: #005000;"></td>
+</tr>
+<tr>
+<td style="background: #003200;">&nbsp;</td>
+<td style="background: #003200;"></td>
+</tr>
+<tr>
+<td colspan="5" class="bg"><span class="arrowsm">&larr;</span> Gamut Mismatch <span class="arrowsm">&rarr;</span></td>
+</tr>
+<tr class="bg">
+<td colspan="2">Wide Color Gamut</td>
+<td>&nbsp;</td>
+<td colspan="2">Narrow Color Gamut</td>
+</tr>
+</table>
+</div>
+<p class="note">In the above example, Standard &quot;A&quot; has a greater range of greens than Standard &quot;B,&quot; so the colors in the original image get squeezed from a wide range of intensities to a narrow range.<br/>For details on how color spaces are converted, also see tutorial on "<a href="color-space-conversion.htm">color space conversion</a>."</p>
+<h2>MONITOR CALIBRATION DEVICES</h2>
+<div class="left">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_calibration-device.jpg" width="175" height="150" alt="calibration device">
+<p class="note">calibration device in-use</p>
+</div>
+<p>A monitor calibration device is what performs the task of both calibration and profiling. It is usually something that looks like a computer mouse, but it instead fastens to the front of your monitor. Special software then controls the monitor so that it displays a broad range of colors and shades underneath the calibration device, which are each sequentially measured and recorded.</p>
+<p>Common calibration devices include the X-Rite Eye-One Display, ColorVision Spyder, ColorEyes Display and ColorMunki Photo, amongst others.</p>
+<p>Before initiating a calibration, first make sure to give your monitor at least 10-15 minutes to warm up. This ensures that its brightness and color balance have reached a steady and reproducible state.</p>
+<p>Just before the calibration starts, your calibration software will ask you to specify several parameters that it will calibrate to (the &quot;target settings&quot;). These may include the white point, gamma and luminance (we'll get to these in the next section). During the calibration process you may also be instructed to change various display settings, including brightness and contrast (and RGB values if you have a CRT).</p>
+<p>The result will be a matrix of color values and their corresponding measurements. Sophisticated software algorithms then attempt to create an LUT which both (i) reproduces neutral, accurate and properly-spaced shades of gray and (ii) reproduces accurate <a href="color-perception.htm">color hue and saturation</a> across the gamut. If neither are perfectly achievable (they never are), then the software tries to prioritize so that inaccuracies only correspond to tonal and color differences that our eyes are not good at perceiving.</p>
+<h2>CALIBRATION SETTINGS</h2>
+<p>Here's a brief description and recommendation for each of the target calibration settings:</p>
+<p><strong>White Point</strong>. This setting controls the relative warmth or coolness the display's lightest tone, as specified by the &quot;color temperature.&quot; Higher color temperatures appear cooler, whereas lower temperatures appear warmer (yes, this is at first counter-intuitive).</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<td style="background: #e2e1d8;">&nbsp;<br/>&nbsp;</td>
+<td style="background: #ddd;"></td>
+<td style="background: #dadae2;"></td>
+</tr>
+<tr>
+<td>Warmer Color<br/>Temperature</td>
+<td>Your Monitor's Native<br/>Color Temperature</td>
+<td>Cooler Color<br/>Temperature</td>
+</tr>
+</table>
+</div>
+<p class="note">Even though the above shades appear slightly warmer and cooler, that's primarily because they're being compared side by side. If they were on their own, and were the brightest shade your display could show, then your eye would adjust and you would likely call each of them &quot;white.&quot;<br/>See the <a href="white-balance.htm">tutorial on white balance</a> for additional background reading on this topic. </p>
+<p>With CRT monitors, the standard recommendation is to set your display to around 6500K (aka D65), which is a little cooler than daylight. However, with LCD monitors it's become a bit more complicated. While many LCD's have a color temperature option, the back light for these displays always has a native color temperature. Any deviation from this native value will end up reducing your display's color gamut. For this reason, it's generally recommended to leave your LCD at its default color temperature unless you have a good reason to set it otherwise. Your eye will adjust to this native color temperature, and no warm or cool hue will be apparent unless it is being directly compared.</p>
+<a name="display-gamma"></a>
+<p><strong>Display Gamma</strong>. This setting controls the rate at which shades appear to increase from black to white (for each successive digital value). This makes a given image appear brighter and darker for lower and higher gamma values, respectively, but does not change the black and white points. It strongly influences an image's apparent contrast:</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Gamma 1.0" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gamma10b.jpg" width="100" height="140" alt="Gamma 1.0"/></div></div>
+<div><div><img loading="lazy" title="Gamma 1.8" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gamma18b.jpg" width="100" height="140" alt="Gamma 1.8"/></div></div>
+<div><div><img loading="lazy" title="Gamma 2.2" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gamma22b.jpg" width="100" height="140" alt="Gamma 2.2"/></div></div>
+<div><div><img loading="lazy" title="Gamma 4.0" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gamma40b.jpg" width="100" height="140" alt="Gamma 4.0"/></div></div>
+</div>
+<p class="note">Note: The above images assume that your display is currently set to gamma 2.2.<br/>Older mac computers at one time used gamma values of 1.8, but they now also use gamma 2.2.</p>
+<p>A <a href="gamma-correction.htm#display-gamma">display gamma</a> of 2.2 has become a standard for image editing and viewing, so it's generally recommended to use this setting. It also correlates best with how we perceive brightness variations, and is usually close to your display's native setting.</p>
+<p><strong>Luminance</strong>. This setting controls the amount of light emitted from your display.</p>
+<div class="left">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_shadow_8step.png" width="208" height="80" alt="Monitor Calibration - Shadow Detail" title="Shadow Detail">
+</div>
+<p>Unlike with the white point and gamma settings, the optimal luminance setting is heavily influenced by the brightness of your working environment. Most people set the luminance to anywhere from 100-150 Cd/m<sup>2</sup>, with brighter working environments potentially requiring values that exceed this range. The maximum attainable luminance will depend on your monitor type and age, so this may ultimately limit how bright your working environment can be.</p>
+<p>However, higher luminance will shorten the usable life span of your monitor, so it's always better to instead move your monitor to somewhere darker if you can. Use the lowest setting in the 100-150 range where you can still see all 8 shades in the above image.</p>
+<a name="look-up-tables"></a>
+<h2>CALIBRATION: LOOK-UP TABLES</h2>
+<p>The Look-Up Table (LUT) is either controlled by your video card or by your monitor itself, so it will be used regardless of whether your software program is color managed &#8212; unlike with the color profile. The LUT is usually loaded immediately after booting up into your operating system, and is used identically regardless of what your monitor is displaying.</p>
+<p>Whenever the red, green and blue values are equal, an accurate monitor should display this as a neutral gray. However, you'd be surprised how often this isn't the case (see below). The job of the LUT* is to maintain neutral gray tones with the correct gamma.</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<td><strong>R,G,B Input<br/>Values </strong></td>
+<td class="bg"></td>
+<th>Monitor<br/>&quot;X&quot;</th>
+<th>Neutral<br/>Gray</th>
+</tr>
+<tr>
+<td>200,200,200</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #d0c8d0;"></td>
+<td style="background: #c8c8c8;"></td>
+</tr>
+<tr>
+<td>159,159,159</td>
+<td width="60"><span class="arrow">&rarr;</span></td>
+<td width="60" style="background: #ada49c;"></td>
+<td style="background: #9f9f9f;"></td>
+</tr>
+<tr>
+<td>100,100,100</td>
+<td width="60"><span class="arrow">&rarr;</span></td>
+<td width="60" style="background: #666266;"></td>
+<td style="background: #646464;"></td>
+</tr>
+<tr>
+<td>50,50,50</td>
+<td><span class="arrow">&rarr;</span></td>
+<td style="background: #343036;"></td>
+<td style="background: #323232;"></td>
+</tr>
+<tr class="bg">
+<td colspan="2">&nbsp;</td>
+<td colspan="2"><span class="arrowsm">&larr;</span> Mismatch <span class="arrowsm">&rarr;</span></td>
+</tr>
+</table>
+</div>
+<p class="note">*Note: this example is for a simpler 1D 8-bit LUT, as is most commonly used with CRT monitors.</p>
+<p>A sample LUT that corrects Monitor &quot;X&quot; is shown below. It effectively applies a separate <a href="photoshop-curves.htm">tonal curve</a> to each of your monitor's three color channels:</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="No Adjustment" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_lut1.png" width="178" height="172" alt="1D look-up table (LUT)"/></div></div>
+<div><span class="arrowbg">&rarr;</span></div>
+<div><div><img loading="lazy" title="Look-Up Table (LUT)" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_lut2.png" width="178" height="172" alt="1D look-up table (LUT)"/></div></div>
+</div>
+<p class="note">Note: The table shown above is an 8-bit 1D LUT; there's also more complicated 3D LUT's which do not treat each color independently. However, the basic concept remains the same.</p>
+<p>Without the above LUT, your video card sends an input color value of 159 (from a digital file) directly to your monitor as an output value of 159 (no matter what the color is). With the LUT, the video card looks up each red, green and blue value using the tonal curves. An input value of R,G,B=159,159,159 gets sent to your monitor as an output value of 145,155,162 (which is now perceived as neutral gray). Also, note how greater color corrections correspond to color curves which diverge more from a straight diagonal.</p>
+<p>There's often several LUT's along the imaging chain &#8212; not just with the video card. The other LUT that is most relevant to monitor calibration is your monitor's <em>internal</em> LUT (as discussed later). If your monitor supports modifying its own LUT (few do), this will usually achieve more accurate calibrations than using your video card's LUT. However, unless the calibration software is designed for your particular monitor, it will likely end up using your video card's LUT instead.</p>
+<h2>PROFILING: COLOR PROFILE</h2>
+<p>The color profile specifies the target settings from your calibration, such as gamma, white point and luminance, in addition to measurements from the calibration, such as the maximum red, green and blue intensities that your display can emit. These properties collectively define the <a href="color-spaces.htm">color space</a> of your monitor. A copy of the LUT is also included, but this is not used directly since it's already been implemented by your monitor or video card.</p>
+<p>A color profile is used to convert images so that they can be displayed using the unique characteristics of your monitor. <strong>Unlike with the LUT, you will need to view images using color-managed software in order to use a color profile</strong>. This won't be a problem if you're running the latest PC or Mac operating systems though, since they're both color-managed. Otherwise Photoshop or any other mainstream image editing or RAW development software will work just fine.</p>
+<p>Whenever a digital image is opened that contains an embedded color profile, your software can compare this profile to the profile that was created for your monitor. If the monitor has the same range of colors specified in the digital image, then values from the file will be directly converted by the LUT into the correct values on your monitor. However, if the color spaces differ (as is usually the case), then your software will perform a more sophisticated conversion. This process is called <a href="color-space-conversion.htm">color space conversion</a>.</p>
+<h2>TESTING YOUR MONITOR CALIBRATION</h2>
+<p>Do not assume that just because you've performed a color calibration that this monitor will now reproduce accurate color without complication. It's important to also verify the quality of this calibration. If you end up noticing that your color calibration device was unable to repair some inaccuracies, at least you can be aware of these in the back of your mind if you perform any image editing that influences color.</p>
+<p>The quickest and easiest way to diagnose the quality of a color calibration is to view a large grayscale gradient in an image viewing program that supports color management. Sub optimal monitor calibration may render this gradation with subtle vertical bands of color, or occasional discrete jumps in tone. <em>Move your mouse over the image below to see what a poor quality monitor calibration might look like</em>:</p>
+<div class="center">
+<span onmouseover="i0b.src='https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gradation2.jpg';" onmouseout="i0b.src='https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gradation1.jpg';"><img loading="lazy" name="i0b" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gradation1.jpg" alt="smooth grayscale gradient" width="550" height="40"></span>
+</div>
+<p class="note">Example of a smooth grayscale gradation for diagnosing the quality of a monitor calibration.<br/>Such a gradation is easiest to diagnose when viewed at your display's maximum size, and when alternating between having the monitor's color profile turned on and off. In Photoshop, this is achieved by using &quot;Proof Colors&quot; set to &quot;Monitor RGB&quot;; CTRL+Y toggles the monitor profile on and off. When &quot;Monitor RGB&quot; is turned on, this means that the monitor's color profile is <em>not</em> being used.</p>
+<p>If color banding is visible, then this might mean that your monitor needs re-calibration. It's generally recommended to perform this once every month or so, depending on how important color accuracy is to your work.</p>
+<p>Alternatively, your monitor's native color reproduction might be so far from optimal that the color profile represents an extreme correction. This could be due to the monitor calibration settings you're using, but could also be caused by the age of the monitor. In the latter case, a color profile is likely still a vast improvement over no color profile &#8212; but it comes with compromises.</p>
+<h2>LIMITATIONS OF MONITOR CALIBRATION</h2>
+<p>Unfortunately, there are limits to how accurately you can calibrate your display. With a digital display, <strong>the more you have to change your monitor from its native state, the more you will decrease the number of colors/shades that it can display</strong>. Fortunately, the bit depth of your monitor's internal LUT can influence how well it is calibrated, since a monitor with a <a href="bit-depth.htm">higher bit depth</a> LUT is able to draw upon a larger palette of colors: </p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_lut3.png" width="130" height="130" alt="1D look-up table (LUT)"/>
+<span class="caption"><strong>No Adjustment</strong><br/>(4 output shades)</span></div></div>
+<div><span class="arrowbg">&rarr;</span></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_lut4.png" width="130" height="130" alt="1D look-up table (LUT)"/>
+<span class="caption"><strong>Low Bit Depth LUT</strong><br/>(2 output shades)</span></div></div>
+<div><span>OR</span></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_lut5.png" width="130" height="130" alt="1D look-up table (LUT)"/>
+<span class="caption"><strong>High Bit Depth LUT</strong><br/>(4 output shades)</span></div></div>
+</div>
+<p class="note">Note: A higher bit depth internal LUT does not mean that a monitor can actually display more colors <em>at the same time</em>, since the number of input values remains the same. This is why a higher bit depth LUT in your video card will not on its own achieve more accurate calibrations.</p>
+<p>In the low bit depth example, the brightest (4) and darkest (1) shades are forced to merge with white (5) and black (0), respectively, since the LUT has to round to the nearest output value available. On the other hand, the high bit depth LUT can use additional intermediate values. This greatly reduces the likelihood of color banding and <a href="posterization.htm">image posterization</a> &#8212; even when the display is old and deviates substantially from its original colors.</p>
+<p>If you have a new accurate display with an 8-bit LUT, then you'll likely get good calibrations; the LUT bit depth is just something to be aware of as your monitor ages. The vast majority of displays have an 8-bit LUT, although some have 6-bit or 10+ bit LUT's. Avoid LCD monitors that are marketed to the gaming community, because these sometimes sacrifice the bit depth of their LUT (or other aspects) in exchange for higher refresh rates &#8212; which are of no importance to viewing still images.</p>
+<h2>FURTHER READING</h2>
+<p>Despite all of this work with profiling and calibration, it still doesn't guarantee that prints will look as intended or expected. For more on this topic, also take a look at the tutorial on <a href="soft-proofing.htm">Soft Proofing: Matching On-Screen Photos with Prints</a>.</p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/moncalib_gradation2.jpg">
+</div>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1355353451"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/monitor-calibration.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/monitor-calibration.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

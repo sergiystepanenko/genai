@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>High Dynamic Range (HDR) Photography in Photoshop</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/high-dynamic-range.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/high-dynamic-range.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/high-dynamic-range.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-142 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>HIGH DYNAMIC RANGE PHOTOGRAPHY</h1>
+<p>High dynamic range (HDR) images enable photographers to record a greater range of tonal detail than a camera could capture in a single photo. This opens up a whole new set of lighting possibilities which one might have previously avoided &#8212; for purely technical reasons. The new &quot;merge to HDR&quot; feature of Photoshop accomplishes this by combining a series of bracketed exposures into a single image, which encompasses the tonal detail of the entire series.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-1400934785"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Single Photo without HDR" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_intro2.jpg" alt="example ordinary low dynamic range photo" width="200" height="133"/></div></div>
+<span class="arrowbg">&rarr;</span>
+<div><div><img loading="lazy" title="After High Dynamic Range Technique" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_intro1b.jpg" alt="example photo after hdr technique" width="300" height="200"/></div></div>
+</div>
+<p class="note">Image above courtesy of <a href="http://www.kylekruchok.org" target="_blank">Kyle Kruchock</a> (albeit in a heavily modified form).</p>
+<p>There is no free lunch however; trying to broaden the tonal range will inevitably come at the expense of decreased contrast in some tones. Learning to use HDR software can help you make the most of your <a href="dynamic-range.htm">dynamic range</a> under tricky lighting &#8212; while still balancing this trade-off with contrast.</p>
+<h2>MOTIVATION: THE DYNAMIC RANGE DILEMMA</h2>
+<p>As digital sensors attain progressively higher resolutions, and thereby successively smaller pixel sizes, the one quality of an image which does not benefit is its dynamic range. This is particularly apparent in modern compact cameras with 8 or more megapixels, as these are more susceptible than ever to blown highlights or noisy shadow detail. Furthermore, some scenes simply contain a greater brightness range than can be captured by current digital cameras &#8212; of any type.</p>
+<p>The &quot;bright side&quot; is that nearly any camera can actually capture a vast dynamic range &#8212; just not in a single photo. By varying the shutter speed alone, most digital cameras can change how much light they let in by a factor of 50,000 or more. High dynamic range imaging utilizes this characteristic by creating images composed of multiple exposures.</p>
+<h2>WHEN TO USE HDR IMAGES</h2>
+<p>Only use HDR when the scene's brightness distribution cannot be easily blended using a <a href="graduated-neutral-density-filters.htm">graduated neutral density (GND) filter</a>. This is because GND filters extend dynamic range while still maintaining local contrast. Scenes which are ideally suited for GND filters are those with simple lighting geometries, such as the linear blend from darker land to a brighter sky in landscape photography:</p>
+<div class="center">
+<table class="t1" width="302">
+<tr>
+<td>
+<div class="bot">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/new_dynamic-range_ex2a.jpg" width="149" height="228">
+</div>
+<div class="top" style="margin-top: -228px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/new_dynamic-range_ex2a-top.png" width="149" height="228">
+</div>
+</td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/new_dynamic-range_ex2b.jpg" width="149" height="228"></td>
+</tr>
+<tr>
+<td>GND Filter</td>
+<td>Final Result</td>
+</tr>
+</table>
+</div>
+<p>In contrast, a scene whose brightness distribution is no longer easily blended using a GND filter is the doorway scene shown below.</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Brightness Distribution" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_door-brightdist.jpg" width="149" height="271"/></div></div>
+<div><div><img loading="lazy" title="Underexposure" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_door-lowexp.jpg" width="149" height="271"/></div></div>
+<div><div><img loading="lazy" title="Overexposure" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_door-hiexp.jpg" width="149" height="271"/></div></div>
+</div>
+<p>Note that the above scene contains roughly three tonal regions with abrupt transitions at their edges &#8212; therefore requiring a custom-made GND filter. If we were to look at this in person, we would be able to discern detail both inside and outside the doorway, because our eyes would adjust to changing brightness. This tutorial focuses on using HDR to better <i>approximate</i> what we would see with our own eyes.</p>
+<h2>INNER WORKINGS OF AN HDR FILE</h2>
+<p>Photoshop creates an HDR file by using the EXIF information from each of your bracketed images to determine their shutter speed, aperture and ISO settings. This tells Photoshop how much light actually came from each image region. Since this light may vary greatly in its intensity, Photoshop creates the HDR file using 32-bits to describe each color channel (as opposed to the usual 16 or 8-bits; see &quot;<a href="bit-depth.htm">Understanding Bit Depth</a>&quot;).</p>
+<p>HDR files use these extra bits to create a relatively open-ended brightness scale, which can adjust to fit the needs of your image. However, the key benefit is that these extra bits are also used more efficiently than typical 8 or 16-bit images (which we'll refer to as &quot;low dynamic range&quot; or LDR images from here on out).</p>
+<p><strong>The 32-bit HDR file format is able to record a greater dynamic range because it uses its bits to specify floating point numbers</strong>, also referred to as exponential notation. A floating point number is composed of a decimal number between 1 and 10 multiplied by some power of 10, such as 5.467x10<sup>3</sup>, as opposed to the usual integers of 0-255 (for 8-bit) or 0-65535 (for 16-bit). This way, an image file can specify a brightness of 4,300,000,000 simply as 4.3<i>x</i>10<sup>9</sup>, which would be too large even with 32-bit integers.</p>
+<p>OK, the floating point notation certainly looks more concise, but how does this help a computer? Why not just keep adding more bits to specify successively larger numbers, and therefore a larger dynamic range? It's a problem of diminishing returns. As more bits are added to ordinary LDR files, an exponentially greater fraction are just used to specify color more precisely &#8212; not to extend dynamic range. This results in far more bits being used to describe the darker tones than the lighter ones:</p>
+<div class="center">
+<table class="t1 bg" width="485">
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_bits2.jpg" width="485" height="33"></td>
+</tr>
+<tr>
+<td>Actual Brightness* <span class="arrowsm">&rarr;</span></td>
+</tr>
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_bits1c.png" width="485" height="121"></td>
+</tr>
+<tr>
+<td>LDR Bits Become Progressively More Sparsely Spaced <span class="arrowsm">&rarr;</span></td>
+</tr>
+</table>
+<p class="note">*As measured by a digital camera. See the <a href="gamma-correction.htm">tutorial on gamma correction</a> for more on this topic. Above representation is qualitative. The more closely spaced bits for darker values is a result of gamma-encoding. This is of great benefit with ordinary images and can even help increase dynamic range, but becomes progressively more inefficient as the bit depth increases.</p>
+</div>
+<p>HDR files get around this LDR dilemma by using tonal values which are proportional to the actual brightness of the subject matter. This causes bits to be equally spaced throughout the dynamic range &#8212; allowing for greater bit efficiency. Floating point numbers also ensure that all tones are recorded with the same relative precision, since numbers such as 2.576x10<sup>3</sup> and 8.924x10<sup>9</sup> each have the same number of significant figures (four), even though the second number is more than a million times larger.</p>
+<p class="notebox">Note: just as how using high <a href="bit-depth.htm">bit depth</a> images don't necessarily mean your image contains more color, an HDR file does not guarantee greater dynamic range unless this is also present in the actual subject matter.</p>
+<p>All of these extra bits provided by the HDR format are great, and effectively allow for a nearly infinite brightness range to be recorded. However, your computer display and prints can only show a fixed, narrowrange. This tutorial therefore not only focuses on creating 32-bit HDR files, but also on converting these into images which can be displayed on your computer, or will look great as a photographic print. This conversion step is commonly referred to as "<strong>tonal mapping</strong>."</p>
+<h2>IN-FIELD PREPARATION</h2>
+<p>Since creating an HDR image requires capturing a series of identically-positioned exposures, a sturdy tripod is essential. Photoshop has a feature which attempts to align the images when the camera may have moved between shots, however best results are achieved when this is not relied upon.</p>
+<p>Make sure to take <strong>at least three exposures</strong>, although five or more is recommended for optimum accuracy. More exposures allow the HDR algorithm to better approximate how your camera translates light into digital values (a.k.a. the digital sensor's response curve) &#8212; creating a more even tonal distribution. The doorway example is best-suited with several intermediate exposures, in addition to the two shown previously.</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Reference" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_image1.jpg" width="120" height="219"/></div></div>
+<div><div><img loading="lazy" title="-1 Stops" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_image2.jpg" width="120" height="219"/></div></div>
+<div><div><img loading="lazy" title="-2 Stops" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_image3.jpg" width="120" height="219"/></div></div>
+<div><div><img loading="lazy" title="-3 Stops" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_image4.jpg" width="120" height="219"/></div></div>
+</div>
+<p>It is essential that the darkest of these exposures includes no blown highlights in areas where you want to capture detail. The brightest exposure should show the darkest regions of the image with enough brightness that they are relatively noise-free and clearly visible. Each exposure should be separated by one to two stops, and these are ideally set by varying the shutter speed (as opposed to aperture or ISO speed). Recall that each &quot;stop&quot; refers to a doubling (+1 stop) or halving (-1 stop) of the captured light.</p>
+<p>We also note another disadvantage of HDR images: they require relatively static subject matter, due to the necessity of several separate exposures. Our previous ocean sunset example would therefore not be well-suited for the HDR technique, as the waves would have moved significantly between each exposure.</p>
+<h2>CREATING A 32-BIT HDR FILE IN PHOTOSHOP</h2>
+<p>Here we use Adobe Photoshop to convert the sequence of exposures into a single image, which uses tonal mapping to approximate what we would see with our eye. First, we need to combine all exposures into a single 32-bit HDR file:</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_photoshop1.png" width="300" height="165"></p>
+<p>Open the HDR tool (File&gt;Automate&gt;Merge to HDR...), and load all photographs in the exposure sequence; for this example it would be the four images shown in the previous section. If your images were not taken on a stable tripod, this step may require checking &quot;Attempt to Automatically Align Source Images&quot; (which greatly increases processing time). After pressing OK,&nbsp;you will soon see a &quot;Computing Camera Response Curves&quot; message.</p>
+<p style="text-align: center;"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_photoshop2.png" width="400" height="214"></p>
+<p>Once your computer has stopped processing, it will show a window with their combined histogram. Photoshop has estimated the white point, but this value often clips the highlights. You may wish to move the white point slider to the rightmost edge of the histogram peaks in order to see all highlight detail. This value is for preview purposes only and will require setting more precisely later. After pressing OK, this leaves you with a 32-bit HDR image, which can now be saved if required. Note how the image may still appear quite dark; only once it has been converted into a 16 or 8-bit image (using tonal mapping) will it begin to look more like the desired result.</span></p>
+<p>At this stage, very few image processing functions can be applied to a 32-bit HDR file, so it is of little use other than for archival purposes. One function which is available is exposure adjustment (Image&gt;Adjustments&gt;Exposure). You may want to try adjusting the exposure to have this reveal any hidden highlight or shadow detail.</p>
+<h2>USING HDR TONAL MAPPING IN PHOTOSHOP</h2>
+<p>Here we use Adobe Photoshop to convert the 32-bit HDR image into a 16 or 8-bit LDR file using tonal mapping. This requires interpretive decisions about the type of tonal mapping, depending on the subject matter and brightness distribution within the photograph.</p>
+<p>Convert into a regular 16-bit image (Image&gt;Mode&gt;16 Bits/Channel...) and you will see the HDR Conversion tool. The tonal mapping method use one of four methods:</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<th width="25%">Exposure and Gamma</th>
+<td class="left">This method lets you manually adjust the exposure and gamma, which serve as the equivalent to brightness and contrast adjustment, respectively.</td>
+</tr>
+<tr>
+<th>Highlight Compression</th>
+<td class="left">This method has no options and applies a custom <a href="photoshop-curves.htm">tonal curve</a>, which greatly reduces highlight contrast in order to brighten and restore contrast in the rest of the image.</td>
+</tr>
+<tr>
+<th>Equalize Histogram</th>
+<td class="left">This method attempts to redistribute the HDR histogram into the contrast range of a normal 16 or 8-bit image. This uses a custom <a href="photoshop-curves.htm">tonal curve</a> which spreads out histogram peaks so that the histogram becomes more homogenous. It generally works best for image histograms which have several relatively narrow peaks with no pixels in between.</td>
+</tr>
+<tr>
+<th>Local Adaptation</th>
+<td class="left">This is the most flexible method and probably the one which is of most use to photographers. Unlike the other three methods, this one changes how much it brightens or darkens regions on a per-pixel basis (similar to <a href="local-contrast-enhancement.htm">local contrast enhancement</a>). This has the effect of tricking the eye into thinking that the image has more contrast, which is often critical in contrast-deprived HDR images. This method also allows changing the tonal curve to better suit the image.</td>
+</tr>
+</table>
+</div>
+<p>Before using any of the above methods, one may first wish to set the black and white points on the image histogram sliders (see &quot;<a href="levels.htm">Using Levels in Photoshop</a>&quot; for a background on this concept). Click on the double arrow next to &quot;Toning Curve and Histogram&quot; to show the image histogram and sliders.</p>
+<p>The remainder of this tutorial focuses on settings related to the &quot;local adaptation&quot; method, as this is likely the most-used, and provides the greatest degree of flexibility.</p>
+<h2>CONCEPT: TONAL HIERARCHY &amp; IMAGE CONTRAST</h2>
+<p>In contrast to the other three conversion methods, the local adaptation method does not necessarily retain the overall hierarchy of tones. It translates pixel intensities not just with a single tonal curve, but instead also based on the surrounding pixel values. This means that unlike using a tonal curve, tones on the histogram are not just stretched and compressed, but may instead cross positions. Visually, this would mean that some part of the subject matter which was initially darker than some other part could later acquire the same brightness or become lighter than that other part &#8212; if even by a small amount.</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Underexposed Photo" src="https://cdn.cambridgeincolour.com/images/tutorials/new_dynamic-range_ex1a.jpg" width="149" height="228"/></div></div>
+<div><div><img loading="lazy" title="Overexposed Photo" src="https://cdn.cambridgeincolour.com/images/tutorials/new_dynamic-range_ex1b.jpg" width="149" height="228"/></div></div>
+<div><div><img loading="lazy" title="Final Composite" src="https://cdn.cambridgeincolour.com/images/tutorials/new_dynamic-range_ex2b.jpg" width="149" height="228"/></div></div>
+</div>
+<p>In the above example, even though the foreground sea foam and rock reflections are actually darker than the distant ocean surface, the final image renders the distant ocean as being darker. <strong>The key concept here is that over larger image regions our eyes adjust to changing brightness (such as looking up at a bright sky), while over smaller distances our eyes do not</strong>. Mimicking this characteristic of vision can be thought of as a goal of the local adaptive method &#8212; particularly for brightness distributions which are more complex than the simple vertical blend in the ocean sunset above.</p>
+<p>An example of a more complex brightness distribution is shown below for three statue images. We refer to contrast over larger image distances as global contrast, whereas contrast changes over smaller image distances are termed local contrast. The local adaptation method attempts to maintain local contrast, while decreasing global contrast (similar to that performed with the ocean sunset example).</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_face-both.png" width="90" height="147"/>
+<span class="caption">Original Image<br/><br/></span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_face-higlobal.png" width="90" height="147"/>
+<span class="caption">High Global Contrast<br/>Low Local Contrast</span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_face-hilocal.png" width="90" height="147"/>
+<span class="caption">Low Global Contrast<br/>High Local Contrast</span>
+</div></div>
+</div>
+<p>The above example illustrates visually how local and global contrast impact an image. Note how the large-scale (global) patches of light and dark are exaggerated for the case of high global contrast. Conversely, for the case of low global contrast the front of the statue's face is virtually the same brightness as it's side.</p>
+<p>The original image looks fine since all tonal regions are clearly visible, and shown with sufficient contrast to give it a three-dimensional appearance. Now imagine that we started with the middle image, which would be an ideal candidate for HDR conversion. Tonal mapping using local adaptation would likely produce an image similar to the far right image (although perhaps not as exaggerated), since it retains local contrast while still decreasing global contrast (thereby retaining texture in the darkest and lightest regions).</p>
+<h2>HDR CONVERSION USING LOCAL ADAPTATION</h2>
+<p>The distance which distinguishes between local and global contrast is set using the radius value. Radius and threshold are similar to the settings for an <a href="unsharp-mask.htm">unsharp mask</a> used for <a href="local-contrast-enhancement.htm">local contrast enhancement</a>. A high threshold improves local contrast, but also risks inducing halo artifacts, whereas too low of a radius can make the image appear washed out. For any given image, it is recommended to adjust each of these to see their effect, since their ideal combination varies depending on image content.</p>
+<p>In addition to the radius and threshold values, images almost always require adjustments to the tonal curve. This technique is identical to that described in the <a href="photoshop-curves.htm">Photoshop curves tutorial</a>, where small and gradual changes in the curve's slope are nearly always ideal. This curve is shown for our doorway example below, yielding the final result.</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_photoshop3.png" width="207" height="271"/>
+<span class="caption">Photoshop CS2+ Tool<br/><br/></span>
+</div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hdr_finalimage.jpg" width="149" height="271"/>
+<span class="caption">Final Result<br/>Using Local Adaptation Method</span>
+</div></div>
+</div>
+<p>HDR images which have been converted into 8 or 16-bit often require touching up in order to improve their color accuracy. Subtle use of levels and saturation can drastically improve problem areas in the image. In general, regions which have increased in contrast (a large slope in the tonal curve) will exhibit an increase in color saturation, whereas the opposite occurs for a decrease in contrast. Changes in saturation may sometimes be desirable when brightening shadows, but in most other instances this should be avoided.</p>
+<p>The main problem with the local adaptation method is that it cannot distinguish between incident and reflected light. As a result, it may unnecessarily darken naturally white textures and brighten darker ones. Be aware of this when choosing the radius and threshold settings so that this effect can be minimized.</p>
+<h2>TIP: USING HDR TO REDUCE SHADOW NOISE</h2>
+<p>Even if your scene does not require more dynamic range, your final photo may still improve from a side benefit: decreased shadow noise. Ever noticed how digital images always have more noise in the shadows than in brighter tones? This is because the <a href="image-noise.htm">image's signal to noise ratio</a> is higher where the image has collected more of a light signal. You can take advantage of this by combining a properly exposed image an overexposed one. Photoshop always uses the most exposed image to represent a given tone &#8212; thereby collecting more light in the shadow detail (but without overexposing).</p>
+<h2>RECOMMENDATIONS</h2>
+<p>Keep in mind that HDR images are very new &#8212; particularly in the field of digital photography. Existing tools are therefore likely to improve significantly; there is not currently an automated process which converts all HDR images into those which look pleasing on screen, or in a print. <strong>Good HDR conversions therefore require significant work and experimentation in order to achieve realistic and pleasing final final images.</strong></p>
+<p>Additionally, incorrectly converted or difficult HDR images may appear washed out after conversion. While re-investigating the conversion settings is recommended as the first corrective step, touch-up with <a href="local-contrast-enhancement.htm">local contrast enhancement</a> may improve results.</p>
+<p>As with all new tools, be careful not to overdo their use. Use care when violating the image's original tonal hierarchy; do not expect deep shadows to become nearly as light as a bright sky. In our doorway example, the sunlit building and sky are the brightest objects, and they stayed that way in our final image. Overdoing the HDR effect can easily cause the image to lose its sense of realism. Furthermore, HDR should only be used when necessary; best results can always be achieved by having good lighting to begin with.</p>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1465988166"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/high-dynamic-range.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/high-dynamic-range.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

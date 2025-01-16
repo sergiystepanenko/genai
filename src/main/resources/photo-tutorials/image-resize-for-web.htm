@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Resizing for the Web and Email</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/image-resize-for-web.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/image-resize-for-web.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/image-resize-for-web.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-151 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>IMAGE RESIZING FOR THE WEB &amp; EMAIL</h1>
+<p>Resizing images for the web and email are perhaps the most common ways to share digital photos. Particularly for web presentation, being able to retain artifact-free sharpness in a downsized image is critical &#8212; yet may prove problematic. Unlike in photo enlargement where jagged edges are a problem, downsizing results in the opposite aliasing artifact: moir&eacute;. The prevalence of moir&eacute; largely depends on the type of interpolator used, although some images are much more susceptible than others. This tutorial compares different approaches of how to resize an image for web and email, and makes recommendations based on their results.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-518034810"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<a name="moire"></a>
+<h2>BACKGROUND: MOIRE ARTIFACTS</h2>
+<p>Moir&eacute; (pronounced &quot;more-ay&quot;) is another type of aliasing artifact, but may instead occur when downsizing an image. This shows up in images with fine textures which are near the resolution limit. These textures surpass the resolution when downsized, so the image may only selectively record them in a repeating pattern:</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moire1.jpg" width="260" height="152">
+<span class="caption">Original Image</span>
+</div></div>
+<div>
+<span class="arrowbg">&rarr;</span>
+</div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moire2.png" width="130" height="76" alt="resized image">
+<span class="caption">Image Downsized to 50%</span>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/moire2b.png" width="260" height="152">
+<span class="caption">Downsized Image Shown at 200%</span>
+</div></div>
+</div>
+<p>Note how this pattern has no physical meaning in the picture because these lines do not correlate with the direction of roof shingles. Images with fine geometric patters are at the highest risk; these include roof tiles, distant brick and woodwork, wire mesh fences, and others.</p>
+<h2>RESIZE-INDUCED SOFTENING</h2>
+<p>In addition to moir&eacute; artifacts, a resized image can also become significantly less sharp. Interpolation algorithms which preserve the best sharpness are more susceptible to moir&eacute;, whereas those which avoid moir&eacute; typically produce a softer result. This is unfortunately an unavoidable trade-off in resizing.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_softex1.png" width="200" height="309">
+<span class="caption">Original Image</span>
+</div></div>
+<div>
+Downsized<br/>90%<br/><br/><span class="arrowbg">&rarr;</span>
+</div>
+<div><div>
+<span onmouseover="img4.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_softex3.jpg'; " onmouseout="img4.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_softex2.jpg'; ">
+<img loading="lazy" name="img4" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_softex2.jpg" width="180" height="278"></span>
+<span class="caption">Softer Resized Image</span>
+</div></div>
+</div>
+<p>One of the best ways to combat this is to apply a follow-up unsharp mask after resizing an image &#8212; even if the original had already been sharpened. Move your mouse over the image above to see how this can regain lost sharpness.</p>
+<h2>INTERPOLATION PERFORMANCE COMPARED</h2>
+<p>As an example: when an image is downsized to 50% of its original size, it is impossible to show detail which previously had a resolution of just a single pixel. If any detail is shown, this is not real and must be an artifact of the interpolator.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-stripes1.png" width="64" height="64">
+<span class="caption">Original Image</span>
+</div></div>
+<div>
+Downsized<br/>50%<br/><br/><span class="arrowbg">&rarr;</span>
+</div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-stripes2.png" width="32" height="32" style="padding: 16px;">
+<span class="caption">Image Averages to Gray</span>
+</div></div>
+</div>
+<p>Using this concept, a test was designed to assess both the maximum resolution and degree or moir&eacute; each interpolator produces upon downsizing. It amplifies these artifacts for a typical scenario: resizing a digital camera image to a more manageable web and email resolution of 25% its original size.</p>
+<p>The test image (below) was designed so that the resolution of stripes progressively increases away from the center of the image. When the image gets downsized, all stripes beyond a certain distance from the center should no longer be resolvable. Interpolators which show detail all the way up to the edge of this resolution limit (dashed red box shown below) preserve maximum detail, whereas interpolators which show detail outside this limit are adding patterns to the image which are not actually there (moir&eacute;).</p>
+<div class="image-row">
+<div>
+<table class="t1 pad left">
+<tr>
+<td id="b1" class="on"><span onmouseover="on('b1'); off('b2'); off('b3'); off('b4'); off('b5'); off('b6'); off('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-NN.png'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but1.png'; ">&nbsp;1. Nearest Neighbor</span></td>
+</tr>
+<tr>
+<td id="b2"><span onmouseover="off('b1'); on('b2'); off('b3'); off('b4'); off('b5'); off('b6'); off('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-bilinear.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but2.png'; ">&nbsp;2. Bilinear</span></td>
+</tr>
+<tr>
+<td id="b3"><span onmouseover="off('b1'); off('b2'); on('b3'); off('b4'); off('b5'); off('b6'); off('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-psbc.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but3.png'; ">&nbsp;3. Bicubic **</span></td>
+</tr>
+<tr>
+<td id="b4"><span onmouseover="off('b1'); off('b2'); off('b3'); on('b4'); off('b5'); off('b6'); off('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-sinc.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but12.png'; ">&nbsp;4. Sinc</span></td>
+</tr>
+<tr>
+<td id="b5"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); on('b5'); off('b6'); off('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-lanczos.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but8.png'; ">&nbsp;5. Lanczos</span></td>
+</tr>
+<tr>
+<td id="b6"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); off('b5'); on('b6'); off('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-psbc-pf.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but3.png'; ">&nbsp;6. Bicubic, 1px pre-blur</span></td>
+</tr>
+<tr>
+<td id="b7"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); off('b5'); off('b6'); on('b7'); off('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-psbc-pfs.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but3.png'; ">&nbsp;7. #6 w/ sharpening</span></td>
+</tr>
+<tr>
+<td id="b8"><span onmouseover="off('b1'); off('b2'); off('b3'); off('b4'); off('b5'); off('b6'); off('b7'); on('b8'); img2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-GF4.jpg'; but2.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_but9.png'; ">&nbsp;8. Genuine Fractals</span></td>
+</tr>
+</table>
+</div>
+<div><div>
+<div style="z-index: 0; clear: both; ">
+<div class="bot">
+<img loading="lazy" name="img2" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-NN.png" width="200" height="200">
+</div>
+<div class="top" style="margin-top: -200px;">
+<img loading="lazy" name="img3" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-resbox.png" width="200" height="200">
+</div>
+</div>
+<span class="caption">
+&nbsp;Show Red Box?&nbsp;&nbsp;&nbsp;<span id="b9" class="on" onmouseover="on('b9'); off('b10'); img3.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-resbox.png'; ">&nbsp;YES</span><span id="b10" onmouseover="off('b9'); on('b10'); img3.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-resbox2.png'; ">&nbsp;NO</span>
+</span>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize.png" width="200" height="200">
+<span class="caption">Test Image*</span>
+</div></div>
+</div>
+<p class="note">*Above test image has been modified for viewing;<br/>actual image is 800x800 pixels and stripes extend to max resolution at that size.<br/>**Bicubic is from the default setting used in Adobe Photoshop CS &amp; CS2<br/>Test chart conceived in a BBC paper and first implemented at www.worldserver.com/turk/opensource/;<br/>all diagrams and custom code above were performed in Matlab for the above use.</p>
+<p>Sinc and lanczos algorithms produce the best results; they are able to resolve detail all the way to the theoretical maximum (red box), while still maintaining the fewest artifacts beyond. Photoshop bicubic comes in second, as it has visible moir&eacute; patterns far outside the box. Furthermore, note how bicubic also does not show as much detail and contrast just inside the red box. 6 &amp; 7 are variants of the bicubic downsize, and are discussed below. Genuine Fractals 4.0 was included for comparison, although it does poorly at downsizing (not its intended use). This highlights a key divide: <strong>some interpolation algorithms are much better at increasing than decreasing image size, and vice versa</strong>.</p>
+<p class="notebox"><strong>Technical Note</strong>: interpolation algorithms vary depending on the software used, even if the algorithm has the same name. Sinc interpolation, for example, has variations which take into account anywhere from 256-1024+ adjacent known pixels. This may or may not be explicitly stated in the software. Furthermore, software may also vary in how much weighting they give to close vs. far known pixels in their calculations, which is often the case with &quot;bicubic.&quot;</p>
+<h2>PRE-BLUR TO MINIMIZE MOIR&Eacute; ARTIFACTS</h2>
+<p>One approach which can improve results in problem images is to apply a little blur to the image *before* you downsize it. This allows you to eliminate any detail smaller than what you know is impossible to capture at a lower resolution. If you do not have a problem with moire artifacts, then there is no need to pre-blur.</p>
+<div class="left">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_psblurwindow.jpg" width="200" height="205">
+</div>
+<p>Since the above image was downsized to 1/4 its original size, any repeating patterns smaller than 4 pixels cannot be resolved. A radius as high as 2 pixels (for a total diameter of 4 pixels) could have been used in #6, however 1 pixel is all that was needed to virtually eliminate artifacts outside the box. Too high of a pre-blur can lead to softening in the final image.</p>
+<p>The pre-blurred photoshop image above (#6) eliminates most of the moir&eacute; (found in #3), however additional sharpening (performed in #7) is required to regain sharpness for detail just inside the red box. After pre-blur and sharpening, photoshop bicubic performs close to the more sophisticalted sinc and lanczos algorithms.</p>
+<h2>PHOTOSHOP BICUBIC SHARPER vs. BICUBIC SMOOTHER</h2>
+<p>Adobe Photoshop versions CS (8.0) and higher actually have three options for bicubic interpolation: bicubic smoother, bicubic (intermediate default), and bicubic sharper. All variations provide similar results to #3 in the interpolation comparison, but with varying degrees of sharpness. Therefore if your image has moir&eacute;, the sharper setting will amplify and the smoother setting will reduce it (relative to default).</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_psvariation1.jpg" width="200" height="325">
+<span class="caption">Original Image</span>
+</div></div>
+<div>
+Downsized<br/>75%<br/><br/><span class="arrowbg">&rarr;</span>
+</div>
+<div><div>
+<img loading="lazy" name="img5" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_psvariation-sm.jpg" width="150" height="244"><br/>
+<table class="t1 pad center">
+<tr class="bg">
+<td colspan="2">Show Bicubic Type:</td>
+</tr>
+<tr>
+<td id="b11" class="on"><span onmouseover="on('b11'); off('b12'); img5.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_psvariation-sm.jpg'; ">Smoother</span></td>
+<td id="b12"><span onmouseover="off('b11'); on('b12'); img5.src='https://cdn.cambridgeincolour.com/images/tutorials/interp2_psvariation-sh.jpg'; ">Sharper</span></td>
+</tr>
+</table>
+</div></div>
+</div>
+<p>Many recommend using the smoother variation for upsizing and the sharper variation for downsizing. This works well, but my preference is to use the standard bicubic for downsizing &#8212; leaving greater flexibility to sharpen afterwards as the image requires. Many find the built-in sharpening in the sharper variation to be a little to strong and coarse for most images, but this is simply a matter of preference.</p>
+<h2>RECOMMENDATIONS</h2>
+<p>All of this analysis is directed at explaining what happens <i>when things go wrong</i>. If resizing is artifact-free, you may not need to change a thing; photographic workflows can become complicated enough as is. Many photos do not have detail which is susceptible to moir&eacute; &#8212; regardless of the interpolation. On the other hand, when things <i>do</i> go wrong this can help explain why &#8212; and what actions you can take to fix it.</p>
+<p><strong>The ideal solution is to use a sinc or lanczos algorithm to avoid moir&eacute; artifacts in the downsized image, then follow-up with a very small radius (0.2-0.3) unsharp mask</strong> to correct for any interpolation-induced softening. On the other hand, the sinc algorithm is not widely supported and software which uses it is often not as user-friendly.</p>
+<p><strong>An alternative approach would be to use bicubic, pre-blur problematic images and then sharpen after downsizing</strong>. This prepares the image for the interpolator in a way which minimizes aliasing artifacts. The main disadvantage to this approach is that the required radius of blur depends on how much you wish to downsize your image &#8212; therefore you have to use this technique on a case-by-case basis.</p>
+<div class="image-row">
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_cg1.png" width="207" height="69">
+<span class="caption">Original Computer Graphic</span>
+</div>
+<div>
+Downsized 50%<br/><br/><span class="arrowbg">&rarr;</span>
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_cg2.png" width="100" height="33" style="padding-top: 36px;">
+<span class="caption">Zero Anti-Aliasing</span>
+</div>
+</div>
+<p>Finally, <strong>you can ensure that you do not induce any <a href="image-interpolation.htm#anti-aliasing">anti-aliasing</a> in computer graphics if you use the nearest neighbor algorithm</strong>. Just be particularly cautious when the image contains fine textures, as this algorithm is the most prone to moir&eacute; artifacts.</p>
+<p style="text-align: center;">For further reading, please visit:<br/><a href="image-interpolation.htm">Digital Image Interpolation, Part 1</a></p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_softex3.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_psvariation-sh.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-resbox2.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-bilinear.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-psbc.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-sinc.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-lanczos.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-psbc-pf.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-psbc-pfs.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/interp2_resize-GF4.jpg">
+</div>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1196383207"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/image-resize-for-web.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/image-resize-for-web.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

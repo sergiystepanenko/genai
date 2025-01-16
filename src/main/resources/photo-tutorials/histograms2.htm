@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Understanding Digital Camera Histograms: Luminosity and Color</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/histograms2.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/histograms2.htm"/>
+<link rel="alternate" hreflang="pt-br" href="https://www.cambridgeincolour.com/pt-br/tutoriais/histograms2.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/histograms2.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-144 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>CAMERA HISTOGRAMS: LUMINOSITY &amp; COLOR</h1>
+<p>This section is designed to help you develop a better understanding of how luminosity and color both vary within an image, and how this translates into the relevant histogram. Although RGB histograms are the most commonly used histogram, other types are more useful for specific purposes.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-1241687197"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<p>The image below is shown alongside several of the other histogram types which you are likely to encounter. Move your mouse over the labels at the bottom to toggle which type of color histogram is displayed. When you change to one of the color histograms a different image will be shown. This new image is a grayscale representation of how that color's intensity is distributed throughout the image. Pay particular attention to how each color changes the brightness distribution within the image, and how the colors within each region influence this brightness.</p>
+<div class="image-row">
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerRGB_hist.png" width="258" height="102"><br/>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/gradient.jpg" width="258" height="17"><br/><br/>
+<img loading="lazy" name="i1" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerALL_hist.png" width="258" height="102"><br/>
+<table class="t1 pad center">
+<tr>
+<td class="bg">Choose:</td>
+<td id="b1"><span onmouseover="i1.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerRED_hist.png'; i2.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_RED.jpg'; on('b1'); off('b2'); off('b3'); off('b4');">Red</span></td>
+<td id="b2"><span onmouseover="i1.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerGREEN_hist.png'; i2.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_GREEN.jpg'; off('b1'); on('b2'); off('b3'); off('b4');">Green</span></td>
+<td id="b3"><span onmouseover="i1.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerBLUE_hist.png'; i2.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_BLUE.jpg'; off('b1'); off('b2'); on('b3'); off('b4');">Blue</span></td>
+<td id="b4" class="on"><span onmouseover="i1.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerALL_hist.png'; i2.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler.jpg'; off('b1'); off('b2'); off('b3'); on('b4');">ALL</span></td>
+</tr></table>
+</div>
+<div><div>
+<span onmouseover="i2.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_LUM.jpg';" onmouseout="i2.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler.jpg';"><img loading="lazy" name="i2" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler.jpg" width="265" height="400"></span><br/>
+<span class="caption">Tap or mouseover image<br/>to view as luminosity</span>
+</div></div>
+</div>
+<h2>LUMINANCE HISTOGRAMS</h2>
+<p>Luminance* histograms are more accurate than RGB histograms at describing the perceived brightness distribution or &quot;luminosity&quot; within an image. Luminosity takes into account the fact that the human eye is more sensitive to green light than red or blue light. View the above example again for each color and you will see that the green intensity levels within the image are most representative of the brightness distribution for the full color image. This also reflected by the fact that the luminance histogram also matches the green histogram more than any other color. Luminosity correctly predicts that the following stepped gradient gradually increases in lightness, whereas a simple addition of each RGB value would give the same intensity at each rectangle.</p>
+<div class="image-row">
+<div><div>
+Darkest&nbsp;<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_luminance_ex.png" width="160" height="47">&nbsp;Lightest
+</div></div>
+</div>
+<p>How is a luminance histogram produced? First, each pixel is converted so that it represents a luminosity based on a weighted average of the three colors at that pixel. This weighting assumes that green represents 59% of the perceived luminosity, while the red and blue channels account for just 30% and 11%, respectively. Move your mouse over &quot;convert to luminosity&quot; under the example image above to see what this calculation looks like when performed for each pixel. Once all pixels have been converted into luminosity, a luminance histogram is produced by counting how many pixels are at each brightness &#8212; identical to how a histogram is produced for a single color.</p>
+<p class="notebox"><strong>*Technical Note</strong>: Strictly speaking, these should really be called &quot;luminosity histograms.&quot; Unfortunately, the terms &quot;luminance&quot; and &quot;luminosity&quot; are often used interchangeably, including by Photoshop, even though each describes a different aspect of light intensity. Luminance refers to the absolute amount of light emitted by an object per unit area, whereas luminosity refers to the perceived brightness of that object by a human observer.</p>
+<p>An important difference to take away from the above calculation is that while luminance histograms keep track of the location of each color pixel, RGB histograms discard this information. An RGB histogram produces three independent histograms and then adds them together, irrespective of whether or not each color came from the same pixel. To illustrate this point we will use an image which the two types of histograms interpret quite differently.</p>
+<div class="center">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_probhist.jpg" width="400" height="200">
+</div>
+<div class="image-row">
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_probhist_histRGB.png" width="258" height="102"><br/>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/gradient.jpg" width="258" height="17">
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_probhist_histLUM.png" width="258" height="102"><br/>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/gradient.jpg" width="258" height="17">
+</div>
+</div>
+<p>The above image contains many patches of pure color. At the interior of each color patch the intensity reaches a maximum of 255, so all patches have significant color clipping and only in that color. Even though this image contains no pure white pixels, the RGB histogram shows strong clipping&#8212;so much that if this were a photograph the image would appear significantly overexposed. This is because the RGB histogram does not take into account the fact that all three colors never clip in the same place.</p>
+<p>The luminance histogram tells an entirely different story by showing no pixels anywhere near full brightness. It also shows three distinct peaks&#8212;one for each color that has become significantly clipped. Since this image contains primarily blue, then red, then least of all green, the relative heights clearly show which color belongs where. Also note that the relative horizontal position of each peak is in accordance with the percentages used in the weighted average for calculating luminance: 59%, 30%, and 11%.</p>
+<p>So which one is better? If we cared about color clipping, then the RGB histogram clearly warns us while the luminance histogram provides no red flags. On the other hand, the luminance histogram accurately tells us that no pixel is anywhere near full black or white. Each has its own use and should be used as a collective tool. Since most digital cameras show only a RGB histogram, just be aware of its shortcomings. As a rule of thumb, the more intense and pure the colors are in your image, the more a luminance and RGB histogram will differ. Pay careful attention when your subject contains strong shades of blue since you will rarely be able to see blue channel clipping with luminance histograms.</p>
+<h2>COLOR HISTOGRAMS</h2>
+<p>Whereas RGB and luminance histograms use all three color channels, a color histogram describes the brightness distribution for any of these colors individually. This can be more helpful when trying to assess whether or not individual colors have been clipped.</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<td class="bg">View Channel:</td>
+<td id="b1b"><span onmouseover="i3.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredRED.jpg'; on('b1b'); off('b2b'); off('b3b'); off('b4b'); off('b5b');">Red</span></td>
+<td id="b2b"><span onmouseover="i3.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredGREEN.jpg'; off('b1b'); on('b2b'); off('b3b'); off('b4b'); off('b5b');">Green</span></td>
+<td id="b3b"><span onmouseover="i3.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredBLUE.jpg'; off('b1b'); off('b2b'); on('b3b'); off('b4b'); off('b5b');">Blue</span></td>
+<td id="b4b" class="on"><span onmouseover="i3.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipred.jpg'; off('b1b'); off('b2b'); off('b3b'); on('b4b'); off('b5b');">ALL</span></td>
+<td id="b5b"><span onmouseover="i3.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredLUM.jpg'; off('b1b'); off('b2b'); off('b3b'); off('b4b'); on('b5b');">Luminosity</span></td>
+</tr>
+</table>
+<img name="i3" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipred.jpg">
+</div>
+<div class="image-row">
+<div>
+<img loading="lazy" name="i4" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredrgb_hist.png" width="258" height="102"><br/>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/gradient.jpg" width="258" height="17"><br/>
+<table class="t1 pad center">
+<tr>
+<td style="text-align: right;" class="bg">View Histogram:</td>
+<td id="b1c" class="on"><span onmouseover="i4.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredrgb_hist.png'; on('b1c'); off('b2c');">RGB</span></td>
+<td id="b2c"><span onmouseover="i4.src='https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredlum_hist.png'; off('b1c'); on('b2c');">Luminosity</span></td>
+</tr></table>
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredred_hist.png" width="258" height="119"><br/>
+<table class="t1 pad bg"><tr><td>&nbsp;</td></tr></table>
+</div>
+</div>
+<p>The petals of the red flowers caught direct sunlight, so their red color became clipped, even though the rest of the image remained within the histogram. Regions where individual color channels are clipped lose all texture caused by that particular color. However, these clipped regions may still retain some luminance texture if the other two colors have not also been clipped. Individual color clipping is often not as objectionable as when all three colors clip, although this all depends upon what you wish to convey.</p>
+<p>RGB histograms can show if an individual color channel clips, however they do not tell you if this is due to an individual color or all three. Color histograms amplify this effect and clearly show the type of clipping. Move your mouse over the labels above to compare the luminance and RGB histograms, to view the image in terms of only a single color channel, and to view the image luminance. Notice how the intensity distribution for each color channel varies drastically in regions of nearly pure color. The strength and purity of colors within this image cause the RGB and luminance histograms to differ significantly.</p>
+<p style="text-align: center;">For additional information on histograms, visit part 1 of this tutorial:<br/>&quot;<a href="histograms1.htm">Understanding Camera Histograms - Tones and Contrast</a>&quot;</p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerRED_hist.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerGREEN_hist.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_samplerBLUE_hist.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_RED.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_GREEN.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_BLUE.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_sampler_LUM.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredRED.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredBLUE.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredGREEN.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredLUM.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/hist2_clipredlum_hist.png">
+</div>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1224618744"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/histograms2.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/histograms2.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

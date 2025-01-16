@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Archival Digital Photo Backup</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/archival-photo-backup.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/archival-photo-backup.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/archival-photo-backup.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-107 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>ARCHIVAL DIGITAL PHOTO BACKUP</h1>
+<p>Backing up your photos so that they last for 100 years is no longer as simple as having an archival print made and stored in a safe frame. Modern digital images and scans require an intimate understanding of topics such as file format, data degradation, media type and ever-changing storage technologies. This tutorial summarizes the best strategies in three stages &#8212; what to store, how and where to backup, and what to do once everything's archived &#8212; so that you can be confident your photos will stand the test of time.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-875822945"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<h2>ARCHIVAL FILE FORMATS FOR PHOTO STORAGE</h2>
+<p>Here's a topic that keeps many photographers up at night: how can you be truly sure that the photos you are saving will be readable on computers 10, 50 or 100 years down the road, with vastly different technology? Will Canon, Nikon, Sony or another camera manufacturer's proprietary RAW format still have full software support, and will the images be reproduced exactly as before when loaded?</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Old Photo, circa 1890" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_oldphoto1.jpg" width="192" height="150" alt="old photograph"/></div></div>
+<div><div><img loading="lazy" title="New Photograph, circa 2008" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_newphoto1.jpg" width="340" height="150" alt="new photograph"/></div></div>
+</div>
+<p class="note">Unfortunately, the photo on the right will not necessarily last as long as the one on the left did.<br/>However, if the necessary precautions are taken, not only will the photo on the right be preserved, but it also won't be subject to the gradual fading and deterioration of the photo from 1890.</p>
+<p>The chosen file type is therefore an important first consideration when backing up archives of your photos. The table below compares the most common file formats:</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<th>Archival File Format</th>
+<th>Size</th>
+<th>Quality</th>
+<th>Software Compatibility</th>
+</tr>
+<tr>
+<td>JPEG</td>
+<td>Smallest</td>
+<td>Lowest</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>TIFF (8 bit)</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>TIFF (16 bit)</td>
+<td>Largest</td>
+<td>High</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>RAW files: CR2, NEF, etc</td>
+<td>Large</td>
+<td>Highest</td>
+<td>Good now;<br/>Questionable years later</td>
+</tr>
+<tr>
+<td>DNG</td>
+<td>Large</td>
+<td>Highest</td>
+<td>Moderate now;<br/>Excellent years later (in theory)</td>
+</tr>
+</table>
+</div>
+<p><strong>JPEG files</strong> are by far the most likely to be widely supported many years down the road; after all, JPEG has become a near standard for images on the internet. If you already have a lot of photos taken in JPEG, then the choice of what format to store them in is easy: leave them as JPEG files. However, for future photos, it's highly advised that you shoot in RAW if your camera supports it, as discussed later.</p>
+<p><strong>TIFF files</strong> are a close second to JPEG when it comes to compatibility, but are much higher quality because they do not use <a href="imagetypes.htm">JPEG's lossy image compression</a>. For many, TIFF achieves an optimal balance. However, TIFF files either preserve much less about the original photo (if the <a href="bit-depth.htm">bit depth is 8-bit</a>), or are even larger than RAW files despite preserving a little less of the original image (if the <a href="bit-depth.htm">bit depth is 16-bit</a>).</p>
+<p><span style="padding-right: 5px;"><a href="RAW-file-format.htm"><strong>RAW files</strong></a> are certainly the best when it comes to preserving what was originally captured, while still being smaller than 16-bit TIFF files. However, nearly every camera has a slightly different RAW file, so it's highly unlikely that general software 10-20 years later will be able to open every one of these file types correctly. RAW file backup therefore leaves two options: (i) to convert them to some other format, or (ii) to backup the RAW files in their native format until some later date when you start to notice compatibility issues, and a suitable replacement format exists.</span></p>
+<div class="left">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_dng.png" width="111" height="97" alt="dng file format">
+</div>
+<p>Many feel that a suitable format already exists: the Digital Negative (DNG) file format, which was created by Adobe to address many of the problems associated with longer term archival storage. It is an open standard and royalty free, so you can be sure the files can be more easily and universally opened in the future. DNG aims to combine the compatibility advantages of <a href="imagetypes.htm">TIFF and JPEG file formats</a> with the quality and efficiency advantages of your camera's original RAW files.</p>
+<p>However, even DNG is not future-proof. With the exception of Adobe software, support is still not as universal as one would like it to be for a format that aims to be archival (although this is rapidly changing). Furthermore, companies go in and out of existence (remember the once dominant Kodak?), DNG itself has version numbers, and DNG is helpless if sensor technologies change dramatically.</p>
+<p>Another consideration is how to store various edited versions of your files, which is something that DNG does not address. Multiple 16-bit TIFF, PSD or other files can quickly become extremely large and unmanageable. The best way to conserve storage space is to save file types that preserve the editing steps, but do not actually apply them as an additional saved TIFF file. RAW conversion software often has the ability to store the settings you used to convert the RAW file, such as XMP sidecar files (for Camera RAW), catalog files (for Lightroom), and library files (for Aperture), amongst others. In Photoshop, using and storing adjustment layers is also a great way to avoid multiple intermediate files for each edit.</p>
+<p>Unfortunately, many of the formats used for storing edited photos are also subject to future compatibility issues. Fortunately, this is one area where changing technology can mean you'd like to rework certain images using the latest software and techniques. Just make sure that you also have an archived version of the unaltered original photo.</p>
+<p>Overall, the only fail-proof solution is to keep your data up-to-date. Every few years it's a good idea to convert file types that are in danger of becoming obsolete.</p>
+<h2>CHOOSING PHOTO BACKUP MEDIA</h2>
+<p>Even if we use a compatible file format, how can we be sure that these files will later be accessible on our chosen backup device or media? Remember 5.25 inch floppy disks? In fact, the US Federal Government is so concerned about this topic that they house and maintain computers at various stages of advancement &#8212; just in case a file can only be loaded on one of these older computer setups.</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_tape.jpg" width="184" height="100" alt="old tape backup"/></div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_dvdspindle.jpg" width="132" height="100" alt="dvd spindle"/></div></div>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_intdrive.jpg" width="115" height="100" alt="internal hard drive"/></div></div>
+</div>
+<p><strong>CD, DVD, Blu-Ray, or other removable media</strong> has been the primary method of consumer backup for quite some time. They have the advantage of being reasonably inexpensive and broadly compatible. Probably their biggest drawback is inconsistency; some removable media lasts only 5-10 years, while others claim a lifetime of 50-100 years. It can often be difficult to tell which longevity category your media purchase falls under.</p>
+<p>Do not assume that all writable media is created equal. There's often a dramatic difference in longevity between one brand and another. Pay attention to the type of dyes used (blue, gold, silver, etc), to online accelerated aging tests, and to reports of issues with a particular model/batch.</p>
+<p><strong>External hard drives</strong>, while a newcomer on the backup scene, have made great progress since they've dropped in price tremendously over the past several years. Hard drives can store a tremendous amount of information in a small area, are quite fast, and permit the backed up data to be immediately accessible and modifiable. Over time they can gradually demagnetize, but the biggest concern is that they may not spin up because their internal motor has failed (although no data is lost, it can be expensive to recover). Another concern would be if the eSATA, USB or firewire connector becomes obsolete.</p>
+<p><strong>Tape backup</strong>, while once the &quot;go to&quot; method of archiving data, is becoming increasingly marginalized, and today is only really used for large corporate backups. Consumer models are less common, and they haven't quite kept pace with the storage density progress that's been made with hard drives. Furthermore, some tapes are much more vulnerable to humidity, water damage and other external factors than are external hard drives or other removable media. Their biggest advantages are that (i) they are very inexpensive for high volume backups, and (ii) they do not require an internal motor, and thus have no risk of not spinning up for access (unlike hard drives).	</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_35floppydisks.jpg" width="76" height="150" alt="stack of 3.5 inch floppy disks"/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_35floppydisks.jpg" width="76" height="150" alt="stack of 3.5 inch floppy disks"/></div></div>
+<span class="arrowbg">&rarr;</span>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_cds.jpg" width="130" height="80" alt="pile of CD's"/></div></div>
+<span class="arrowbg">&rarr;</span>
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_extdrive.jpg" width="91" height="60" alt="external hard drive"/></div></div>
+</div>
+<p>Unfortunately, the only future-proof solution is to migrate your data over to the latest technology every 3-5 years. Fortunately, storage technologies have been increasing in capacity exponentially, so your old 10 photo DVD's can be combined into just one Blu-Ray or a fraction of an external hard drive &#8212; and one would expect that 10 or more of these could easily be combined into just one of the next storage technology, and so on. This means that even if you continue to accrue photos, the amount of work required to transfer these will not necessarily increase each time you need to do so.</p>
+<h2>PRESERVING IMAGE INTEGRITY</h2>
+<p>No matter what the backup media, all data degrades over time, and errors can occur each time you copy your images from one location to another. The chemicals in a DVD disk gradually decompose, tapes and hard drives eventually become demagnetized, and flash memory can lose its charge. All of these processes are inevitable. The following is a real-world example of what it can look like when a photograph becomes corrupted:</p>
+<div class="right"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_corruptphoto1.jpg" width="200" height="280" alt="Corrupt Photo Example"></div>
+<div class="center"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/archive_corruptphoto1b.jpg" alt="Corrupt Photo Zoom 1" width="300" height="106" style="border: 2px solid #000000"></div>
+<p>Noticing the above flaw requires zooming in 100% and inspecting specific regions of the photograph, even though it would be easily visible as a colored streak in a print. This is a little unsettling considering that most people have hundreds if not many thousands of photographs; identifying each and every corrupt image would clearly be unrealistic.</p>
+<p>Furthermore, image corruptions become replicated in each subsequent backup copy, and would go unnoticed until a print were made many years later.</p>
+<p>A storage technique that employs parity, checksum or other data verification files is the only way to systematically spot these problems before they permanently alter your photo archives. That is the only reason the photo in the above example (and others) were identified before they became a problem. The following chart outlines some of the most common techniques for preventing, verifying and repairing corrupt photographs:</p>
+<table class="t1 pad">
+<tr>
+<th>Type</th>
+<th>Primary Use</th>
+<th>How It Works</th>
+</tr>
+<tr>
+<td>RAID 1,5,10</td>
+<td>PREVENTION</td>
+<td class="left"><strong>A RAID 1, 5 or 10 is an array of disk drives with fault protection in case one of your drives fail.</strong> These can continue to operate even if a drive fails, without losing any information. However, they can also substantially increase costs since they require additional disk drives and a RAID controller.</td>
+</tr>
+<tr>
+<td>SFV or MD5 Checksum Files</td>
+<td>VERIFICATION</td>
+<td class="left"><strong>Checksum files verify that a file or copy is identical to its original.</strong> They are effectively digital fingerprints, which are created based on every 0 and 1 in a digital file. When even one bit of the file changes, it's almost guaranteed that the fingerprint won't match. However, that's all they do: inform you when there was an error.</td>
+</tr>
+<tr>
+<td>Parity or Recovery Files</td>
+<td>REPAIR</td>
+<td class="left"> <strong>Parity files can be used to repair minor damage without requiring a full duplicate of the original.</strong> They store carefully chosen redundant information about a file; if part of the original becomes corrupt, the parity file can be used along with the surviving portions of the corrupt file to re-create the original data. However, parity files take up increasingly more space if you want to recover files which are more badly damaged.</td>
+</tr>
+</table>
+<p class="note">Technical Notes: Although it's beyond the scope of this article, RAID comes in many varieties; RAID 1 is effectively two disks containing identical data at all times; RAID 5 is three or more disks where one drive contains parity data; RAID 10 requires four drives, and is similar to RAID 1 except it improves performance by simultaneously reading/writing to multiple drives. RAID 0 should not be used with critical data since it increases the failure rate in exchange for better performance.</p>
+<p>If you routinely work with very important photographs, the best protection is achieved by using RAID while editing on your computer and between backups, and storing MD5/SFV checksum and parity files along with your archived photographs. Alternatively, using an enterprise-class solid state drive (SSD) can improve both performance and reliability.</p>
+<p>A simpler solution would be to store two backup copies immediately after the photo is captured. This way you do not need to worry about complicated RAID or parity files, but you will still need to store SFV or MD5 checksum files** along with each archived photo. There are far too many programs that can read or create SFV and MD5 files to list here; a quick search engine query will yield several free options. If you ever identify a corrupt file, then the other backup copy can be used as a replacement. Not having RAID means that there's no protection against losing intermediate edited files on your computer, but these are usually much less important than the unaltered originals.</p>
+<p class="note">**Technical Notes: A checksum is a digital fingerprint that verifies the integrity/identity of a file. SFV stands for &quot;single file verify&quot;, and contains a list of checksums corresponding to a list of files. MD5 checksums were created to not just verify the integrity of a file, but to also verify its authenticity (that no person had intentionally modified a file). CRC checksums are much quicker to calculate than their equivalent MD5 checksums, but MD5 checksums are also more sensitive to file changes. There are other checksum file types available, but SFV and MD5 are currently the most widely supported.</p>
+<p>Regardless, it's important to keep your data &quot;fresh&quot; by copying it to some other media after 5-10 years &#8212; even if the file format or media isn't in danger of becoming obsolete.</p>
+<h2>WHERE TO STORE YOUR PHOTO ARCHIVES</h2>
+<p>The best location to store your archival photo backups is in a cool, dry place with a reasonably constant environment and minimal need for movement. If there's a chance of humidity, be sure to seal the media in a plastic bag prior to storage.</p>
+<p>However, unforeseen accidents such as theft and fire can occur, so any fail-proof backup strategy should make use of multiple backup locations. This could mean having a duplicate archive in a safety deposit box, at a friend or family's household or at some remote online server. If your internet connection is fast, backups can even be transferred regularly and systematically via FTP. Depending on the size and quantity of your photos, some even treat online photo sharing sites as backup locations. However, this is not an option for true digital negatives, such as RAW files, since they cannot be displayed as is.</p>
+<p>Try and stick to a regular backup schedule with an easy to follow naming convention. After all, if you cannot find a photo once it's been archived then it's as good as lost.</p>
+<h2>MINIMIZING RISK OF ACCIDENTAL DELETION</h2>
+<p>OK, so we've now gone to great lengths to ensure that (1) the file format will be readable, (2) the backup media will be loadable and (3) the accuracy of each photo will be preserved identically. What's preventing someone from mistakenly deleting or overwriting some of your photo archive? Of course, clearly labeling your media is a must, but it might also be a good idea to make the archived photos read only, and to password-protect the photos folder and/or media. However, adding a password is a double edged sword, because it means there's always the possibility of forgetting the password. If this is a concern, then simply use a password of &quot;password&quot;, since the purpose is to add another barrier to inadvertent deletion as opposed to preventing unauthorized access.</p>
+<h2>SUMMARY OF ARCHIVAL PHOTO BACKUP OPTIONS</h2>
+<p>Photographers can be loosely grouped into one of two categories:</p>
+<div class="d1">
+<strong>(1) Casual Photographer</strong>: generally takes snapshots to record events and other get togethers; not overly concerned with making large prints, but wants their collections to be preserved for later generations. Often uses a compact digital camera or camera phone and photos are rarely post-processed. Usually takes JPEG photographs to simplify image sharing and printing, or to save storage space.</div>
+<p><u>Backup Strategy</u>: Casual photographers should try and save their JPEG files using the highest quality &quot;superfine&quot; (or similar setting) to minimize image compression artifacts. Each batch of photos should be backed up in two copies on removable media, ideally with SFV or MD5 checksum files to identify if any image later becomes corrupt. Archived photos should be transferred over to new media every 5 years to keep the storage technology up to date, and to prevent corrupt images by keeping the data fresh.</p>
+<div class="d1">
+<strong>(2) Discerning Photographer</strong>: takes a variety of photos, possibly including very memorable events or work to be made into large prints; maximal preservation of each scene is of high importance. Often uses a digital SLR camera, or a compact digital camera when weight/space are important. Usually takes RAW photographs, because any added trouble in post-processing is worth it in exchange for knowing they can make the most out of any print if they happen to capture a special moment.</div>
+<p><u>Backup Strategy</u>: Discerning photographers should always save their photos using their camera's RAW file format. Any photo editing should ideally occur on a computer with duplicate hard drives in RAID 1 or a SSD, otherwise unaltered photos should be backed up immediately after capture. RAW files should either be converted to the DNG format prior to archiving or saved in their native format. When possible, edited versions of photos should be stored as processing steps (such as in XMP catalog files) as opposed to separate TIFF files. Each batch of photo backups should be written to at least two media, and all images should be stored along with SFV or MD5 checksum files and parity information, just in case a repair is needed. Each set of backups should be stored in a different physical building. Archived RAW or DNG files should be converted to some other format every 3-5 years to maintain software compatibility; each of these backups should be on new media using the latest storage technology to keep their data fresh.</p>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-970887257"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/archival-photo-backup.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/archival-photo-backup.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diffraction Limited Photography: Pixel Size, Aperture and Airy Disks</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/diffraction-photography.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/diffraction-photography.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/diffraction-photography.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-129 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>LENS DIFFRACTION &amp; PHOTOGRAPHY</h1>
+<p>Diffraction is an optical effect which limits the total resolution of your photography — no matter how many megapixels your camera may have. It happens because light begins to disperse or "diffract" when passing through a small opening (such as your camera's aperture). This effect is normally negligible, since smaller apertures often improve <a href="sharpness.htm">sharpness</a> by minimizing <a href="lens-quality-mtf-resolution.htm">lens aberrations</a>. However, for sufficiently small apertures, this strategy becomes counterproductive — at which point your camera is said to have become <em>diffraction limited</em>. Knowing this limit can help maximize detail, and avoid an unnecessarily long exposure or high ISO speed.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-701577793"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<h2>BACKGROUND</h2>
+<p>Light rays passing through a small aperture will begin to diverge and interfere with one another. This becomes more significant as the size of the aperture decreases relative to the wavelength of light passing through, but occurs to some extent for any aperture or concentrated light source.</p>
+<div class="image-row cap">
+<div>
+<div><img loading="lazy" title="Large Aperture" src="https://cdn.cambridgeincolour.com/images/tutorials/diffraction_intro-low.png" alt="Low diffraction" width="250" height="100"/></div>
+</div>
+<div>
+<div><img loading="lazy" title="Small Aperture" src="https://cdn.cambridgeincolour.com/images/tutorials/diffraction_intro-high.png" alt="High diffraction" width="250" height="100"/></div>
+</div>
+</div>
+<p>Since the divergent rays now travel different distances, some move out of phase and begin to interfere with each other — adding in some places and partially or completely canceling out in others. This interference produces a diffraction pattern with peak intensities where the amplitude of the light waves add, and less light where they subtract. If one were to measure the intensity of light reaching each position on a line, the measurements would appear as bands similar to those shown below.</p>
+<div class="image-row">
+<div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/diffraction_intro-high.png" alt="" width="250" height="100"/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/diffraction_intro-pattern.jpg" alt="" width="15" height="100"/> <span class="caption">Diffraction Pattern</span></div>
+</div>
+</div>
+<p>For an ideal circular aperture, the 2-D diffraction pattern is called an "airy disk," after its discoverer George Airy. The width of the airy disk is used to define the theoretical maximum resolution for an optical system (defined as the diameter of the first dark circle).</p>
+<div class="image-row">
+<div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/airydisk-rings.jpg" alt="airk disk with rings" width="200" height="200"/> <span class="caption">Airy Disk</span></div>
+</div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/airydisk-3D.png" alt="3D view of airy disk" width="277" height="201"/> <span class="caption">3-D Visualization</span></div>
+</div>
+<p>When the diameter of the airy disk's central peak becomes large relative to the pixel size in the camera (or maximum tolerable <a href="depth-of-field.htm">circle of confusion</a>), it begins to have a visual impact on the image. Once two airy disks become any closer than half their width, they are also no longer resolvable (Rayleigh criterion).</p>
+<div class="image-row">
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/airydisks-resolved.png" alt="Airy disks resolved" width="258" height="121"/> <span class="caption">Barely Resolved</span></div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/airydisks-unresolved.png" alt="Airy disks not resolved" width="259" height="129"/> <span class="caption">No Longer Resolved</span></div>
+</div>
+<p>Diffraction thus sets a fundamental resolution limit that is independent of the number of megapixels, or the size of the film format. It depends only on the f-number of your lens, and on the wavelength of light being imaged. One can think of it as the smallest theoretical "pixel" of detail in photography. Furthermore, the onset of diffraction is gradual; prior to limiting resolution, it can still reduce small-scale contrast by causing airy disks to partially overlap.</p>
+<h2>VISUAL EXAMPLE: APERTURE VS. PIXEL SIZE</h2>
+<p>The size of the airy disk is primarily useful in the context of pixel size. The following interactive tool shows a single airy disk compared to pixel size for several camera models:</p>
+<div id="gridcontainer" style="position: relative; float: left; width: 200px; height: 200px; background: #000; overflow: hidden; margin-right: 20px;">
+<div id="airyimg" style="display: block; width: 200px; height: 200px; background: url('https://cdn.cambridgeincolour.com/images/tutorials/airy-z16.png') no-repeat; background-size: 180px; background-position: 10px 10px;"></div>
+<div id="hlines" style="position: absolute; top: 0; left: 0; width: 200px; height: 200px;">
+<div style="border-bottom: 1px dashed #21a5d9; width: 100%; height: 38px;"></div>
+<div style="border-bottom: 1px dashed #21a5d9; width: 100%; height: 40px;"></div>
+<div style="border-bottom: 1px dashed #21a5d9; width: 100%; height: 40px;"></div>
+<div style="border-bottom: 1px dashed #21a5d9; width: 100%; height: 40px;"></div>
+</div>
+<div id="vlines" style="position: absolute; top: 0; left: 0; width: 200px; height: 200px;">
+<div style="float: left; border-right: 1px dashed #21a5d9; width: 38px; height: 100%;"></div>
+<div style="float: left; border-right: 1px dashed #21a5d9; width: 40px; height: 100%;"></div>
+<div style="float: left; border-right: 1px dashed #21a5d9; width: 40px; height: 100%;"></div>
+<div style="float: left; border-right: 1px dashed #21a5d9; width: 40px; height: 100%;"></div>
+</div>
+</div>
+<div style="float: left; width: 360px;">
+<form method="post" name="airygridform" class="calculator">
+<div class="input-area" style="width: 358px; height: 230px; padding-top: 10px;">
+<p><label style="width: 105px;">Lens Aperture</label>
+<select name="drawaperture" onchange="drawdiff(airygridform)" style="width: 245px; background: #484550; position: relative; height: 30px; line-height: 30px; font-size: 14px; margin: 0; padding: 0 0 0 10px; color: #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; border-left:1px solid #3f3b45; border-top:1px solid #1a191d; border-bottom:1px solid #716f78; border-right: none;">
+<option value="1.4">f/1.4</option>
+<option value="2.0">f/2.0</option>
+<option value="2.8">f/2.8</option>
+<option value="4.0">f/4.0</option>
+<option value="5.6">f/5.6</option>
+<option value="8.0">f/8.0</option>
+<option value="11.">f/11</option>
+<option value="16." selected="selected">f/16</option>
+<option value="22.">f/22</option>
+<option value="32.">f/32</option>
+</select>
+</p>
+<p><label style="width: 300px; padding-left: 80px;">Airy Diameter: <span id="airydiam">21.3</span> &micro;m</label>
+<p><label style="width: 105px;">Camera</label>
+<select name="drawpixel" onchange="drawdiff(airygridform)" style="width: 245px; background: #484550; position: relative; height: 30px; line-height: 30px; font-size: 14px; margin: 0; padding: 0 0 0 10px; color: #eee; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; border-left:1px solid #3f3b45; border-top:1px solid #1a191d; border-bottom:1px solid #716f78; border-right: none;">
+<option value="77.6">Canon EOS 1Ds</option>
+<option value="52.0">Canon EOS 1Ds Mk II</option>
+<option value="41.1">Canon EOS 1Ds Mk III, 5D Mk II</option>
+<option value="135.">Canon EOS 1D</option>
+<option value="67.0">Canon EOS 1D Mk II</option>
+<option value="53.3">Canon EOS 1D Mk III</option>
+<option value="32.5">Canon EOS 1D Mk IV</option>
+<option value="48.2" selected="selected">Canon EOS 1D X</option>
+<option value="67.0">Canon EOS 5D</option>
+<option value="39.1">Canon EOS 5D Mk III</option>
+<option value="18.5">Canon EOS 7D,60D,550D,600D,650D,1D C</option>
+<option value="22.1">Canon EOS 50D, 500D</option>
+<option value="32.6">Canon EOS 40D, 400D, 1000D</option>
+<option value="41.2">Canon EOS 30D, 20D, 350D</option>
+<option value="57.0">Canon EOS 1100D</option>
+<option value="18.4">Canon PowerShot G1 X</option>
+<option value="4.16">Canon PowerShot G11, G12, S95</option>
+<option value="3.46">Canon PowerShot G9, S100</option>
+<option value="5.41">Canon PowerShot G6</option>
+<option value="71.4">Nikon D3, D3S / D700</option>
+<option value="61.1">Nikon D40, D50, D70</option>
+<option value="53.2">Nikon D4</option>
+<option value="37.2">Nikon D60, D80, D3000</option>
+<option value="35.3">Nikon D3X</option>
+<option value="30.5">Nikon D2X, D90, D300, D5000</option>
+<option value="23.8">Nikon D800</option>
+<option value="23.0">Nikon D5100, D7000</option>
+<option value="15.3">Sony SLT-A65, SLT-A77, NEX-7</option>
+<option value="5.82">Sony DSC-RX100</option>
+</select>
+</p>
+<p><label style="width: 300px; padding-left: 80px;">Pixel Diameter: <span id="pixdiam">6.9</span> &micro;m</label>
+</div>
+</form>
+</div>
+<div class="clear"></div>
+<p class="note">Note: above airy disk will appear narrower than its specified diameter (since this is defined by where it reaches its first minimum instead of by the visible inner bright region).</p>
+<p>As a result of the sensor's <a href="image-interpolation.htm">anti-aliasing</a> filter (and the Rayleigh criterion above), an airy disk can have a diameter of about 2-3 pixels before diffraction limits resolution (assuming an otherwise perfect lens). However, diffraction will likely have a visual impact prior to reaching this diameter.</p>
+<p>As two examples, the Canon EOS 20D begins to show diffraction at around f/11, whereas the Canon PowerShot G6 begins to show its effects at only about f/5.6. On the other hand, the Canon G6 does not require apertures as small as the 20D in order to achieve the same depth of field (due to its much <a href="digital-camera-sensor-size.htm">smaller sensor size</a>).</p>
+<p>Since the size of the airy disk also depends on the wavelength of light, each of the three primary colors will reach its diffraction limit at a different aperture. The calculation above assumes light in the middle of the visible spectrum (~550 nm). Typical digital SLR cameras can capture light with a wavelength of anywhere from 450 to 680 nm, so at best the airy disk would have a diameter of 80% the size shown above (for pure blue light).</p>
+<p>Another complication is that <a href="camera-sensors.htm">sensors utilizing a Bayer array</a> allocate twice the fraction of pixels to green as red or blue light, and then interpolate these colors to produce the final full color image. This means that as the diffraction limit is approached, the first signs will be a loss of resolution in green and pixel-level luminosity. Blue light requires the smallest apertures (highest f-stop) in order to reduce its resolution due to diffraction.</p>
+<div class="notebox"><strong>Other Technical Notes:</strong>
+<ul style="margin: 0;">
+<li>The physical pixels do not actually occupy 100% of the sensor area, but instead have gaps in between. This calculation assumes that <a href="camera-sensors.htm">microlenses</a> make these gaps negligible.</li>
+<li>Some cameras have pixels which are slightly rectangular, in which case diffraction will reduce resolution more in one direction than the other.</li>
+<li>The above chart approximates the aperture as being circular (a common approximation), but in reality these are polygonal with 5-8 sides.</li>
+<li>The calculation for pixel area assumes these extend all the way to the edge of each sensor, and all contribute to the final image. In reality, camera manufacturers leave some pixels unused around the edge of the sensor. Since not all manufacturers specify the number of used vs. unused pixels, only used pixels were considered when calculating the fraction of total sensor area. The pixel sizes above are thus slightly larger than if measured (but by no more than 5%).</li>
+</ul>
+</div>
+<h2>WHAT IT LOOKS LIKE</h2>
+<p>Although the above diagrams help give a feel for the concept of diffraction, only real-world photography can show its visual impact. The following series of images were taken on the Canon EOS 20D, which typically exhibits softening from diffraction beyond about f/11. Move your mouse over each f-number to see how these impact fine detail:</p>
+<div class="image-row">
+<div>
+<div><img loading="lazy" name="fab1" src="https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f8.jpg" width="232" height="173">
+<table class="t1 pad"><tr>
+<td class="bg">Select Aperture:</td>
+<td id="b1" class="on"><span onmouseover="on('b1');off('b2');off('b3');off('b4'); fab1.src='https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f8.jpg';">f/8.0</span></td>
+<td id="b2"><span onmouseover="off('b1');on('b2');off('b3');off('b4'); fab1.src='https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f11.jpg';">f/11</span></td>
+<td id="b3"><span onmouseover="off('b1');off('b2');on('b3');off('b4'); fab1.src='https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f16.jpg';">f/16</span></td>
+<td id="b4"><span onmouseover="off('b1');off('b2');off('b3');on('b4'); fab1.src='https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f22.jpg';">f/22</span></td>
+</tr></table>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/airy_bars1.png" width="172" height="60">
+<span class="caption">No Overlap of Airy Disks</span>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/airy_bars2.png" width="172" height="60">
+<span class="caption">Partial Overlap of Airy Disks</span>
+</div></div>
+</div>
+<p>Note how most of the lines in the fabric are still resolved at f/11, but have slightly lower small-scale contrast or <a href="sharpness.htm">acutance</a> (particularly where the fabric lines are very close). This is because the airy disks are only partially overlapping, similar to the effect on adjacent rows of alternating black and white airy disks (as shown on the right). By f/22, almost all fine lines have been smoothed out because the airy disks are larger than this detail.</p>
+<a name="calculator"></a>
+<h2>CALCULATING THE DIFFRACTION LIMIT</h2>
+<p>The form below calculates the size of the airy disk and assesses whether the camera has become diffraction limited. Click on "show advanced" to define a custom circle of confusion (CoC), or to see the influence of pixel size.</p>
+<form class="calculator" method="post" name="form">
+<h3>Diffraction Limit Calculator</h3>
+<div class="advanced"><span class="show-adv">show advanced</span><span class="hide-adv">hide advanced</span></div>
+<div class="input-area">
+<div class="showhide">
+<p><label>Max Print Dimension</label> <input name="print_size" type="text" value="10"/><select class="unitSelect" name="unit">
+<option value="1">in</option>
+<option value="2.54">cm</option>
+<option value="0.0254">m</option>
+</select></p>
+<p><label>Viewing Distance</label><select class="mySelect" name="view_dist">
+<option value="25">default: 25 cm</option>
+<option value="10">10 cm</option>
+<option value="50">50 cm</option>
+<option value="100">1 m</option>
+<option value="500">5 m</option>
+<option value="1000">10 m</option>
+<option value="10000">100 m</option>
+<option value="50000">500 m</option>
+</select></p>
+<p><label>Eyesight</label><select class="mySelect" name="eyesight">
+<option value="1">default: manufacturer standard</option>
+<option value="0.333">20/20 Vision</option>
+</select></p>
+<p><label>Resolution</label> <input name="megapixels" type="text" value="?"/> Megapixels</p>
+<p><input name="usepixels" type="checkbox"/> Set circle of confusion* based on pixels?</p>
+</div>
+<p><label>Camera Type</label><select class="mySelect" name="format">
+<option value="0.02000">Digital SLR with CF of 1.6X</option>
+<option value="0.02107">Digital SLR with CF of 1.5X</option>
+<option value="0.02551">Digital SLR with CF of 1.3X</option>
+<option value="0.01600">Digital SLR with 4/3" sensor</option>
+<option value="0.03200">35 mm (full frame)</option>
+<option value="0.00444">Digital compact with 1/3" sensor</option>
+<option value="0.00567">Digital compact with 1/2.3" sensor</option>
+<option value="0.00592">Digital compact with 1/2" sensor</option>
+<option value="0.00663">Digital compact with 1/1.8" sensor</option>
+<option value="0.00814">Digital compact with 2/3" sensor</option>
+<option value="0.01173">Digital compact with a 1" sensor</option>
+<option value="0.02231">APS</option>
+<option value="0.05547">6x4.5 cm</option>
+<option value="0.06276">6x6 cm</option>
+<option value="0.06819">6x7 cm</option>
+<option value="0.12029">5x4 inch</option>
+<option value="0.24058">10x8 inch</option>
+</select></p>
+<p><label>Selected Aperture</label><select class="mySelect" name="aperture">
+<option value="1.2">f/1.2</option>
+<option value="1.4">f/1.4</option>
+<option value="1.8">f/1.8</option>
+<option value="2">f/2</option>
+<option value="2.8">f/2.8</option>
+<option value="4">f/4</option>
+<option value="5.6">f/5.6</option>
+<option value="8">f/8</option>
+<option value="11">f/11</option>
+<option selected="selected" value="16">f/16</option>
+<option value="22">f/22</option>
+<option value="32">f/32</option>
+<option value="64">f/64</option>
+</select></p>
+</div>
+<div class="result-area showhide">
+<div class="result"><label>Pixel Size:</label> <input name="pix_out" readonly="readonly" type="text" value="?"/></div>
+</div>
+<div class="result-area"><input type="button" value="Calculate" onclick="diffcalc(form)"/>
+<div class="result"><label>Maximum Circle of Confusion:</label> <input name="coc_out" readonly="readonly" type="text" value="20 µm"/></div>
+<div class="result"><label>Diameter of Airy Disk:</label> <input name="airy_out" readonly="readonly" type="text" value="21.3 µm"/></div>
+<div class="result"><label>Diffraction Limited?</label> <input name="diff_out" readonly="readonly" type="text" value="YES"/></div>
+</div>
+</form>
+<p class="note">Note: CF = "crop factor" (commonly referred to as the focal length multiplier);
+assumes square pixels, 4:3 aspect ratio for compact digital and 3:2 for SLR.
+*Calculator assumes that your camera sensor uses the typical bayer array.</p>
+<p>This calculator shows a camera as being diffraction limited when the diameter of the airy disk exceeds what is typically resolvable in an 8x10 inch print viewed from one foot. Click "show advanced" to change the criteria for reaching this limit. The "set circle of confusion based on pixels" checkbox indicates when diffraction is likely to become visible on a computer at 100% scale. For a further explanation of each input setting, also see the <a href="dof-calculator.htm">depth of field calculator</a>.</p>
+<p>In practice, the diffraction limit doesn't necessarily bring about an abrupt change; there is actually a gradual transition between when diffraction is and is not visible. Furthermore, this limit is only a best-case scenario when using an otherwise perfect lens; real-world results may vary.</p>
+<h2>NOTES ON REAL-WORLD USE IN PHOTOGRAPHY</h2>
+<p>Even when a camera system is near or just past its diffraction limit, other factors such as focus accuracy, motion blur and imperfect lenses are likely to be more significant. Diffraction therefore limits total sharpness only when using a sturdy tripod, mirror lock-up and a very high quality lens.</p>
+<p><strong>Some diffraction is often ok</strong> if you are willing to sacrifice sharpness at the focal plane in exchange for sharpness outside the depth of field. Alternatively, very small apertures may be required to achieve sufficiently long exposures, such as to induce motion blur with flowing water. In other words, diffraction is just something to be aware of when choosing your exposure settings, similar to how one would balance other trade-offs such as noise (ISO) vs shutter speed.</p>
+<p><strong>This should not lead you to think that "larger apertures are better,"</strong> even though very small apertures create a soft image; most lenses are also quite soft when used wide open (at the largest aperture available). Camera systems typically have an optimal aperture in between the largest and smallest settings; with most lenses, optimal sharpness is often close to the diffraction limit, but with some lenses this may even occur prior to the diffraction limit. These <strong>calculations only show when diffraction becomes significant, not necessarily the location of optimum sharpness</strong> (see <a href="lens-quality-mtf-resolution.htm">camera lens quality: MTF, resolution &amp; contrast</a> for more on this).</p>
+<p><strong>Are smaller pixels somehow worse?</strong> Not necessarily. Just because the diffraction limit has been reached (with large pixels) does not necessarily mean an image is any worse than if smaller pixels had been used (and the limit was surpassed); both scenarios still have the same total resolution (even though the smaller pixels produce a larger file). However, the camera with the smaller pixels will render the photo with fewer artifacts (such as color moiré and aliasing). Smaller pixels also give more creative flexibility, since these can yield a higher resolution if using a larger aperture is possible (such as when the depth of field can be shallow). On the other hand, when other factors such as <a href="image-noise.htm">noise</a> and <a href="dynamic-range.htm">dynamic range</a> are considered, the "small vs. large" pixels debate becomes more complicated...</p>
+<p class="notebox"><strong>Technical Note: Independence of Focal Length</strong>
+Since the physical size of an aperture is larger for telephoto lenses (f/4 has a 50 mm diameter at 200 mm, but only a 25 mm diameter at 100 mm), why doesn't the airy disk become smaller? This is because longer focal lengths also cause light to travel farther before hitting the camera sensor -- thus increasing the distance over which the airy disk can continue to diverge. The competing effects of larger aperture and longer focal length therefore cancel, leaving only the f-number as being important (which describes focal length relative to aperture size).</p>
+<p style="text-align: center;">For additional reading on this topic, also see the addendum:
+<a href="diffraction-photography-2.htm">Digital Camera Diffraction, Part 2: Resolution, Color &amp; Micro-Contrast</a></p>
+<div id="multipage-top">Page #: 1 <a href="diffraction-photography-2.htm">2</a></div>
+<div class="preload"><img src="https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f11.jpg" alt=""/> <img src="https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f16.jpg" alt=""/><img src="https://cdn.cambridgeincolour.com/images/tutorials/airy-ex-f22.jpg" alt=""/></div>
+<script src="https://cdn.cambridgeincolour.com/js/tutorials/diffraction.js.pagespeed.jm.lR78UG6vwN.js"></script>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-775858668"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/diffraction-photography.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/diffraction-photography.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

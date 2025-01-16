@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Camera Flash: Exposure</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/camera-flash-2.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/camera-flash-2.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/camera-flash-2.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-111 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>CAMERA FLASH: EXPOSURE</h1>
+<p>Using a camera flash can both broaden the scope and enhance the appearance of your photographic subjects. However, flash is also one of the most confusing and misused of all photographic tools. In fact, the best flash photo is often the one where you cannot even tell a flash was used. This tutorial aims to overcome all the technical terminology in order to focus on the real essence of flash photography: how to control your light and subsequently achieve the desired exposure.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-780757775"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<p>The <a href="camera-flash.htm">first part of the camera flash tutorial</a> focused on the qualitative aspects of using a camera's flash to influence a subject's appearance; this second part focuses on what camera settings to use in order to achieve the desired flash exposure.</p>
+<h2>FLASH EXPOSURE OVERVIEW</h2>
+<p>Using a flash is fundamentally different from taking a normal camera exposure because your subject is being lit by two light sources: your flash, which you have some control over, and the ambient light, which is likely beyond your control. In this part of the tutorial we'll focus on the other two consequences of this fact, as they pertain to flash exposure:</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Diagram Illustrating the Flash Exposure Sequence" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_shutterdiagram.png" alt="flash diagram" width="524" height="144"/></div></div>
+</div>
+<p class="note">Illustration shown roughly to scale for a 1/200th second exposure with a 4:1 flash ratio.<br/>Flash shown for first curtain sync. A pre-flash is not emitted with much older flash units.</p>
+<ol>
+<li><strong>A flash photograph actually consists of two separate exposures</strong>: one for ambient light and the other for flash. Each of these occurs in the split second between when you hold the shutter button and when the shutter opens. Newer SLR cameras also fire a pre-flash in order to estimate how bright the actual flash needs to be.</li>
+<li><strong>A flash pulse is usually very brief compared to the exposure time</strong>, which means that the amount of flash captured by your camera is independent of your shutter speed. On the other hand, aperture and ISO speed still affect flash and ambient light equally.</li>
+</ol>
+<p>The key is knowing how to achieve the desired mix between light from your flash and light from ambient sources &#8212; while also having the right amount of total light (from all sources) to achieve a properly exposed image.</p>
+<h2>CONCEPT: FLASH RATIO</h2>
+<p>The &quot;flash ratio&quot; is an important way to describe the mix between ambient light and light from your flash. Since the shutter speed doesn't affect the amount of light captured from your flash (but does affect ambient light), you can use this fact to control the flash ratio. For a given amount of ambient light, the mix of flash and ambient light is adjusted using only two camera settings: (i) the length of the exposure and (ii) the flash intensity.</p>
+<div class="center">
+<table class="t1">
+<tr class="bg">
+<td>&nbsp;</td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio1.png" width="124" height="75" alt="localized light source"></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio2.png" width="124" height="75" alt="localized light source"></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio3.png" width="106" height="75" alt="localized light source"></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio4.png" width="108" height="75" alt="localized light source"></td>
+</tr>
+<tr>
+<td class="bg" style="text-align: right;">Flash Ratio:</td>
+<td>N/A or 0</td>
+<td>1:8 - 1:2</td>
+<td>1:1</td>
+<td>2:1 - 8:1</td>
+</tr>
+<tr>
+<td class="bg">&nbsp;</td>
+<td>Only Ambient Light</td>
+<td>Fill Flash</td>
+<td>Balanced Flash</td>
+<td>Strong Flash</td>
+</tr>
+<tr>
+<td class="bg" style="text-align: right;">Settings:</td>
+<td class="note">no flash</td>
+<td class="note">longest exposure<br/>weakest flash</td>
+<td class="note">shorter exposure<br/>weaker flash</td>
+<td class="note">shortest exposure<br/>strongest flash</td>
+</tr>
+</table>
+</div>
+<p>In this tutorial, <strong>the flash ratio</strong>*<strong> is used to describe the ratio between light from the flash and ambient light</strong>. At one extreme of this ratio is ordinary ambient light photography (left), and at the other extreme is photography using mostly light from the flash (right). Realistically though, there's always some amount of ambient light, so an infinite flash ratio is just a theoretical limit.</p>
+<p class="notebox">*<strong>Technical Note</strong>: Sometimes the flash ratio is instead described in terms of the ratio between total light and light from the flash. In that case, a 2:1, 3:1 and 5:1 ratio would be equivalent to a 1:1, 1:2 and 1:4 ratio in the table above, respectively. Unfortunately both conventions are used.</p>
+<p>It's important to also note that <strong>not all flash ratios are necessarily attainable with a given flash unit or ambient light intensity</strong>. If ambient light is extremely intense, or if your flash is far from your subject, it's unlikely that the internal flash of a compact camera could achieve flash ratios approaching 10:1, for example. At the other extreme, using a subtle 1:8 fill flash might be impractical if there's very little ambient light and your lens doesn't have a large maximum aperture (or if you are unable to use a high ISO speed, or capture the photo using a tripod).</p>
+<p><strong>Flash ratios of 1:2 or greater are where the topics in the first half of this tutorial become most important</strong>, including the flash position and its apparent light area, since the flash can appear quite harsh unless carefully controlled. On the other hand, flash ratios less than 1:2 can often achieve excellent results using a flash that is built into the camera. For this reason, most photographers will likely want to use their flash as a fill flash, if possible, since this is the simplest type of flash photography.</p>
+<h2>FLASH EXPOSURE MODES</h2>
+<div class="left">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_cameramodedial.jpg" width="144" height="157" alt="camera mode dial">
+</div>
+<p>One of the most difficult tasks in flash photography is understanding how different camera and flash metering modes will affect an overall exposure. Some modes assume you only want a fill flash, while others virtually ignore ambient light and assume that your camera's flash will be the dominant source of illumination.</p>
+<p>Fortunately, all cameras use their flash as either the primary light source or as a fill flash. The key is knowing when and why your camera uses its flash in each of these ways. A table summarizing the most common camera modes is listed below:</p>
+<div class="center">
+<table width="85%" class="t1 pad">
+<tr>
+<th>Camera Mode</th>
+<th>Flash Ratio</th>
+</tr>
+<tr>
+<td>Auto (<span style="font-size: 24px; color: #1ac76c; vertical-align: text-bottom;">&#9633;</span>)</td>
+<td class="left">1:1 or greater if dim; otherwise flash doesn't fire</td>
+</tr>
+<tr>
+<td> Program (P)</td>
+<td class="left">fill flash if bright; otherwise greater than 1:1</td>
+</tr>
+<tr>
+<td>Aperture Priority (Av)<br/>Shutter Priority (Tv)</td>
+<td class="left">fill flash</td>
+</tr>
+<tr>
+<td>Manual (M)</td>
+<td class="left">whatever flash ratio is necessary</td>
+</tr>
+</table>
+</div>
+<p>In <strong>Auto mode</strong> (<span style="font-size: 24px; color: #1ac76c; vertical-align: text-bottom;">&#9633;</span>), the flash turns on only if the shutter speed would otherwise drop below what is deemed as being hand-holdable &#8212; usually about 1/60 of a second. The flash ratio then increases progressively as light hitting the subject gets dimmer, but the shutter speed remains at 1/60 of a second.</p>
+<p><strong>Program (P) mode</strong> is similar to Auto, except one can also force a flash to be used in situations where the subject is well-lit, in which case the flash will act as a fill flash. Most cameras intelligently decrease their fill flash as ambient light increases (called &quot;auto fill reduction&quot; in Canon models). The fill flash ratio may therefore be anywhere from 1:1 (in dim light) to 1:4 (in bright light). For situations where the shutter speed is longer than 1/60 of a second, flash in Program mode acts just as it did in Auto mode.</p>
+<p><strong>Aperture Priority (Av) and Shutter Priority (Tv) modes</strong> have even different behavior. Just as with Program mode, one usually has to force their flash to &quot;on,&quot; which results in the camera using the flash as a fill flash. However, unlike with Auto and P modes, the flash ratio never increases beyond about 1:1 and exposures are as long as necessary (aka &quot;slow sync&quot;). In Tv mode, the flash ratio may also increase if the necessary f-stop is smaller than available with your lens.</p>
+<p>In <strong>Manual (M) mode</strong>, the camera exposes ambient light based on how you set the aperture, shutter speed and ISO. The flash exposure is then calculated based on whatever remaining light is necessary to illuminate the subject. Manual mode therefore enables a much broader range of flash ratios than the other modes.</p>
+<p>In all modes, <strong>the relevant setting in your viewfinder will blink if a flash exposure is not possible using that setting</strong>. This might include requiring an aperture that is outside the range available with your lens, or a shutter speed that is faster than what your camera/flash system supports (the &quot;X-sync speed&quot; - usually 1/200 to 1/500 second).</p>
+<h2>FLASH EXPOSURE COMPENSATION - FEC</h2>
+<p>The key to changing the flash ratio is using the right combination of flash exposure compensation (FEC) and ordinary <a href="camera-metering.htm">exposure compensation (EC)</a>. FEC works much like regular EC: it tells the camera to take whatever flash intensity it was going to use, and to override that by the FEC setting. The big difference is that while EC may affect the exposures for both flash and ambient light (depending on camera model), FEC only affects flash intensity.</p>
+<p>Both EC and FEC are specified in terms of stops of light. Each positive or negative stop refers to a doubling or halving of light, respectively. Therefore a +1 EC or FEC value means a doubling of light, whereas a -2 value means there's a quarter as much light.</p>
+<p>With current Canon cameras, EC only affects ambient exposure, whereas with most Nikon cameras, EC simultaneously affects flash intensity and ambient exposure. Some of the newer Nikon cameras, such as the D4 and D800, can work either way via a custom function.</p>
+<p>Each type of flash control has clear advantages and disadvantages. When EC affects both flash output and ambient exposure, one can easily adjust the flash ratio without affecting the overall exposure; a +1 FEC and -1 EC setting will leave the overall exposure unchanged, for example. <strong>When EC affects only ambient exposure, EC and FEC effectively become independent controls over ambient and flash metering, but these cameras can also make it more difficult to use both EC and FEC to change the flash ratio without also changing the overall exposure</strong>. If you happen to have this type of camera, the remainder of the section focuses on using these settings to control the flash ratio. The next table provides reference settings to change the flash ratio if it had originally been 1:1:</p>
+<div class="image-row">
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio2.png" style="padding: 0; display: inline;" width="124" height="75" alt="localized light source"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio3.png" style="padding: 0 50px 0 40px; display: inline;" width="106" height="75" alt="localized light source"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_flashratio4.png" style="padding: 0; display: inline;" width="108" height="75" alt="localized light source"></div>
+</div>
+<table class="t1 pad" width="100%">
+<tr>
+<th class="bg" style="text-align: right;" width="15%">Flash Ratio:</th>
+<td>1:8</td>
+<td>1:4</td>
+<td>1:2</td>
+<td>1:1</td>
+<td>2:1</td>
+<td>4:1</td>
+<td>8:1</td>
+<th class="bg" width="15%">&nbsp;</th>
+</tr>
+<tr>
+<th class="bg" style="text-align: right;">FEC Setting:</th>
+<td>-3</td>
+<td>-2</td>
+<td>-1</td>
+<td>0</td>
+<td>+1</td>
+<td>+2</td>
+<td>+3</td>
+<th class="bg">&nbsp;</th>
+</tr>
+<tr>
+<th class="bg" style="text-align: right;">EC Setting:</th>
+<td>+2/3 to<br/>+1</td>
+<td>+2/3</td>
+<td>+1/3 to<br/>+1/2</td>
+<td>0</td>
+<td>-1/2 to<br/>-2/3</td>
+<td>-1 1/3</td>
+<td>-2 to<br/>-2 1/3</td>
+<th class="bg">&nbsp;</th>
+</tr>
+</table>
+<p class="note">The above table shows how to change the flash ratio by adjusting FEC and EC;<br/>EC settings are listed as a range because they can only be set in 1/2 to 1/3 stop increments.</p>
+<p>Note that the FEC value is straightforward: it's just equal to the number of stops you intend to increase or decrease the flash ratio by. On the other hand, the EC setting is far from straightforward: it depends not only on how much you want to change the flash ratio by, but also on the original flash ratio &#8212; and it's rarely an integer.</p>
+<p class="notebox"><strong>As an example of why EC is much more complicated than FEC</strong>, let's walk through what happens when you change the flash ratio from 1:1 to 2:1 in the above example. You will first want to dial in +1 FEC, since that's the easiest part. However, if only FEC is increased +1, then the amount of light from flash doubles while light from ambient remains the same &#8212; thereby increasing the overall exposure. We therefore need to dial in a negative EC to compensate for this, so that the exposure is unchanged. But how much EC? Since the original flash ratio was 1:1, the total amount of light using +1 FEC is now 150% of what it was before. We therefore need to use an EC value which reduces the total amount of light by a factor of 2/3 (150% * 2/3 = 100%). Since each negative EC halves the amount of light, we know this EC value has to be between 0 and -1, but the exact value isn't something we can readily calculate in our head. It's equal to log<sub>2</sub>(2/3), which comes out to about -0.58.</p>
+<p>Fortunately, the flash ratio calculator (below) solves this problem for us. While it's not something one would necessarily use in the field, hopefully it can help you develop a better intuition for roughly what EC values are needed in different situations.</p>
+<div class="center">
+<form method=post name=fratioform>
+<table class="calc">
+<tr>
+<th colspan="5">Flash Ratio Calculator</th>
+</tr>
+<tr>
+<td width="150">&nbsp;Original Flash Ratio:</td>
+<td><select name=fr1><option value=1> 1:1</option><option value=2> 2:1</option><option value=4> 4:1</option><option value=8> 8:1</option><option value=0.5> 1:2</option><option value=0.25> 1:4</option><option value=0.125> 1:8</option></select></td>
+<td class="calcbutton" rowspan="2" width="120"><input type="button" value="Calculate -->" onclick="fratio(fratioform)"></td>
+<td width="100" class="result">&nbsp;FEC Setting:</td>
+<td class="result"><input name=reqfec type=text value="" size=3></td>
+</tr>
+<tr>
+<td>&nbsp;New Flash Ratio:</td>
+<td><select name=fr2><option value=1> 1:1</option><option value=2> 2:1</option><option value=4> 4:1</option><option value=8> 8:1</option><option value=0.5> 1:2</option><option value=0.25> 1:4</option><option value=0.125> 1:8</option></select></td>
+<td class="result">&nbsp;EC Setting:</td>
+<td class="result"><input name=reqec type=text value="" size=3></td>
+</tr>
+</table>
+</form>
+<p class="note">note: EC can only be set in 1/3 to 1/2 stop increments, so use the nearest value available</p>
+</div>
+<p><strong>How to increase the flash ratio</strong>: dial in a positive flash exposure compensation, while simultaneously entering a negative exposure compensation. Assuming a default 1:1 flash ratio, achieving a 2:1 flash ratio requires an FEC value of +1 and a corresponding EC value of -1/2 to -2/3.</p>
+<p><strong>How to decrease the flash ratio</strong>: dial in a negative flash exposure compensation, while simultaneously entering a positive exposure compensation (but not exceeding +1). Assuming a default 1:1 flash ratio, achieving a 1:2 flash ratio requires an FEC value of -1 and a corresponding EC value of about +1/3 to +1/2.</p>
+<p>Finally, it's important to note that FEC is not always used to change the flash ratio. It can also be used to override errors by your camera's flash metering system. How and why this might happen is discussed in the next section...</p>
+<h2>TTL FLASH METERING</h2>
+<p>Most current SLR flash systems employ some form of through-the-lens (TTL) metering. Digital TTL flash metering works by bouncing one or more tiny pre-flash pulses off the subject immediately before the exposure begins, which are then used to estimate what flash intensity is needed during the actual exposure.</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_preflashdiagram.png" alt="camera pre-flash sequence" width="481" height="118"/></div></div>
+</div>
+<p>Just after the exposure begins, the flash unit starts emitting its flash pulse. Your camera then measures how much of this flash has reflected back in real-time, and quenches (stops) the flash once the necessary amount of light has been emitted. Depending on the camera mode, the flash will be quenched once it either balances ambient light (fill flash) or adds whatever light is necessary to expose the subject (greater than 1:1 flash ratio).</p>
+<p>However, a lot can go wrong. Since a flash exposure is actually two sequential exposures, both (1) ambient light metering and (2) flash metering have to be correct. We'll therefore deal with each source of metering error separately.</p>
+<p><strong>(1) Ambient Light Metering</strong> is the first to occur, and determines the combination of aperture, ISO and shutter speed. It's quite important since it controls the overall exposure, and is what the subsequent flash metering will be based on.</p>
+<p>Recall that in-camera metering goes awry primarily because it can only measure reflected and not incident light (see tutorial on <a href="camera-metering.htm">camera metering &amp; exposure</a>).</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_reflective-subje.jpg" alt="reflective subject example" width="130" height="130">
+<span class="caption">Reflective Subject</span>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_incident-reflect.png" alt="incident vs reflected light metering" width="390" height="130">
+<span class="caption">Incident vs. Reflected Light</span>
+</div></div>
+</div>
+<p>If your subject is light and reflective, such as in the example above, then your camera will mistakenly assume that this apparent brightness is caused by lots of incident light, as opposed to its high reflectance. Since your camera over-estimates the amount of ambient light, it therefore ends up under-exposing the subject. Similarly, a dark and unreflective subject often results in an over-exposure. Furthermore, situations with high or low-key lighting can also throw off your camera's metering (see <a href="histograms1.htm">digital camera histograms</a>).</p>
+<p class="note">Note: Ironically, white wedding dresses and black tuxedos are perfect examples of highly reflective and unreflective subjects that can throw off your camera's exposure &#8212; even though weddings are often where flash photography and accurate exposures are most important.</p>
+<p>Regardless, if you suspect your camera's ambient light metering will be incorrect, then dialing in a positive or negative exposure compensation (EC) will fix ambient light metering and improve flash metering at the same time.</p>
+<p><strong>(2) Flash Metering</strong> is based on the results from both the pre-flash and from ambient light metering. If your TTL flash metering system emits an incorrect amount of flash, not only will your overall exposure be off, but the flash ratio will be off as well &#8212; thereby affecting the appearance of your subject.</p>
+<p>The biggest causes for flash error are the distance to your subject, the distribution of ambient light and your subject's reflective properties. The subject distance is important because it strongly influences how much flash will hit and bounce back from this subject:</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Flash Illumination vs. Distance" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_distance.png" alt="flash intensity vs distance" width="335" height="100"/></div></div>
+</div>
+<p class="note">light fall-off is so rapid that objects 2x as far receive 1/4 the amount of flash</p>
+<p>Even with a proper flash exposure, if your subject (or other objects) traverse a large distance to and from the camera, expect regions of these objects which are closer to the camera to appear much brighter than regions which are farther.</p>
+<div class="left">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_complex-light.jpg" width="250" height="206" alt="complex ambient light example">
+<p class="note">example of complex, uneven ambient light</p>
+</div>
+<p>Complex lighting situations can also be problematic. If ambient light illuminates your subject differently than the background or other objects, the flash might mistakenly try to balance light hitting the overall scene (or some other object), as opposed to light which only hits your subject.</p>
+<p>Additionally, since flash metering occurs after your camera meters for ambient light, it is important not to use the auto exposure (AE) lock setting when using the focus and recompose technique. If available, one should instead use flash exposure lock (FEL).</p>
+<p>The particular reflective properties of objects in your photo can also throw off flash metering. This might include flash glare and other hard reflections from mirrors, metal, marble, glass or other similar objects. These objects may also create additional unintended sources of hard light, which can cast additional shadows on your subject.</p>
+<p>There's also subtleties with how different manufacturer's metering systems work. For Canon EOS digital, you will likely have either E-TTL or E-TTL II; for Nikon digital it will be D-TTL or i-TTL. However, many of their flash metering algorithms are complicated and proprietary, and differences often only arise in situations with uneven ambient lighting. Therefore the best approach is to experiment with a new flash system before using it for critical photos, so you can get a better feel for when metering errors might occur.</p>
+<h2>FIRST &amp; SECOND CURTAIN SYNC</h2>
+<p><strong>First and second curtain sync are flash exposure settings that affect how a subject's motion blur is perceived</strong>. Since a flash pulse is usually much shorter than the exposure time, a flash photo of a moving object is comprised of both a blurred portion, caused by the slower ambient light exposure, and a sharper portion, caused by the much faster flash pulse. Each of these is effectively overlaid to create the final flash photograph. First and second curtain sync control whether the blurred portion trails behind or in front of the subject's flash image, respectively, by synchronizing the flash pulse with the beginning (&quot;first curtain&quot;) or end (&quot;second curtain&quot;) of the exposure:</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_second-curtain-sync.png" alt="first and second curtain flash sync diagram" width="524" height="144"/></div></div>
+</div>
+<p>With first curtain sync, most of the ambient light is captured <em>after</em> the flash pulse &#8212; causing the blurred portion to streak <em>in front of</em> the sharper flash image. This can give moving objects the appearance of traveling in the opposite direction of their actual motion. In the example below, the swan has motion streaks which make it appear as though it is rapidly swimming backwards, and the snow appears to be &quot;falling&quot; upwards:</p>
+<div class="image-row">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_first-curtain.jpg" alt="example of first curtain flash sync" width="300" height="200"/>
+<span class="caption">Example of First Curtain Sync</span>
+</div></div>
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_first-curtain-zm.jpg" width="234" height="100" alt="first curtain sync zoomed"><br/><br/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/flash2_first-curtain-z2.jpg" width="152" height="60" alt="first curtain sync zoomed">
+<span class="caption">Appearance of Moving Objects</span>
+</div></div>
+</div>
+<p>For the above reasons, first curtain sync is usually undesirable for subjects in motion &#8212; unless the exposure time is kept short enough that no streaks are visible. On the other hand, <strong>second curtain sync can be very useful for exaggerating subject motion, because the light streaks appear <em>behind</em> the moving subject</strong>.</p>
+<p>However, most cameras do not use second curtain sync by default, because it can make timing the shot more difficult. This is because second curtain sync introduces much more of a delay between when you press the shutter button and when the flash fires &#8212; and increasingly so for longer exposure times. One therefore needs to anticipate where the subject will be <em>at the end of the exposure</em>, as opposed to when the shutter button is pressed. This can be very tricky to time correctly for exposures of a second or more, or for really fast moving subjects.</p>
+<hr/>
+<p style="text-align: center;">For additional reading, please refer to the first half of this tutorial at:<br/><a href="camera-flash.htm">Camera Flash, Part 1: Light Quality &amp; Appearance</a></p>
+<script>//<![CDATA[
+(function fratio(fratioform){fr1=fratioform.fr1.value*1;fr2=fratioform.fr2.value*1;reqfec=Math.log(fr2/fr1)/Math.log(2);reqec=Math.log((fr1+1)/(fr2+1))/Math.log(2);fratioform.reqfec.value=Math.round(100*reqfec)/100;fratioform.reqec.value=Math.round(100*reqec)/100;}
+//]]></script>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-336952942"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/camera-flash.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/camera-flash.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

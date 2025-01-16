@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Management: Color Space Conversion</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/color-space-conversion.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/color-space-conversion.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/color-space-conversion.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-124 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>COLOR SPACE CONVERSION</h1>
+<p>Color space conversion is what happens when a Color Management Module (CMM) translates color from one device's space to another. Conversion may require approximations in order to preserve the image's most important color qualities. Knowing how these approximations work can help you control how the photo may change &#8212; hopefully maintaining the intended look or mood.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-1429200014"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<br/>
+<div class="image-row">
+<div>
+<span class="caption bold">Input Device</span>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/colormgt_additive-sm.png" alt="Additive RGB Colors" width="50" height="48"><br/>
+RGB Profile<br/>(RGB Space)
+</div></div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/colormgt_cmm-arrow1.png" width="80" height="35" alt="color management module translation"></div>
+<div>
+<span class="caption bold">Profile Connection Space</span>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/colormgt_a98_subset-s.jpg" width="80" height="73">
+</div></div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/colormgt_cmm-arrow1.png" width="80" height="35" alt="color management module translation"></div>
+<div>
+<span class="caption bold">Output Device</span>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/colormgt_subtractive-s.png" alt="Subtractive CMYK Colors" width="50" height="48"><br/>
+CMYK Profile<br/>(CMYK Space)
+</div></div>
+</div>
+<h2>BACKGROUND: GAMUT MISMATCH &amp; RENDERING INTENT</h2>
+<p>The translation stage attempts to create a best match between devices &#8212; even when seemingly incompatible. If the original device has a larger color gamut than the final device, some of the those colors will be outside the final device's color space. These &quot;out-of-gamut colors&quot; occur with nearly every conversion and are called a <i>gamut mismatch</i>.</p>
+<div class="image-row">
+<div>
+<span class="caption">RGB Color Space</span>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_srgb-cmyk.png" width="155" height="241" alt="sRGB to CMYK color space conversion">
+<span class="caption">CMYK Color Space<br/>(Destination Space)</span>
+</div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_gamut-mismatch.png" width="292" height="272" alt="color space gamut mismatch"></div>
+</div>
+<p>Each time a gamut mismatch occurs, the CMM uses the <i>rendering intent</i> to decide what qualities of the image it should prioritize. Common rendering intents include: absolute and relative colorimetric, perceptual, and saturation. Each of these types maintains one property of color at the expense of others (described below).</p>
+<h2>PERCEPTUAL &amp; RELATIVE COLORIMETRIC INTENT</h2>
+<p>Perceptual and relative colorimetric rendering are probably the most useful conversion types for digital photography. Each places a different priority on how they render colors within the gamut mismatch region. Relative colorimetric maintains a near exact relationship between in gamut colors, even if this clips out of gamut colors. In contrast, perceptual rendering tries to also preserve some relationship between out of gamut colors, even if this results in inaccuracies for in gamut colors. The following example demonstrates an extreme case for an image within a 1-D black-magenta color space:</p>
+<div class="center">
+<span class="caption">Original Image:</span>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_image1.jpg" width="200" height="80"><br/>
+<span style="color:#0080ff;"><strong>A = Wide Gamut Space</strong></span><br/>
+<span style="color:#0c0;"><strong>B = Narrow Gamut Space (Destination Space)</strong></span>
+</div>
+<div class="image-row">
+<div>
+<table class="t1 bg">
+<tr>
+<td width="10%"></td>
+<th>Relative Colorimetric</th>
+</tr>
+<tr>
+<td><strong><span style="color:#0080ff;">A</span></strong></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_samplespace.png" width="252" height="30" alt="sample 2d color space"></td>
+</tr>
+<tr>
+<td><span class="arrowsm">&darr;</span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_rc-arrows.png" width="250" height="50" alt="arrows"></td>
+</tr>
+<tr>
+<td><span style="color:#0c0;"><strong>B</strong></span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_sample-sm2.png" width="252" height="20"></td>
+</tr>
+<tr>
+<td rowspan="2"></td>
+<td>Converted Image:</td>
+</tr>
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_image1-rc.jpg" width="200" height="80"></td>
+</tr>
+</table>
+</div>
+<div>
+<table class="t1 bg">
+<tr>
+<td width="10%"></td>
+<th>Perceptual</th>
+</tr>
+<tr>
+<td><strong><span style="color:#0080ff;">A</span></strong></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_samplespace.png" width="252" height="30" alt="sample 2d color space"></td>
+</tr>
+<tr>
+<td><span class="arrowsm">&darr;</span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_perc-arrows.png" width="250" height="50" alt="arrows"></td>
+</tr>
+<tr>
+<td><span style="color:#0c0;"><strong>B</strong></span></td>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_sample-sm2.png" width="252" height="20"></td>
+</tr>
+<tr>
+<td rowspan="2"></td>
+<td>Converted Image:</td>
+</tr>
+<tr>
+<td><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_image1-perc.jpg" width="200" height="80"></td>
+</tr>
+</table>
+</div>
+</div>
+<p>Note how perceptual maintains smooth color gradations throughout by compressing the entire tonal range, whereas relative colorimetric clips out of gamut colors (at center of magenta globules and in the darkness between them). For 2D and 3D color spaces, relative colorimetric maps these to the closest reproducible hue in the destination space.</p>
+<p>Even though perceptual rendering compresses the entire gamut, note how it remaps the central tones more precisely than those at the edges of the gamut. The exact conversion depends on what CMM is used for the conversion; Adobe ACE, Microsoft ICM and Apple ColorSynch are some of the most common.</p>
+<p>Another distinction is that perceptual does not destroy any color information &#8212; it just redistributes it. Relative colorimetric, on the other hand, does destroy color information. This means that <strong>conversion using relative colorimetric intent is irreversible, while perceptual can be reversed</strong>. This is not to say that converting from space A to B and then back to A again using perceptual will reproduce the original; this would require careful use of tone curves to reverse the color compression caused by the conversion.</p>
+<h2>ABSOLUTE COLORIMETRIC INTENT</h2>
+<p>Absolute is similar to relative colorimetric in that it preserves in gamut colors and clips those out of gamut, but they differ in how each handles the white point. The white point is the location of the purest and lightest white in a color space (also see discussion of <a href="white-balance.htm">color temperature</a>). If one were to draw a line between the white and black points, this would pass through the most neutral colors.</p>
+<div class="image-row">
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_3dwp4.png" width="175" height="230" alt="3d color space">
+<span class="caption">3D Color Space</span>
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_white-point.png" width="240" height="187" alt="color space white point comparison">
+<span class="caption">2D Cross-Section<br/>(Two Spaces at 50% Luminosity)</span>
+</div>
+</div>
+<p>The location of this line often changes between color spaces, as shown by the &quot;+&quot; on the top right. Relative colorimetric skews the colors within gamut so that the white point of one space aligns with that of the other, while absolute colorimetric preserves colors exactly (without regard to changing white point). To illustrate this, the example below shows two theoretical spaces that have identical gamuts, but different white points:</p>
+<div class="image-row">
+<div>
+<div>
+<div class="bot">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_generic.jpg" width="99" height="99">
+</div>
+<div class="top" style="margin-top: -99px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_grid1.png" width="99" height="99">
+</div>
+<span class="caption">Color Space #1</span>
+</div>
+<div>
+<div class="bot">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_generic.jpg" width="99" height="99">
+</div>
+<div class="top" style="margin-top: -99px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_grid2.png" width="99" height="99">
+</div>
+<span class="caption">Color Space #2</span>
+</div>
+</div>
+<div>Conversion<br/>from #1 to #2<br/><br/><span class="arrowbg">&rarr;</span><br/></div>
+<div>
+<div>
+<div class="bot">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_generic.jpg" width="99" height="99">
+</div>
+<div class="top" style="margin-top: -99px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_grid1.png" width="99" height="99">
+</div>
+<span class="caption">Absolute<br/>Colorimetric</span>
+</div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_wp3.jpg" width="99" height="99">
+<span class="caption">Relative<br/>Colorimetric</span>
+</div>
+</div>
+</div>
+<div class="center"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_X.png" width="8" height="10"> = White Point</div>
+<p>Absolute colorimetric preserves the white point, while relative colorimetric actually displaces the colors so that the old white point aligns with the new one (while still retaining the colors' relative positions). The exact preservation of colors may sound appealing, however relative colorimetric adjusts the white point for a reason. Without this adjustment, <strong>absolute colorimetric results in unsightly image color shifts, and is thus rarely of interest to photographers</strong>.</p>
+<p>This color shift results because the white point of the color space usually needs to align with that of the light source or paper tint used. If one were printing to a color space for paper with a bluish tint, absolute colorimetric would ignore this tint change. Relative colorimetric would compensate colors to account for the fact that the whitest and lightest point has a tint of blue.</p>
+<h2>SATURATION INTENT</h2>
+<p>Saturation rendering intent tries to preserve saturated colors, and is most useful when trying to retain color purity in computer graphics when converting into a larger color space. If the original RGB device contained pure (fully saturated) colors, then saturation intent ensures that those colors will remain saturated in the new color space &#8212; even if this causes the colors to become relatively more extreme.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_pie-chart.png" width="300" height="85" alt="color pie chart">
+<span class="caption">Pie chart with fully saturated <span style="color: #0ff;">cyan</span>, <span style="color: #00f;">blue</span>, <span style="color: #f0f;">magenta</span> and <span style="color: #f00;">red</span></span>
+</div></div>
+</div>
+<p><strong>Saturation intent is not desirable for photos because it does not attempt to maintain color realism.</strong> Maintaining color saturation may come at the expense of changes in hue and lightness, which is usually an unacceptable trade-off for photo reproduction. On the other hand, this is often acceptable for computer graphics such as pie charts.</p>
+<p>Another use for saturation intent is to avoid visible dithering when printing computer graphics on inkjet printers. Some dithering may be unavoidable as inkjet printers never have an ink to match every color, however saturation intent can minimize those cases where dithering is sparse because the color is very close to being pure.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_pie-chart-dither.png" width="300" height="85" alt="color pie chart dithered">
+<span class="caption">Visible dithering due to lack of fully saturated colors</span>
+</div></div>
+</div>
+<h2>PAY ATTENTION TO IMAGE CONTENT</h2>
+<p>One must take the range of image colors present into account; just because an image is defined by a large color space does not mean that it actually utilizes all of those extreme colors. If the destination color space fully encompasses the image's colors (despite being smaller than the original space), then relative colorimetric will yield a more accurate result.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_boat.jpg" width="220" height="137">
+<span class="caption">Example Image</span>
+</div></div>
+<div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_boat-colors.png" width="300" height="275" alt="image content color space comparison">
+</div>
+</div>
+<p>The above image barely utilizes the gamut of your computer display device, which is actually typical of many photographic images. If one were to convert the above image into a destination space which had less saturated reds and greens, this would not place any image colors outside the destination space. For such cases, relative colorimetric would yield more accurate results. This is because perceptual intent compresses the entire color gamut &#8212; regardless of whether these colors are actually utilized.</p>
+<h2>SHADOW &amp; HIGHLIGHT DETAIL IN 3D COLOR SPACES</h2>
+<p>Real-world photographs utilize three-dimensional color spaces, even though up until now we have been primarily analyzing spaces in one and two dimensions. The most important consequence of rendering intent on 3D color spaces is how it affects shadow and highlight detail.</p>
+<div class="left">
+<div class="bot">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_3dwp.png" width="175" height="230" alt="3d color space">
+</div>
+<div class="top" style="margin-top: -230px;">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/conversion_3dwp-text2.png" width="175" height="230">
+</div>
+</div>
+<p>If the destination space can no longer reproduce subtle dark tones and highlights, this detail may be clipped when using relative/absolute colorimetric intent. Perceptual intent compresses these dark and light tones to fit within the new space, however it does this at the cost of reducing overall contrast (relative to what would have been produced with colorimetric intent).</p>
+<p>The conversion difference between perceptual and relative colorimetric is similar to what was demonstrated earlier with the magenta image. The main difference is that now the compression or clipping occurs in the vertical dimension &#8212; for shadows and highlight colors. Most prints cannot produce the range of light to dark that we may see on our computer display, so this aspect is of particular importance when making a print of a digital photograph.</p>
+<p>Using the &quot;black point compensation&quot; setting can help avoid shadow clipping &#8212; even with absolute and relative colorimetric intents. This is available in the conversion properties of nearly all software which supports color management (such as Adobe Photoshop).</p>
+<h2>RECOMMENDATIONS</h2>
+<p>So which is the best rendering intent for digital photography?&nbsp;In general, perceptual and relative colorimetric are best suited for photography because they aim to preserve the same visual appearance as the original.</p>
+<p>The decision about when to use each of these depends on image content and the intended purpose. Images with intense colors (such as bright sunsets or well-lit floral arrangements) will preserve more of their color gradation in extreme colors using perceptual intent. On the other hand, this may come at the expense of compressing or dulling more moderate colors. Images with more subtle tones (such as some portraits) often stand to benefit more from the increased accuracy of relative colorimetric (assuming no colors are placed within the gamut mismatch region). Perceptual intent is overall the safest bet for general and batch use, unless you know specifics about each image.</p>
+<p align="center" style="margin-bottom: 0">For related reading, please visit:</p>
+<p align="center" style="margin-bottom: 0; margin-top:0">Part 1: <a href="color-management1.htm">Color Management</a></p>
+<p align="center" style="margin-top: 0">Part 2: <a href="color-spaces.htm">Color Management: Color Spaces</a></p>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-1772750966"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/color-space-conversion.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/color-space-conversion.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	

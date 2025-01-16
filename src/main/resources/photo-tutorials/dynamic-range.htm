@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Understanding Dynamic Range in Digital Photography</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="https://cdn.cambridgeincolour.com/favicon.ico"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/stylesheets/A.main.css+fonts-cdn.css+calculators.css,Mcc.LjtQ_mS9kz.css.pagespeed.cf.DDR33GDw3V.css" media="screen"/>
+<link rel='stylesheet' href='https://cdn.cambridgeincolour.com/cms/A.wp-includes,,_css,,_dist,,_block-library,,_style.min.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style.basic.css+wp-content,,_plugins,,_ajax-search-lite,,_css,,_style-underline.css,Mcc.8og0jW1BV3.css.pagespeed.cf.4VUCH9I-uw.css' type='text/css' media='all'/><style type="text/css">@font-face{font-family:'aslsicons2';src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot);src:url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix) format('embedded-opentype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2) format('woff2') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff) format('woff') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf) format('truetype') , url(https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons) format('svg');font-weight:normal;font-style:normal}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label{font-size:0!important;color:rgba(0,0,0,0)}div[id*="ajaxsearchlitesettings"].searchsettings .asl_option_inner label:after{font-size:11px!important;position:absolute;top:0;left:0;z-index:1}div[id*="ajaxsearchlite"].wpdreams_asl_container{width:100%;margin:0 0 0 0}div[id*="ajaxsearchliteres"].wpdreams_asl_results div.resdrg span.highlighted{font-weight:bold;color:rgba(217,49,43,1);background-color:rgba(238,238,238,1)}div[id*="ajaxsearchliteres"].wpdreams_asl_results .results div.asl_image{width:70px;height:70px;background-size:cover;background-repeat:no-repeat}div.asl_r .results{max-height:none}.asl_w,.asl_w *{font-family:inherit!important}.asl_m input[type="search"]::placeholder{font-family:inherit!important}.asl_m input[type="search"]::-webkit-input-placeholder{font-family:inherit!important}.asl_m input[type="search"]::-moz-placeholder{font-family:inherit!important}.asl_m input[type="search"]:-ms-input-placeholder{font-family:inherit!important}.asl_m .probox svg{fill:#c1c1c1!important}.asl_m .probox .innericon{background-color:rgba(255,255,255,0)!important;background-image:none!important;-webkit-background-image:none!important;-ms-background-image:none!important}div.asl_r.asl_w.vertical .results .item::after{display:block;position:absolute;bottom:0;content:'';height:1px;width:100%;background:#d8d8d8}div.asl_r.asl_w.vertical .results .item.asl_last_item::after{display:none}</style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-362594-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-362594-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G9635B');</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-7703354124612191",enable_page_level_ads:true});</script>
+<script>if(typeof window.orientation!=='undefined'){var hide_awf_Form=true;}</script>
+<meta name='robots' content='max-image-preview:large'/>
+<link rel="alternate" hreflang="en-us" href="https://www.cambridgeincolour.com/tutorials/dynamic-range.htm"/>
+<link rel="alternate" hreflang="ru-ru" href="https://www.cambridgeincolour.com/ru/tutorials-ru/dynamic-range.htm"/>
+<link rel='dns-prefetch' href='//code.jquery.com'/>
+<script>advanced_ads_ready=function(){var e,t=[],n="object"==typeof document&&document,d=n&&n.documentElement.doScroll,o="DOMContentLoaded",a=n&&(d?/^loaded|^c/:/^loaded|^i|^c/).test(n.readyState);return!a&&n&&(e=function(){for(n.removeEventListener(o,e),window.removeEventListener("load",e),a=1;e=t.shift();)e()},n.addEventListener(o,e),window.addEventListener("load",e)),function(e){a?setTimeout(e,0):t.push(e)}}();</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.12.4.min.js' id='jquery-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>//<![CDATA[
+var advads_options={"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+//]]></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/plugins/advanced-ads,_public,_assets,_js,_advanced.min.js+advanced-ads-pro,_assets,_advanced-ads-pro.js.pagespeed.jc.rA_z06OC2z.js"></script><script>eval(mod_pagespeed_yx5hrYv7uI);</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-3.3.2.min.js' id='jquery-migrate-js'></script>
+<script>eval(mod_pagespeed_0gn7F37ICV);</script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>//<![CDATA[
+var advanced_ads_pro_ajax_object={"ajax_url":"https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php?wpml_lang=en","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-28800"};
+//]]></script>
+<script type='text/javascript' src='/cms/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js.pagespeed.ce.j4jgDnv86a.js' id='advanced-ads-pro/cache_busting-js'></script>
+<link rel="canonical" href="https://www.cambridgeincolour.com/tutorials/dynamic-range.htm"/>
+<script type="text/javascript">var advadsCfpQueue=[];var advadsCfpAd=function(adID){if('undefined'==typeof advadsProCfp){advadsCfpQueue.push(adID)}else{advadsProCfp.addElement(adID)}};</script>
+<meta name="onesignal" content="wordpress-plugin"/>
+<script>window.OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.SERVICE_WORKER_UPDATER_PATH="OneSignalSDKUpdaterWorker.js.php";OneSignal.SERVICE_WORKER_PATH="OneSignalSDKWorker.js.php";OneSignal.SERVICE_WORKER_PARAM={scope:"/"};OneSignal.setDefaultNotificationUrl("https://www.cambridgeincolour.com/cms");var oneSignal_options={};window._oneSignalInitOptions=oneSignal_options;oneSignal_options['wordpress']=true;oneSignal_options['appId']='beb6a1ef-3a80-4073-a2da-0f45af919035';oneSignal_options['allowLocalhostAsSecureOrigin']=true;oneSignal_options['welcomeNotification']={};oneSignal_options['welcomeNotification']['disable']=true;oneSignal_options['path']="https://www.cambridgeincolour.com/cms/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";oneSignal_options['safari_web_id']="web.onesignal.auto.2e77cfdc-f6e8-4572-82d4-363b6713f2bc";oneSignal_options['promptOptions']={};oneSignal_options['notifyButton']={};oneSignal_options['notifyButton']['enable']=true;oneSignal_options['notifyButton']['position']='bottom-right';oneSignal_options['notifyButton']['theme']='default';oneSignal_options['notifyButton']['size']='medium';oneSignal_options['notifyButton']['showCredit']=true;oneSignal_options['notifyButton']['text']={};OneSignal.init(window._oneSignalInitOptions);});function documentInitOneSignal(){var oneSignal_elements=document.getElementsByClassName("OneSignal-prompt");var oneSignalLinkClickHandler=function(event){OneSignal.push(['registerForPushNotifications']);event.preventDefault();};for(var i=0;i<oneSignal_elements.length;i++)oneSignal_elements[i].addEventListener('click',oneSignalLinkClickHandler,false);}if(document.readyState==='complete'){documentInitOneSignal();}else{window.addEventListener("load",function(event){documentInitOneSignal();});}</script>
+<script type="text/javascript">if(typeof _ASL!=="undefined"&&_ASL!==null&&typeof _ASL.initialize!=="undefined")_ASL.initialize();</script>
+</head>
+<body id="" class="">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G9635B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="container" class="post-template-default single single-post postid-137 single-format-standard wrap push aa-prefix-cambr-">
+<div id="wrapper">
+<div id="header">
+<a id="logo" href="/">Cambridge in Colour</a>
+<span id="slogan">A Learning Community for Photographers</span>
+<ul id="top-nav" class=""><li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li id="menu-item-612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li id="menu-item-613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li id="menu-item-614" class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li id="menu-item-616" class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li id="menu-item-617" class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li id="menu-item-618" class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li id="menu-item-619" class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li id="menu-item-620" class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>
+<div id="get-updates">
+<span class="button">Get Updates</span>
+<form method="post" class="af-form-wrapper1" action="https://www.aweber.com/scripts/addlead.pl">
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="649402156"/>
+<input type="hidden" name="meta_split_id" value=""/>
+<input type="hidden" name="listname" value="cinc"/>
+<input type="hidden" name="redirect" value="https://www.cambridgeincolour.com/subscribe/requested.htm" id="redirect_f777ed8e09cde1bd936eb011da968b0d"/>
+<input type="hidden" name="meta_adtracking" value="Top_Page_Form"/>
+<input type="hidden" name="meta_message" value="1"/>
+<input type="hidden" name="meta_required" value="email"/>
+<input type="hidden" name="meta_tooltip" value="email||enter your email here"/>
+</div>
+<input class="text" id="awf_field-29954040" type="email" name="email" x-autocompletetype="email" value="enter your email here" tabindex="500" onfocus=" if (this.value == 'enter your email here') { this.value = ''; }" onblur="if (this.value == '') { this.value='enter your email here';} "/>
+<input name="submit" class="submit" type="submit" value="Submit" tabindex="501"/>
+</form>
+</div>
+<div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+<div class='promagnifier'>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+</svg>
+</div>
+</div>
+<div class='prosettings' style='display:none;' data-opened=0>
+<div class='innericon'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+</svg>
+</div>
+</div>
+<div class='proinput'>
+<form autocomplete="off" aria-label='Ajax search form'>
+<input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Search' value='' autocomplete="off"/>
+<input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+<input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+</form>
+</div>
+<div class='proloading'>
+<div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+</div>
+<div class='proclose'>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<polygon points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+</svg>
+</div>
+</div>
+</div>
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+<form name='options' autocomplete='off'>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='qtranslate_lang' id='qtranslate_lang1' value='0'/>
+</div>
+<div class="asl_option_inner hiddend">
+<input type='hidden' name='wpml_lang' value='en'/>
+</div>
+<fieldset class="asl_sett_scroll">
+<legend style="display: none;">Generic selectors</legend>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="exact" id="set_exactonly1" title="Exact matches only" name="asl_gen[]"/>
+<label for="set_exactonly1">Exact matches only</label>
+</div>
+<div class="asl_option_label">
+Exact matches only </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="title" id="set_intitle1" title="Search in title" name="asl_gen[]" checked="checked"/>
+<label for="set_intitle1">Search in title</label>
+</div>
+<div class="asl_option_label">
+Search in title </div>
+</div>
+<div class="asl_option">
+<div class="asl_option_inner">
+<input type="checkbox" value="content" id="set_incontent1" title="Search in content" name="asl_gen[]" checked="checked"/>
+<label for="set_incontent1">Search in content</label>
+</div>
+<div class="asl_option_label">
+Search in content </div>
+</div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="excerpt" id="set_inexcerpt1" title="Search in excerpt" name="asl_gen[]" checked="checked"/>
+<label for="set_inexcerpt1">Search in excerpt</label>
+</div>
+</fieldset>
+<fieldset class="asl_sett_scroll">
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="post" id="1customset_11" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_11">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+<div class="asl_option_inner hiddend">
+<input type="checkbox" value="page" id="1customset_12" title="Hidden option, ignore please" name="customset[]" checked="checked"/>
+<label for="1customset_12">Hidden</label>
+</div>
+<div class="asl_option_label hiddend"></div>
+</fieldset>
+</form>
+</div>
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+<div class="results">
+<div class="resdrg">
+</div>
+</div>
+<p class='showmore'>
+<a>More results...</a>
+</p>
+</div>
+<div id="asl_hidden_data">
+<svg style="position:absolute" height="0" width="0">
+<filter id="aslblur">
+<fegaussianblur in="SourceGraphic" stddeviation="4"/>
+</filter>
+</svg>
+<svg style="position:absolute" height="0" width="0">
+<filter id="no_aslblur"></filter>
+</svg>
+</div>
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICAgICAiaG9tZXVybCI6ICJodHRwczovL3d3dy5jYW1icmlkZ2VpbmNvbG91ci5jb20vIiwNCiAgICAgICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMSwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL2Nkbi5jYW1icmlkZ2VpbmNvbG91ci5jb20vY21zL3dwLWNvbnRlbnQvcGx1Z2lucy9hamF4LXNlYXJjaC1saXRlL2ltZy9kZWZhdWx0LmpwZyIsDQogICAgImhpZ2hsaWdodCI6IDAsDQogICAgImhpZ2hsaWdodHdob2xld29yZHMiOiAxLA0KCSJzaW5nbGVIaWdobGlnaHQiOiAwLA0KICAgICJzY3JvbGxUb1Jlc3VsdHMiOiAwLA0KICAgICJyZXN1bHRhcmVhY2xpY2thYmxlIjogMSwNCiAgICAiYXV0b2NvbXBsZXRlIjogew0KICAgICAgICAiZW5hYmxlZCIgOiAxLA0KICAgICAgICAibGFuZyIgOiAiZW4iDQogICAgfSwNCgkibW9iaWxlIjogew0KCQkibWVudV9zZWxlY3RvciI6ICIjbWVudS10b2dnbGUiDQoJfSwNCiAgICAidHJpZ2dlcm9udHlwZSI6IDEsDQogICAgInRyaWdnZXJfb25fY2xpY2siOiAwLA0KICAgICJ0cmlnZ2VyX29uX2ZhY2V0X2NoYW5nZSI6IDEsDQogICAgInNldHRpbmdzaW1hZ2Vwb3MiOiAicmlnaHQiLA0KICAgICJocmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJ2cmVzdWx0YW5pbWF0aW9uIjogImZ4LW5vbmUiLA0KICAgICJocmVzdWx0aGlkZWRlc2MiOiAiMSIsDQogICAgInByZXNjb250YWluZXJoZWlnaHQiOiAiNDAwcHgiLA0KICAgICJwc2hvd3N1YnRpdGxlIjogIjAiLA0KICAgICJwc2hvd2Rlc2MiOiAiMSIsDQogICAgImNsb3NlT25Eb2NDbGljayI6IDEsDQogICAgImlpZk5vSW1hZ2UiOiAiZGVzY3JpcHRpb24iLA0KICAgICJpaVJvd3MiOiAyLA0KICAgICJpaXRlbXNXaWR0aCI6IDIwMCwNCiAgICAiaWl0ZW1zSGVpZ2h0IjogMjAwLA0KICAgICJpaXNob3dPdmVybGF5IjogMSwNCiAgICAiaWlibHVyT3ZlcmxheSI6IDEsDQogICAgImlpaGlkZUNvbnRlbnQiOiAxLA0KICAgICJpaWFuaW1hdGlvbiI6ICIxIiwNCiAgICAiYW5hbHl0aWNzIjogInBhZ2V2aWV3IiwNCiAgICAiYW5hbHl0aWNzU3RyaW5nIjogIj9hamF4X3NlYXJjaD17YXNsX3Rlcm19IiwNCiAgICAicmVkaXJlY3RvbmNsaWNrIjogMSwNCiAgICAicmVkaXJlY3RDbGlja1RvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0Q2xpY2tMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X29uX2VudGVyIjogMSwNCiAgICAicmVkaXJlY3RFbnRlclRvIjogInJlc3VsdHNfcGFnZSIsDQogICAgInJlZGlyZWN0RW50ZXJMb2MiOiAic2FtZSIsDQogICAgInJlZGlyZWN0X3VybCI6ICI/cz17cGhyYXNlfSIsDQogICAgIm92ZXJyaWRld3BkZWZhdWx0IjogMSwNCiAgICAib3ZlcnJpZGVfbWV0aG9kIjogImdldCINCn0NCg=="></div>
+<span class="menu-trigger"></span>
+</div>
+<div id="main-wrapper" class="clear">
+<div id="main" class="clear">
+<div id="content">
+<div class="post">
+<h1>DYNAMIC RANGE IN DIGITAL PHOTOGRAPHY</h1>
+<p>Dynamic range in photography describes the ratio between the maximum and minimum measurable light intensities (white and black, respectively). In the real world, one never encounters true white or black &#8212; only varying degrees of light source intensity and subject reflectivity. Therefore the concept of dynamic range becomes more complicated, and depends on whether you are describing a capture device (such as a camera or scanner), a display device (such as a print or computer display), or the subject itself.</p><div class="cambr-content" style="margin-left: auto; margin-right: auto; text-align: center; " id="cambr-1482473386"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="5328152226"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="center">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/all_imaging-chain.png" alt="digital imaging chain" width="510" height="170"/>
+</div>
+<p>Just as with <a href="color-management1.htm">color management</a>, each device within the above imaging chain has their own dynamic range. In prints and computer displays, nothing can become brighter than paper white or a maximum intensity pixel, respectively. In fact, another device not shown above is our eyes, which also have their own dynamic range. Translating image information between devices may therefore affect how that image is reproduced. The concept of dynamic range is therefore useful for relative comparisons between the actual scene, your camera, and the image on your screen or in the final print.</p>
+<h2>INFLUENCE OF LIGHT: ILLUMINANCE &amp; REFLECTIVITY</h2>
+<p>Light intensity can be described in terms of incident and reflected light; both contribute to the dynamic range of a scene (see tutorial on &quot;<a href="camera-metering.htm">camera metering and exposure</a>&quot;).</p>
+<div class="image-row cap">
+<div><div><img loading="lazy" title="Strong Reflections" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_fromreflect.jpg" width="220" height="130"/></div></div>
+<div><div><img loading="lazy" title="Uneven Incident Light" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_fromincident.jpg" width="220" height="130"/></div></div>
+</div>
+<p>Scenes with high variation in reflectivity, such as those containing black objects in addition to strong reflections, may actually have a greater dynamic range than scenes with large incident light variation. Photography under either scenario can easily exceed the dynamic range of your camera &#8212; particularly if the exposure is not spot on.</p>
+<p>Accurate measurement of light intensity, or luminance, is therefore critical when assessing dynamic range. Here we use the term illuminance to specify only incident light. Both illuminance and luminance are typically measured in candelas per square meter (cd/m<sup>2</sup>). Approximate values for commonly encountered light sources are shown below.</p>
+<div class="image-row">
+<div><div>
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_illum1.png" width="473" height="33"><br/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_illum2.jpg" width="473" height="34"><br/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_illum3.png" width="473" height="44">
+</div></div>
+</div>
+<p>Here we see the vast variation possible for incident light, since the above diagram is scaled to powers of ten. If a scene were unevenly illuminated by both direct and obstructed sunlight, this alone can greatly increase a scene's dynamic range (as apparent from the canyon sunset example with a partially-lit cliff face).</p>
+<h2>DIGITAL CAMERAS</h2>
+<p>Although the meaning of dynamic range for a real-world scene is simply the ratio between lightest and darkest regions (contrast ratio), its definition becomes more complicated when describing measurement devices such as digital cameras and scanners. Recall from the <a href="camera-sensors.htm">tutorial on digital camera sensors</a> that light is measured at each pixel in a cavity or well (photosite). Each photosite's size, in addition to how its contents are measured, determine a digital camera's dynamic range.</p>
+<div class="image-row">
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_photosites1.png" width="117" height="87"/>
+<span class="caption">Black Level<br/>(Limited by Noise)</span>
+</div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_photosites2.png" width="117" height="87"/>
+<span class="caption">White Level<br/>(Saturated Photosite)</span>
+</div>
+<div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_photosites3.png" width="79" height="87"/>
+<span class="caption">Darker White Level<br/>(Low Capacity Photosite)</span>
+</div>
+</div>
+<p>Photosites can be thought of as buckets which hold photons as if they were water. Therefore, if the bucket becomes too full, it will overflow. A photosite which overflows is said to have become saturated, and is therefore unable to discern between additional incoming photons &#8212; thereby defining the camera's white level. For an ideal camera, its contrast ratio would therefore be just the number of photons it could contain within each photosite, divided by the darkest measurable light intensity (one photon). If each held 1000 photons, then the contrast ratio would be 1000:1. Since larger photosites can contain a greater range of photons, <strong>dynamic range is generally higher for digital SLR cameras compared to compact cameras</strong> (due to <a href="digital-camera-pixel.htm">larger pixel sizes</a>).</p>
+<p class="notebox"><strong>Technical Note</strong>: In some digital cameras, there is an extended low ISO setting which produces less noise, but also decreases dynamic range. This is because the setting in effect overexposes the image by a full f-stop, but then later truncates the highlights &#8212; thereby increasing the light signal. An example of this is many of the Canon cameras, which have an ISO-50 speed below the ordinary ISO-100.</p>
+<p>In reality, consumer cameras cannot count individual photons. Dynamic range is therefore limited by the darkest tone where texture can no longer be discerned; we call this the black level. The black level is limited by how accurately each photosite can be measured, and is therefore limited in darkness by <a href="image-noise.htm">image noise</a>. Therefore, <strong>dynamic range generally increases for lower ISO speeds and cameras with less measurement noise</strong>.</p>
+<p class="notebox"><strong>Techncal Note</strong>: Even if a photosite could count individual photons, it would still be limited by photon noise. Photon noise is created by the statistical variation in arrival of photons, and therefore represents a theoretical minimum for noise. Total noise represents the sum of photon noise and read-out noise.</p>
+<p><strong>Overall, the dynamic range of a digital camera can therefore be described as the ratio of maximum light intensity measurable (at pixel saturation), to minimum light intensity measurable (above read-out noise).</strong> The most commonly used unit for measuring dynamic range in digital cameras is the f-stop, which describes total light range by powers of 2. A contrast ratio of 1024:1 could therefore also be described as having a dynamic range of 10 f-stops (since 2<sup>10</sup> = 1024). Depending on the application, each unit f-stop may also be described as a &quot;zone&quot; or &quot;eV.&quot;</p>
+<h2>SCANNERS</h2>
+<p>Scanners are subject to the same saturation:noise criterion as for dynamic range in digital cameras, except it is instead described in terms of density (D). This is useful because it is conceptually similar to how pigments create tones in printed media, as shown below.</p>
+<table width="100%" class="t1 bg">
+<tr>
+<td colspan="2"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scanner.png" width="204" height="89"></td>
+<td width="25%"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_density-high.png" width="54" height="93"></td>
+<td width="25%"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_density-low.png" width="54" height="93"></td>
+</tr>
+<tr>
+<td>Low Reflectance<br/>(High Density)</td>
+<td>High Reflectance<br/>(Low Density)</td>
+<td>High Pigment Density<br/>(Darker Tone)</td>
+<td>Low Pigment Density<br/>(Lighter Tone)</td>
+</tr>
+</table>
+<p>The overall dynamic range in terms of density is therefore the maximum pigment density (D<sub>max</sub>), minus the minimum pigment density (D<sub>min</sub>). Unlike powers of 2 for f-stops, density is measured using powers of 10 (just as the Richter scale for earthquakes). A density of 3.0 therefore represents a contrast ratio of 1000:1 (since 10<sup>3.0</sup> = 1000).</p>
+<div class="center">
+<table width="480" class="t1 bg">
+<tr>
+<th>Dynamic Range of Original</th>
+<td rowspan="3"><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_dmax1.jpg" width="348" height="38" style="border: 1px solid #ccc;"><br/><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_dmax2.png" width="350" height="40">
+<img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_dmax3b.png" width="350" height="40">
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>Dynamic Range of Scanner</th>
+</tr>
+</table>
+</div>
+<p>Instead of listing total density (D), scanner manufacturer's typically list just the D<sub>max</sub> value, since D<sub>max </sub>- D<sub>min </sub> is approximately equal to D<sub>max</sub>. This is because unlike with digital cameras, a scanner has full control over it's light source, ensuring that minimal photosite saturation occurs.</p>
+<p>For high pigment density, the same noise constraints apply to scanners as digital cameras (since they both use an array of photosites for measurement). Therefore the measurable D<sub>max</sub> is also determined by the noise present during read-out of the light signal.</p>
+<h2>COMPARISON</h2>
+<p>Dynamic range varies so greatly that it is commonly measured on a logarithmic scale, similar to how vastly different earthquake intensities are all measured on the same Richter scale. Here we show the maximum measurable (or reproducible) dynamic range for several devices in terms any preferred measure (f-stops, density and contrast ratio). Move your mouse over each of the options below to compare these.</p>
+<div class="center">
+<table class="t1" width="400">
+<tr>
+<th colspan="3">Select Measure for Dynamic Range:</th>
+</tr>
+<tr>
+<td id="b1" class="on"><span onmouseover="on('b1'); off('b2'); off('b3'); axis1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_fstops.png';">f-stops</span></td>
+<td id="b2"><span onmouseover="off('b1'); on('b2'); off('b3'); axis1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_density.png';">Density</span></td>
+<td id="b3"><span onmouseover="off('b1'); off('b2'); on('b3'); axis1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_CR.png';">Contrast Ratio</span></td>
+</tr>
+</table>
+</div>
+<p style="text-align: center;"><img loading="lazy" name="plot1" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_prints.jpg" width="416" height="18" style="border: 1px solid #ccc;"><img loading="lazy" name="axis1" src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_fstops.png" width="436" height="35"></p>
+<div class="center">
+<table class="t1" width="400">
+<tr>
+<th colspan="4">Select Types to Display Above:</th>
+</tr>
+<tr>
+<td id="b4" class="on"><span onmouseover="on('b4'); off('b5'); off('b6'); off('b7'); plot1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_prints.jpg';">Printed Media</span></td>
+<td id="b5"><span onmouseover="off('b4'); on('b5'); off('b6'); off('b7'); plot1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_scanners.jpg';">Scanners</span></td>
+<td id="b6"><span onmouseover="off('b4'); off('b5'); on('b6'); off('b7'); plot1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_cameras.jpg';">Digital Cameras</span></td>
+<td id="b7"><span onmouseover="off('b4'); off('b5'); off('b6'); on('b7'); plot1.src='https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_displays.jpg';">Display Devices</span></td>
+</tr>
+</table>
+</div>
+<p>Note the huge discrepancy between reproducible dynamic range in prints, and that measurable by scanners and digital cameras. For a comparison with real-world dynamic range in a scene, these vary from approximately 3 f-stops for a cloudy day with nearly even reflectivity, to 12+ f-stops for a sunny day with highly uneven reflectivity.</p>
+<p>Care should be taken when interpreting the above numbers; real-world dynamic range is a strong function of ambient light for prints and display devices. Prints not viewed under adequate light may not give their full dynamic range, while display devices require near complete darkness to realize their full potential &#8212; especially for plasma displays. Finally, these values are rough approximations only; actual values depend on age of device, model generation, price range, etc.</p>
+<p><strong>Be warned that contrast ratios for display devices are often greatly exaggerated</strong>, as there is no manufacturer standard for listing these. Contrast ratios in excess of 500:1 are often only the result of a very dark black point, instead of a brighter white point. For this reason attention should be paid to both contrast ratio and luminosity. High contrast ratios (without a correspondingly higher luminosity) can be completely negated by even ambient candle light.</p>
+<h2>THE HUMAN EYE</h2>
+<p>The human eye can actually perceive a greater dynamic range than is ordinarily possible with a camera. If we were to consider <a href="new-photography.htm">situations where our pupil opens and closes for varying light</a>, our eyes can see over a range of nearly 24 f-stops.</p>
+<div class="image-left">
+<div><div><img loading="lazy" src="https://cdn.cambridgeincolour.com/images/tutorials/camera-eye_eye1.jpg" width="240" height="150"/></div></div>
+</div>
+<p>On the other hand, for accurate comparisons with a single photo (at constant aperture, shutter and ISO), we can only consider the instantaneous dynamic range (where our pupil opening is unchanged). This would be similar to looking at one region within a scene, letting our eyes adjust, and not looking anywhere else. For this scenario there is much disagreement, because our eye's sensitivity and dynamic range actually change depending on brightness and contrast. Most estimate anywhere from 10-14 f-stops.</p>
+<p>The problem with these numbers is that our eyes are extremely adaptable. For situations of extreme low-light star viewing (where our eyes have adjusted to use rod cells for night vision), our eyes approach even higher instantaneous dynamic ranges (see tutorial on &quot;<a href="color-perception.htm">Color Perception of the Human Eye</a>&quot;).</p>
+<h2>BIT DEPTH &amp; MEASURING DYNAMIC RANGE</h2>
+<p>Even if one's digital camera could capture a vast dynamic range, the precision at which light measurements are translated into digital values may limit usable dynamic range. <strong>The workhorse which translates these continuous measurements into discrete numerical values is called the analog to digital (A/D) converter.</strong> The accuracy of an A/D converter can be described in terms of bits of precision, similar to <a href="bit-depth.htm">bit depth in digital images</a>, although care should be taken that these concepts are not used interchangeably. The A/D converter is what creates values for the <a href="RAW-file-format.htm">digital camera's RAW file format</a>.</p>
+<div class="center">
+<table class="t1 pad">
+<tr>
+<th rowspan="2" width="30%">Bit Precision<br/>of Analog/Digital Converter</th>
+<th rowspan="2" width="35%">Contrast Ratio</th>
+<th colspan="2" width="35%">Dynamic Range</th>
+</tr>
+<tr>
+<th>f-stops</th>
+<th>Density</th>
+</tr>
+<tr>
+<td>8</td>
+<td>256:1</td>
+<td>8</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1024:1</td>
+<td>10</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4096:1</td>
+<td>12</td>
+<td>3.6</td>
+</tr>
+<tr>
+<td>14</td>
+<td>16384:1</td>
+<td>14</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>65536:1</td>
+<td>16</td>
+<td>4.8</td>
+</tr>
+</table>
+<p class="note">Note: Above values are for A/D converter precision only, and should not be used to interpret results for 8 and 16-bit image files. Furthermore, values shown are a theoretical maximum, assuming noise is not limiting, and this applies only to linear A/D converters.</p>
+</div>
+<p>As an example, 10-bits of tonal precision translates into a possible brightness range of 0-1023 (since 2<sup>10</sup> = 1024 levels). <i>Assuming that each A/D converter number is proportional to actual image brightness</i> (meaning twice the pixel value represents twice the brightness), 10-bits of precision can only encode a contrast ratio of 1024:1.</p>
+<p>Most digital cameras use a 10 to 14-bit A/D converter, and so their theoretical maximum dynamic range is 10-14 stops. However, this high bit depth only helps minimize <a href="posterization.htm">image posterization</a> since total dynamic range is usually limited by noise levels. Similar to how a <a href="bit-depth.htm">high bit depth image does not necessarily mean that image contains more colors</a>, if a digital camera has a high precision A/D converter it does not necessarily mean it can record a greater dynamic range. In effect, dynamic range can be thought of as the height of a staircase whereas bit depth can be thought of as the number of steps. <strong>In practice, the dynamic range of a digital camera does not even approach the A/D converter's theoretical maximum</strong>; 8-12 stops is generally all one can expect from the camera.</p>
+<h2>INFLUENCE OF IMAGE TYPE &amp; TONAL CURVE</h2>
+<p>Can digital image files actually record the full dynamic range of high-end devices? There seems to be much confusion on the internet about the relevance of image bit depth on recordable dynamic range.</p>
+<p>We first need to distinguish between whether we are speaking of recordable dynamic range, or displayable dynamic range. Even an ordinary 8-bit JPEG image file can conceivably record an infinite dynamic range &#8212; assuming that the right tonal curve is applied during RAW conversion (see <a href="photoshop-curves.htm">tutorial on curves, under motivation: dynamic range</a>), and that the A/D converter has the required bit precision. The problem lies in the usability of this dynamic range; if too few bits are spread over too great of a tonal range, then this can lead to <a href="posterization.htm">image posterization</a>.</p>
+<p>On the other hand, displayable dynamic range depends on the gamma correction or tonal curve implied by the image file, or used by the video card and display device. Using a gamma of 2.2 (standard for PC's), it would be theoretically possible to encode a dynamic range of nearly 18 f-stops (see tutorial on gamma correction, to be added). Again though, this would suffer from severe posterization. The only current standard solution for encoding a nearly infinite dynamic range (with no visible posterization) is to use <a href="high-dynamic-range.htm">high dynamic range (HDR) image files in Photoshop</a> (or other supporting program).</p>
+<div class="preload">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_density.png">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_CR.png"><img src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_scanners.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_cameras.jpg"><img src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_cameras.jpg">
+<img src="https://cdn.cambridgeincolour.com/images/tutorials/dr_scale_displays.jpg">
+</div>	</div>
+<p><b>Want to learn more?</b> Discuss this and other articles in our <a href="/forums/">digital photography forums</a>.</p>
+<p style="text-align: center; margin-top: 25px;">- Back to <a href="/tutorials.htm">Photography Tutorials</a> -</p>
+</div>
+<div id="sidebar">
+<div class="side-social">
+Follow us via
+<ul>
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>BROWSE CATEGORIES</h3>
+<ul>
+<li class="li-1"><a href="/learn-photography-concepts.htm">Concepts &amp; Terminology</a></li>
+<li class="li-2"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3"><a href="/photo-editing-tutorials.htm">Editing &amp; Post-Processing</a></li>
+<li class="li-4"><a href="/color-management-printing.htm">Color Management &amp; Printing</a></li>
+<li class="li-5"><a href="/photography-techniques.htm">Photo Techniques &amp; Styles</a></li>
+</ul>
+</div>
+<div class="category-links">
+<h3>GET OUR LATEST BOOK!</h3>
+<a href="/books/understanding-photography-v2/"><img src="https://cdn.cambridgeincolour.com/images/book2/ebook2-ad1.jpg" width="226" height="403" alt="photography book"></a>
+</div>
+<div class="cambr-sidebar ad_side" id="cambr-652285594"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px;" data-ad-client="ca-pub-7703354124612191" data-ad-slot="0201281930"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</div>
+<script src="//ws.sharethis.com/button/buttons.js"></script>
+<script>stLight.options({publisher:'04bdc9ae-0156-4f22-9738-578ab5994f7d',tracking:'google'});</script>
+<div id="socializ">
+<div style="margin: 2px 0 5px 0;"><span class='st_email_button' displaytext='Email'></span></div>
+<span class="st_sharethis_vcount" st_url="http://www.cambridgeincolour.com/tutorials/dynamic-range.htm"></span>
+<div style="margin-bottom: -30px; margin-top: 10px; margin-left: 8px;">
+<iframe src="//www.facebook.com/plugins/like.php?app_id=176041055787234&amp;href=http://www.cambridgeincolour.com/tutorials/dynamic-range.htm&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowtransparency="true"></iframe>
+</div>
+</div>
+<script src="https://forms.aweber.com/form/93/717120793.js"></script>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div id="copy"><span>Copyright &copy; 2005-2020 Cambridge in Colour</span>|<span><a href="/gallery/cambridge.htm">Gallery</a></span>|<span><a href="/about.htm">About</a></span>|<span><a href="/contact.htm">Contact Us</a></span></div>
+<ul id="f-social">
+<li class="li-1"><a href="/subscribe/form.htm">Email</a></li>
+<li class="li-3"><a href="https://www.facebook.com/cambridgeincolour" target="_blank" rel="noopener">Facebook</a></li>
+<li class="li-4"><a href="https://twitter.com/#!/cambridgecolour" target="_blank" rel="noopener">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="sidebar panel" role="navigation">
+<div class="sidebar-wrapper">
+<ul id="mobile-nav" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-611"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a target="_blank" rel="noopener" href="/books/understanding-photography-v2/">Books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-612"><a href="/photography-tools.htm">Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-613"><a>Tutorials</a>
+<ul class="sub-menu">
+<li class="li-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-614"><a href="/learn-photography-concepts.htm">Concepts &#038; Terminology</a></li>
+<li class="li-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="/camera-equipment.htm">Using Camera Equipment</a></li>
+<li class="li-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="/photo-editing-tutorials.htm">Editing &#038; Post-Processing</a></li>
+<li class="li-4 menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="/color-management-printing.htm">Color Management &#038; Printing</a></li>
+<li class="li-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-619"><a href="/photography-techniques.htm">Photo Techniques &#038; Styles</a></li>
+<li class="li-6 menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="/tutorials.htm">all photography tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-621"><a href="/forums/">Forums</a></li>
+</ul>	</div>
+</div>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/bigSlide.min.js+jquery.matchHeight-min.js.pagespeed.jc.X5zZvJBviX.js"></script><script>eval(mod_pagespeed_N$78V3jDbB);</script>
+<script>eval(mod_pagespeed_DiJ5JPapbm);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/owl.carousel.min.js' id='owlcarousel-js'></script>
+<script src="https://cdn.cambridgeincolour.com/cms/wp-content/themes/cic/js/jquery.fitvids.js+remodal.js+application.js.pagespeed.jc._jyBomxQvR.js"></script><script>eval(mod_pagespeed_ONcsJphpot);</script>
+<script>eval(mod_pagespeed_cyfocUiwcs);</script>
+<script>eval(mod_pagespeed_8eItmPVRtg);</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill.min.js.pagespeed.jm.yZ1Y6zDT_2.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>('fetch'in window)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr'+'ipt>');(document.contains)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr'+'ipt>');(window.DOMRect)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr'+'ipt>');(window.URL&&window.URL.prototype&&window.URLSearchParams)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr'+'ipt>');(window.FormData&&window.FormData.prototype.keys)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr'+'ipt>');(Element.prototype.matches&&Element.prototype.closest)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr'+'ipt>');('objectFit'in document.documentElement.style)||document.write('<script src="https://www.cambridgeincolour.com/cms/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js"></scr'+'ipt>');</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-includes/js/dist/hooks.min.js.pagespeed.jm.HqdOiLdfga.js' id='wp-hooks-js'></script>
+<script type='text/javascript' id='wpdreams-ajaxsearchlite-js-before'>window.ASL=typeof window.ASL!=='undefined'?window.ASL:{};window.ASL.ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/ajax_search.php";window.ASL.backend_ajaxurl="https:\/\/www.cambridgeincolour.com\/cms\/wp-admin\/admin-ajax.php";window.ASL.js_scope="jQuery";window.ASL.detect_ajax=0;window.ASL.scrollbar="";window.ASL.js_retain_popstate=0;window.ASL.version=4748;window.ASL.min_script_src=["https:\/\/www.cambridgeincolour.com\/cms\/wp-content\/plugins\/ajax-search-lite\/js\/min\/jquery.ajaxsearchlite.min.js"];window.ASL.highlight={"enabled":false,"data":[]};window.ASL.fix_duplicates=1;window.ASL.analytics={"method":"pageview","tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
+<script type='text/javascript' src='https://cdn.cambridgeincolour.com/cms/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js.pagespeed.jm.PDR9sW9oUi.js' id='wpdreams-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?' async='async' id='remote_sdk-js'></script>
+<script>window.advads_has_ads=[["1053","ad",null],["1057","ad",null]];(window.advanced_ads_ready||jQuery(document).ready).call(null,function(){if(!window.advanced_ads_pro){console.log("Advanced Ads Pro: cache-busting can not be initialized");}});</script></body>
+</html>	
